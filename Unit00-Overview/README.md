@@ -36,3 +36,5 @@ git merge origin/main -m "Some good commit message here"
 5) Now, push the changes that you have made:
 
 git push origin main
+
+6) Goto step 2.
