@@ -6,7 +6,7 @@
 ## Exercises
 ## References
 
-#Updating a unit
+# Updating a unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
 directory for you.
