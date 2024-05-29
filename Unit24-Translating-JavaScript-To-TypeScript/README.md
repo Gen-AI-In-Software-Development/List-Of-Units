@@ -1,4 +1,4 @@
-#  Unit-24-Translating-JavaScript-To-TypeScript
+#  Unit24-Translating-JavaScript-To-TypeScript
 ## Introduction
 ## Compelling Use Case
 ## Several Solved Examples Using Copilot
