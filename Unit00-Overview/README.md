@@ -21,6 +21,7 @@ Here, I assume your unit has the name MyModifiedUnit.
 3) You are done making changes. You now want to add and commit your changes locally.  
 
 git add MyModifiedUnit
+
 git commit -m "Made improvements to my unit"
 
 4) We want to upload changes. But first, get a (possibly updated) copy of the repository.
