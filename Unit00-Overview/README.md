@@ -29,6 +29,7 @@ These lines are only useful if another person has updated the repo. They are OK 
 do if no changes were made by another person.
 
 git fetch origin
+
 git merge origin/main -m "Some good commit message here"
 
 5) Now, push the changes that you have made:
