@@ -1,6 +1,7 @@
-# Unit02 Problem Solving And Pseudocode
-## Here we describe the problem solving process
-## Here is a description of the importance of pseudocode
+
+#  Unit-05-Generating-Documentation-From-Code-And-Code-From-Documentation
+## Introduction
+## Compelling Use Case
 ## Several Solved Examples Using Copilot
 ## Critical Evaluations of the Examples
 ## Exercises

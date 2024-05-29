@@ -1,6 +1,6 @@
-# Unit25 Testing Javascript with Mocha
-## Here we describe testing JavaScript
-## Here is a description of the importance of testing
+#  Unit-25-Testing-JavaScript-With-Mocha
+## Introduction
+## Compelling Use Case
 ## Several Solved Examples Using Copilot
 ## Critical Evaluations of the Examples
 ## Exercises
