@@ -11,7 +11,7 @@
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
 directory for you.
 
-git clone --depth 1 --branch head https://github.com/Gen-AI-In-Software-Development/List-Of-Units List-Of-Units
+git clone --depth 1 --branch master https://github.com/Gen-AI-In-Software-Development/List-Of-Units List-Of-Units
 
 2) Do this every time you want to work on a unit:
 
@@ -35,6 +35,6 @@ git merge origin/main -m "Some good commit message here"
 
 5) Now, push the changes that you have made:
 
-git push origin main
+git push origin master
 
 6) Goto step 2.
