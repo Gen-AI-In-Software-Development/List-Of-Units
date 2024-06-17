@@ -42,7 +42,7 @@ the variables - forcing a caller to use class methods to modify these variables.
 appropriate because these will be points in the plane. A public constructor is provided that allows
 the programmer to initialize the x and y values. Two public getter methods are provided so that a programmer can access the values of x and y by calling these methods. Finally, a toString() method is created so
 that the point can be represented as a String. This method overrides the inherited toString() method.
-Overall: This class is well done and readable. We might suggest that comments be added to the code.
+Overall: This class is well done and readable. Next, we suggest that comments be added to the code.
 
 ### Prompt: Please add comments to the code of the Point class.
 
