@@ -19,7 +19,7 @@ Make changes to the README.md file in the unit that you are working on. Avoid ot
 Here, I assume your unit has the name MyModifiedUnit.
 
 3) You are done making changes. You now want to add and commit your changes locally. Do this from
-above the directory MyModifiedUnit. 
+above the directory MyModifiedUnit.
 
 git add MyModifiedUnit
 
@@ -40,7 +40,7 @@ git push origin master
 
 6) Goto step 2.
 
-RESPONSE FROM COMPUTING SERVICES
+# RESPONSE FROM COMPUTING SERVICES
 
 Michael,
 
@@ -59,3 +59,7 @@ Finally, because you mention this being given to students in a teaching and lear
 
 Best,
 Bo Powers
+
+# FROM CMU PAGE ON Copilot
+
+[CMU Copilot page](https://www.cmu.edu/computing/services/ai/copilot/index.html)
