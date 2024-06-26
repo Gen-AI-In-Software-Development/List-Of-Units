@@ -126,6 +126,7 @@ distance from the current point to another point provided as an argument. Overal
 ### Example 3.4 prompt: A word is said to be abecedarian if the letters in the word appear in alphabetical order. For example, the following are all six-letter English abecedarian words abdest, acknow, acorsy, adempt, adipsy, agnosy, befist, behint, beknow, bijoux, biopsy, cestuy, chintz, deflux, dehors, dehort, deinos, diluvy, dimpsy .Write a Java method that takes a word and returns whether the word is abecedarian .Take input from user.
 
 ### Generated Code:
+```
 import java.util.Scanner;
 
 public class AbecedarianChecker {
@@ -148,6 +149,7 @@ public class AbecedarianChecker {
       return true;
   }
 }
+```
 ### Critique
 The solution presented does not take into account letter case. If the user enters
 the string "Hello" the program will find the word to be "abecedarian". This is because
