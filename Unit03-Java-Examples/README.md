@@ -125,7 +125,7 @@ well done and readable. Rating: Good.
 The code was included as a method of the Point class. It uses the Pythagorean theorem to compute the
 distance from the current point to another point provided as an argument. Overall: This method is well done and readable. Rating: Good.
 
-### Example 3.4 prompt: A word is said to be abecedarian if the letters in the word appear in alphabetical order. For example, the following are all six-letter English abecedarian words abdest, acknow, acorsy, adempt, adipsy, agnosy, befist, behint, beknow, bijoux, biopsy, cestuy, chintz, deflux, dehors, dehort, deinos, diluvy, dimpsy .Write a Java method that takes a word and returns whether the word is abecedarian .Take input from user.
+### Example 3.4 prompt: A word is said to be abecedarian if the letters in the word appear in alphabetical order. For example, the following are all six-letter English abecedarian words abdest, acknow, acorsy, adempt, adipsy, agnosy, befist, behint, beknow, bijoux, biopsy, cestuy, chintz, deflux, dehors, dehort, deinos, diluvy, dimpsy .Write a Java method that takes a word and returns whether the word is abecedarian .Take input from user.[1]
 
 ### Generated Code:
 ```
@@ -159,7 +159,7 @@ the capital letter "H" has a lower ASCII value (72) than the lower case letter "
 A better program would have converted the input to lower case before making the check.
 Rating: poor.
 
-### Example 3.5 prompt: Write a Java program that reads a 4-bit binary number from the keyboard as a string and then converts it into decimal. For example, if the input is 1100, the output should be 12. (Hint: Break the string into substrings and then convert each substring to a value for a single bit. If the bits are b0, b1, b2, and b3, the decimal equivalent is 8b0 + 4b1 + 2b2 + b3.). Take input from user.
+### Example 3.5 prompt: Write a Java program that reads a 4-bit binary number from the keyboard as a string and then converts it into decimal. For example, if the input is 1100, the output should be 12. (Hint: Break the string into substrings and then convert each substring to a value for a single bit. If the bits are b0, b1, b2, and b3, the decimal equivalent is 8b0 + 4b1 + 2b2 + b3.). Take input from user.[2]
 
 ### Generated Code:
 ```
@@ -197,7 +197,7 @@ The program provides clear and concise output, indicating the decimal equivalent
 
 An improved version of this code would isolate the computation of the decimal value into its own method. It would also include documentation describing each section. Rating: Fair.  
 
-### Example 3.6 prompt: The Harris-Benedict equation estimates the number of calories your body needs to maintain your weight if you do no exercise. This is called your basal metabolic rate, or BMR. The calories needed for a woman to maintain her weight is: BMR = 655 + (4.3 × weight in pounds) + (4.7 × height in inches) − (4.7× age in years) .The calories needed for a man to maintain his weight is: BMR = 66 + (6.3 × weight in pounds) + (12.9 × height in inches) − (6.8 × age in years).A typical chocolate bar will contain around 230 calories. Write a Java program that allows the user to input his or her weight in pounds, height in inches, and age in years. The program should then output the number of chocolate bars that should be consumed to maintain one’s weight for both a woman and a man of the input weight, height, and age.
+### Example 3.6 prompt: The Harris-Benedict equation estimates the number of calories your body needs to maintain your weight if you do no exercise. This is called your basal metabolic rate, or BMR. The calories needed for a woman to maintain her weight is: BMR = 655 + (4.3 × weight in pounds) + (4.7 × height in inches) − (4.7× age in years) .The calories needed for a man to maintain his weight is: BMR = 66 + (6.3 × weight in pounds) + (12.9 × height in inches) − (6.8 × age in years).A typical chocolate bar will contain around 230 calories. Write a Java program that allows the user to input his or her weight in pounds, height in inches, and age in years. The program should then output the number of chocolate bars that should be consumed to maintain one’s weight for both a woman and a man of the input weight, height, and age.[3]
 
 ### Generated Code:
 ```
@@ -259,3 +259,6 @@ Rating: Fair.
 
 
 ## References
+[1]
+[2]
+[3]
