@@ -259,6 +259,8 @@ Rating: Fair.
 
 
 ## References
-[1]
-[2]
-[3]
+[1] Downey, Allen B., and Chris Mayfield, *Think Java: How to Think Like a Computer Scientist*, 2nd edn (Sebastopol, CA: O’Reilly Media, 2019), pp. 92, ISBN 978-1-492-07250-8.
+
+[2] Savitch, Walter, *JavaTM: An Introduction to Problem Solving & Programming*, 8th edn (London: Pearson Education, 2019), pp. 168, ISBN 978-1-292-24747-2.
+
+[3] Savitch, Walter, *JavaTM: An Introduction to Problem Solving & Programming*, 8th edn (London: Pearson Education, 2019), pp. 169, ISBN 978-1-292-24747-2.
