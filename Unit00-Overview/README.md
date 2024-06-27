@@ -13,6 +13,10 @@ directory for you.
 
 git clone --depth 1 --branch master https://github.com/Gen-AI-In-Software-Development/List-Of-Units List-Of-Units
 
+
+git clone https://<personal_access_token>@github.com/Gen-AI-In-Software-Development/List-Of-Units.git
+
+
 2) Do this every time you want to work on a unit:
 
 Make changes to the README.md file in the unit that you are working on. Avoid other units.
@@ -63,3 +67,34 @@ Bo Powers
 # FROM CMU PAGE ON Copilot
 
 [CMU Copilot page](https://www.cmu.edu/computing/services/ai/copilot/index.html)
+
+# Notes from SEI talk
+Give the LLM a large undocumented program and have it generate a clear description of the code.
+
+Check out glasp (a plugin for chrome) as a tutor or trainer
+
+We have to teach how to read and evaluate code
+
+Unit tests are needed. Now, we will see more of this with LLM's.
+
+Other software engineering activities => Requirements documents from a large body of text, policy document analysis, code, looking for inconsistencies, architecture documents (may be incorrect with glossy beauty)
+
+A fool with a tool is still a fool.
+
+Test driven development with LLMs.
+
+Good prompt engineering is a type of programming.
+
+Risk assessment of introducing LLM code into a system
+
+# We have code coming from a potentially untrusted source. We have to be able to read and analyze code.
+
+Fundamental principles of software engineering (abstractions, information hiding, etc) will not be going away.
+
+Ethically sourced data for LLMs?
+
+Douglas Schmidt has videos. Know how to do prompt engineering and providing context.
+
+Prompt Patterns are important: https://www.dre.vanderbilt.edu/~schmidt/PDF/prompt-patterns.pdf
+Prompt engineering utube channel: https://www.youtube.com/@DouglasSchmidt
+The programmer still needs to take ownership of the code in, say, safety critical systems.
