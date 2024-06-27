@@ -87,7 +87,7 @@ Good prompt engineering is a type of programming.
 
 Risk assessment of introducing LLM code into a system
 
-# We have code coming from a potentially untrusted source. We have to be able to read and analyze code.
+We have code coming from a potentially untrusted source. We have to be able to read and analyze code.
 
 Fundamental principles of software engineering (abstractions, information hiding, etc) will not be going away.
 
