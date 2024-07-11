@@ -151,6 +151,125 @@ public class GradebookParser {
 
 
 
+### Example 3.5 prompt: Continuing with our discussion, I would like GradeBook to be a separate Java class that has the same structure as the XML grade book. I would like to be able to create an empty GradeBook object, populate it with values, and write the object as a XML to a file. In addition, I would like to be able to read the grade book XML into an object of class GradeBook.
+
+### Generated Java Code
+```
+import org.w3c.dom.*;
+import javax.xml.parsers.*;
+import java.io.*;
+import org.xml.sax.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GradeBook {
+    private List<Student> students;
+
+    public GradeBook() {
+        this.students = new ArrayList<>();
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public static GradeBook fromXml(Document doc) {
+        GradeBook gradeBook = new GradeBook();
+        NodeList studentNodes = doc.getElementsByTagName("student");
+        for (int i = 0; i < studentNodes.getLength(); i++) {
+            Node studentNode = studentNodes.item(i);
+            if (studentNode.getNodeType() == Node.ELEMENT_NODE) {
+                Element studentElement = (Element) studentNode;
+                String name = studentElement.getElementsByTagName("name").item(0).getTextContent();
+                List<Integer> examScores = new ArrayList<>();
+                NodeList examNodes = studentElement.getElementsByTagName("exam");
+                for (int j = 0; j < examNodes.getLength(); j++) {
+                    Node examNode = examNodes.item(j);
+                    if (examNode.getNodeType() == Node.ELEMENT_NODE) {
+                        examScores.add(Integer.parseInt(examNode.getTextContent()));
+                    }
+                }
+                Student student = new Student(name, examScores);
+                gradeBook.addStudent(student);
+            }
+        }
+        return gradeBook;
+    }
+
+    public Document toXml() {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.newDocument();
+
+            Element rootElement = doc.createElement("gradebook");
+            doc.appendChild(rootElement);
+
+            for (Student student : students) {
+                Element studentElement = doc.createElement("student");
+                rootElement.appendChild(studentElement);
+
+                Element nameElement = doc.createElement("name");
+                nameElement.appendChild(doc.createTextNode(student.getName()));
+                studentElement.appendChild(nameElement);
+
+                for (int score : student.getExamScores()) {
+                    Element examElement = doc.createElement("exam");
+                    examElement.appendChild(doc.createTextNode(String.valueOf(score)));
+                    studentElement.appendChild(examElement);
+                }
+            }
+
+            return doc;
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example usage:
+        GradeBook gradeBook = new GradeBook();
+        gradeBook.addStudent(new Student("Sam", List.of(76, 82)));
+        gradeBook.addStudent(new Student("Joe", List.of(80, 88)));
+
+        // Convert to XML
+        Document gradeBookXml = gradeBook.toXml();
+        if (gradeBookXml != null) {
+            // Write to file (customize the file path as needed)
+            GradeBookParser.writeGradebookToFile(gradeBookXml, "gradebook_output.xml");
+            System.out.println("Gradebook written to gradebook_output.xml");
+        } else {
+            System.out.println("Error creating XML.");
+        }
+    }
+}
+
+class Student {
+    private String name;
+    private List<Integer> examScores;
+
+    public Student(String name, List<Integer> examScores) {
+        this.name = name;
+        this.examScores = examScores;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Integer> getExamScores() {
+        return examScores;
+    }
+}
+
+```
+### Critique
+
 
 ## Exercises
 1. In Example 3.2, ask Copilot to generate comments for the Point class without using the Javadoc format. That is, you want comments but do not plan on generating API documentation.
