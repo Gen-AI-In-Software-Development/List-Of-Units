@@ -297,7 +297,8 @@ public class PatternDisplay extends Application {
 }
 
 ```
-<img src="Dartboard.png" width="600"/>
+<img src="images/Dartboard.png" width="600"/>
+
 ### Critique:
 The code effectively demonstrates the use of JavaFX to create a graphical application that displays a dartboard-like pattern with concentric rings and a bull's eye.
 The code is structured well with clear separation of responsibilities. The `start` method handles the creation of the GUI components and setting up the scene.
@@ -313,7 +314,7 @@ Add functionality to allow the user to click and move the bull's eye circle to a
 
 ### Example 3.8 Prompt: Write a JavaFX application that displays the following pattern [5]:
 
-<img src="Screenshot 2024-06-23 at 10.51.24 PM.png" width="600"/>
+<img src="images/Screenshot 2024-06-23 at 10.51.24 PM.png" width="600"/>
 
 ### Generated Code:
 
@@ -384,7 +385,7 @@ public class PatternApp extends Application {
 }
 
 ```
-<img src="Screenshot 2024-07-11 at 12.27.05 AM.png" width="400"/>
+<img src="images/Screenshot 2024-07-11 at 12.27.05 AM.png" width="400"/>
 ### Critique:
 The code provided does not match the prompt and instead shows a completely different pattern. 
 It demonstrates the creation of a pattern with a central circle, concentric circles, and lines radiating from the center, but it does not align with the desired pattern.
