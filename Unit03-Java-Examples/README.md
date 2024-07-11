@@ -250,7 +250,7 @@ There is no error checking in the code. The user may crash the program by enteri
 Rating: Fair.
 
 
-### Example 3.7 prompt Prompt: Write statements that can be used in a JavaFX application to draw a dart board showing concentric circular rings and a bull’s eye. (The bull’s eye should be a filled circle.)[4]
+### Example 3.7 prompt: Write statements that can be used in a JavaFX application to draw a dart board showing concentric circular rings and a bull’s eye. (The bull’s eye should be a filled circle.)[4]
 
 ### Generated Code:
 ```
@@ -306,10 +306,8 @@ The main method is used to launch the application, adhering to JavaFX convention
 The use of `Pane` as the root container is appropriate for this application as it allows for easy placement of the circular rings and the bull's eye.
 Overall Rating: Good
 
-## Exercises:
-Modify the program to allow the user to input the number of rings, initial ring radius, and radius decrement through a dialog box or command-line arguments.
-Update the program to color each ring differently. For example, use alternating colors or a gradient effect.
-Add functionality to allow the user to click and move the bull's eye circle to a different position within the pane.
+
+
 
 
 ### Example 3.8 Prompt: Write a JavaFX application that displays the following pattern [5]:
@@ -388,7 +386,7 @@ public class PatternApp extends Application {
 <img src="images/Screenshot 2024-07-11 at 12.27.05 AM.png" width="400"/>
 
 ### Critique:
-The code provided does not match the prompt and instead shows a completely different pattern. 
+The code provided does not match the prompt and instead shows a completely different pattern.
 It demonstrates the creation of a pattern with a central circle, concentric circles, and lines radiating from the center, but it does not align with the desired pattern.
 
 Overall Rating: Poor
@@ -401,6 +399,9 @@ Overall Rating: Poor
 4. Request that copilot break out the decimalValue computation in Example 3.5 into its own method.
 5. Request that copilot add error checking on user input in the ChocolateBarsCalculator of Example 3.6. The user should not be able to crash the program by entering bad data.
 6. Request Copilot to update the program to color each ring differently. For example, use alternating colors or a gradient effect.
+7. In Example 3.7, modify the program to allow the user to input the number of rings, initial ring radius, and radius decrement through a dialog box or command-line arguments.
+8. In Example 3.7, update the program to color each ring differently. For example, use alternating colors or a gradient effect.
+9. In Example 3.7, add functionality to allow the user to click and move the bull's eye circle to a different position within the pane.
 
 
 ## References
