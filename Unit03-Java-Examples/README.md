@@ -307,12 +307,9 @@ The use of `Pane` as the root container is appropriate for this application as i
 Overall Rating: Good
 
 
+### Example 3.8 prompt: Write a JavaFX application that displays the following pattern [5]:
 
-
-
-### Example 3.8 Prompt: Write a JavaFX application that displays the following pattern [5]:
-
-<img src="images/Screenshot 2024-06-23 at 10.51.24 PM.png" width="600"/>
+<img src="images/InterestingPatternPrompt.png" width="600"/>
 
 ### Generated Code:
 
@@ -383,7 +380,7 @@ public class PatternApp extends Application {
 }
 
 ```
-<img src="images/Screenshot 2024-07-11 at 12.27.05 AM.png" width="400"/>
+<img src="images/ResponseFromCopilot.png" width="400"/>
 
 ### Critique:
 The code provided does not match the prompt and instead shows a completely different pattern.
@@ -399,9 +396,9 @@ Overall Rating: Poor
 4. Request that copilot break out the decimalValue computation in Example 3.5 into its own method.
 5. Request that copilot add error checking on user input in the ChocolateBarsCalculator of Example 3.6. The user should not be able to crash the program by entering bad data.
 6. Request Copilot to update the program to color each ring differently. For example, use alternating colors or a gradient effect.
-7. In Example 3.7, modify the program to allow the user to input the number of rings, initial ring radius, and radius decrement through a dialog box or command-line arguments.
-8. In Example 3.7, update the program to color each ring differently. For example, use alternating colors or a gradient effect.
-9. In Example 3.7, add functionality to allow the user to click and move the bull's eye circle to a different position within the pane.
+7. In Example 3.7, ask Copilot to modify the program to allow the user to input the number of rings, initial ring radius, and radius decrement through a dialog box or command-line arguments.
+8. In Example 3.7, ask Copilot to update the program to color each ring differently. For example, use alternating colors or a gradient effect.
+9. In Example 3.7, ask Copilot to add functionality to allow the user to click and move the bull's eye circle to a different position within the pane.
 
 
 ## References
