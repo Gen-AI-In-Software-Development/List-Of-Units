@@ -386,6 +386,7 @@ public class PatternApp extends Application {
 
 ```
 <img src="images/Screenshot 2024-07-11 at 12.27.05 AM.png" width="400"/>
+
 ### Critique:
 The code provided does not match the prompt and instead shows a completely different pattern. 
 It demonstrates the creation of a pattern with a central circle, concentric circles, and lines radiating from the center, but it does not align with the desired pattern.
