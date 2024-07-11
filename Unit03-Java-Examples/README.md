@@ -250,12 +250,153 @@ There is no error checking in the code. The user may crash the program by enteri
 Rating: Fair.
 
 
+### Example 3.7 prompt Prompt: Write statements that can be used in a JavaFX application to draw a dart board showing concentric circular rings and a bull’s eye. (The bull’s eye should be a filled circle.)[4]
+
+### Generated Code:
+```
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+
+public class PatternDisplay extends Application {
+    @Override
+    public void start(Stage primaryStage) {
+        Pane root = new Pane();
+        Scene scene = new Scene(root, 400, 400);
+        primaryStage.setTitle("Dartboard");
+
+        // Create concentric circular rings
+        double centerX = 200;
+        double centerY = 200;
+        double ringRadius = 150;
+        int numRings = 5; // Number of concentric rings
+
+        for (int i = 0; i < numRings; i++) {
+            Circle ring = new Circle(centerX, centerY, ringRadius);
+            ring.setFill(null);
+            ring.setStroke(Color.BLACK);
+            root.getChildren().add(ring);
+            ringRadius -= 30; // Decrease radius for each ring
+        }
+
+        // Create the bull's eye (filled circle)
+        Circle bullsEye = new Circle(centerX, centerY, 20);
+        bullsEye.setFill(Color.BLACK);
+        root.getChildren().add(bullsEye);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+```
+### Critique:
+The code effectively demonstrates the use of JavaFX to create a graphical application that displays a dartboard-like pattern with concentric rings and a bull's eye.
+The code is structured well with clear separation of responsibilities. The `start` method handles the creation of the GUI components and setting up the scene.
+The main method is used to launch the application, adhering to JavaFX conventions.
+The use of `Pane` as the root container is appropriate for this application as it allows for easy placement of the circular rings and the bull's eye.
+Overall Rating: Good
+
+## Exercises:
+Modify the program to allow the user to input the number of rings, initial ring radius, and radius decrement through a dialog box or command-line arguments.
+Update the program to color each ring differently. For example, use alternating colors or a gradient effect.
+Add functionality to allow the user to click and move the bull's eye circle to a different position within the pane.
+
+
+### Example 3.8 Prompt: Write a JavaFX application that displays the following pattern [5]:
+
+
+
+### Generated Code:
+
+```
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+
+public class PatternApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Create a Pane to hold the shapes
+        Pane root = new Pane();
+
+        // Set the dimensions of the scene
+        int width = 400;
+        int height = 400;
+
+        // Create the central filled circle
+        Circle centralCircle = new Circle(width / 2, height / 2, 20);
+        centralCircle.setFill(Color.YELLOW);
+
+        // Add the central circle to the Pane
+        root.getChildren().add(centralCircle);
+
+        // Create concentric circles
+        int numCircles = 6;
+        for (int i = 1; i <= numCircles; i++) {
+            Circle circle = new Circle(width / 2, height / 2, 20 + i * 20);
+            circle.setFill(Color.TRANSPARENT);
+            circle.setStroke(Color.BLACK);
+            root.getChildren().add(circle);
+        }
+
+        // Create lines extending from the center to the circles
+        for (int i = 0; i < numCircles; i++) {
+            double angle = 2 * Math.PI * i / numCircles;
+            double x1 = width / 2;
+            double y1 = height / 2;
+            double x2 = x1 + Math.cos(angle) * (20 + numCircles * 20);
+            double y2 = y1 + Math.sin(angle) * (20 + numCircles * 20);
+
+            Line line = new Line(x1, y1, x2, y2);
+            root.getChildren().add(line);
+        }
+
+        // Create the scene
+        Scene scene = new Scene(root, width, height);
+
+        // Set the stage title
+        primaryStage.setTitle("Pattern Display");
+
+        // Set the scene on the stage
+        primaryStage.setScene(scene);
+
+        // Show the stage
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
+
+```
+### Critique:
+The code provided does not match the prompt and instead shows a completely different pattern. 
+It demonstrates the creation of a pattern with a central circle, concentric circles, and lines radiating from the center, but it does not align with the desired pattern.
+
+Overall Rating: Poor
+
+
 ## Exercises
 1. In Example 3.2, ask Copilot to generate comments for the Point class without using the Javadoc format. That is, you want comments but do not plan on generating API documentation.
 2. In Example 3.3, Ask Copilot to generate the distanceTo method as a static method rather than a method of the Point class.
 3. Provide Copilot with a modified prompt so that it improves on its solution to Example 3.4.
 4. Request that copilot break out the decimalValue computation in Example 3.5 into its own method.
 5. Request that copilot add error checking on user input in the ChocolateBarsCalculator of Example 3.6. The user should not be able to crash the program by entering bad data.
+6. Request Copilot to update the program to color each ring differently. For example, use alternating colors or a gradient effect.
 
 
 ## References
@@ -264,3 +405,7 @@ Rating: Fair.
 [2] Savitch, Walter, *JavaTM: An Introduction to Problem Solving & Programming*, 8th edn (London: Pearson Education, 2019), pp. 168, ISBN 978-1-292-24747-2.
 
 [3] Savitch, Walter, *JavaTM: An Introduction to Problem Solving & Programming*, 8th edn (London: Pearson Education, 2019), pp. 169, ISBN 978-1-292-24747-2.
+
+[4] Savitch, Walter, JavaTM: An Introduction to Problem Solving & Programming, 8th edn (London: Pearson Education, 2019), pp. 78, ISBN 978-1-292-24747-2.
+
+[5] Savitch, Walter, JavaTM: An Introduction to Problem Solving & Programming, 8th edn (London: Pearson Education, 2019), pp. 80, ISBN 978-1-292-24747-2.
