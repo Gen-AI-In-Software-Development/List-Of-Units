@@ -1,10 +1,13 @@
-# Unit00 is an Example Unit for Testing
-## Introduction
-## Compelling Use Case
-## Several Solved Examples Using Copilot
-## Critical Evaluations of the Examples
-## Exercises
-## References
+# Unit00-Overview
+## Machine Learning and Software Development
+
+Artificial intelligence studies ways to computationally do what human intelligence does.
+Machine learning is a subfield of artificial intelligence.
+Neural networks is a subfield of machine learning.
+Copilot is a neural network.
+
+<img src="images/CopilotVennDiagram.png" width="400"/>
+
 
 # Updating a unit
 
