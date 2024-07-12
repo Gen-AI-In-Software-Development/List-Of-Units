@@ -160,7 +160,7 @@ import javax.xml.transform.stream.StreamResult;
 After the imports were included, the program compiled and ran correctly. Rating: Good.
 
 
-### Example 3.5 prompt: Continuing with our discussion, I would like GradeBook to be a separate Java class that has the same structure as the XML grade book. I would like to be able to create an empty GradeBook object, populate it with values, and write the object as a XML to a file. In addition, I would like to be able to read the grade book XML into an object of class GradeBook.
+### Example 3.5 prompt: Continuing with our discussion, I would like GradeBook to be a separate Java class that has the same structure as the XML grade book. I would like to be able to create an empty GradeBook object, populate it with values, and write the object in XML markup to a file. In addition, I would like to be able to read the grade book XML into an object of class GradeBook.
 
 ### Generated Java Code
 ```
