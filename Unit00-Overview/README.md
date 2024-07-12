@@ -11,6 +11,9 @@ Software development involves specifying, designing, programming, documenting, t
 
 In this book, we will experiment with how Copilot might assist in the software development process.
 
+"A fool with a tool is still a fool." - Grady Booch
+
+
 # Updating a unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
