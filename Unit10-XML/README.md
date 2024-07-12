@@ -6,9 +6,11 @@ These examples use Microsoft copilot provided here: [Microsoft copilot](https://
 
 ## Use Case
 
-Introduce XML. Why is it still important.
+XML (Extensible Markup Language) is a metalanguage allowing us to create new languages[1]. In fact, a large number of these formal languages exist today. HTML is an XML language and is quite popular for displaying data on a browser. Apache Maven and Apache Ant are popular build tools that describe software builds using XML. The Android platform uses an XML language to describe screen layouts and
+the KML language is used to plot points on a map using Google maps. The list of XML applications is extensive.
 
-Explain why we want to program against XML documents. We want to read, process, and write XML.
+In this unit, we will create our own simple language (Gradebook.xml) and ask copilot to help
+us describe Gradebook.xml with a grammar and process XML documents using Java.
 
 ## Prompts and Code Critique
 
@@ -149,6 +151,16 @@ public class GradebookParser {
 ```
 ### Critique
 
+This program will read an XML document and then write that same document to a file. The only
+error is that there are several missing import statements:
+```
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+```
+After the imports were included, the program compiled and ran correctly. Rating: Good.
 
 
 ### Example 3.5 prompt: Continuing with our discussion, I would like GradeBook to be a separate Java class that has the same structure as the XML grade book. I would like to be able to create an empty GradeBook object, populate it with values, and write the object as a XML to a file. In addition, I would like to be able to read the grade book XML into an object of class GradeBook.
@@ -241,7 +253,7 @@ public class GradeBook {
         Document gradeBookXml = gradeBook.toXml();
         if (gradeBookXml != null) {
             // Write to file (customize the file path as needed)
-            GradeBookParser.writeGradebookToFile(gradeBookXml, "gradebook_output.xml");
+            GradebookParser.writeGradebookToFile(gradeBookXml, "gradebook_output.xml");
             System.out.println("Gradebook written to gradebook_output.xml");
         } else {
             System.out.println("Error creating XML.");
@@ -270,13 +282,38 @@ class Student {
 ```
 ### Critique
 
+The main routine creates an empty Java grade book object and populates it with data. It then
+creates and internal XML document with the call to gradeBook.toXml(). It uses the previously created
+GradebookParser to serialize the grade book to a file.
+
+The output of this program is the following file:
+```
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gradebook>
+    <student>
+        <name>Sam</name>
+        <exam>76</exam>
+        <exam>82</exam>
+    </student>
+    <student>
+        <name>Joe</name>
+        <exam>80</exam>
+        <exam>88</exam>
+    </student>
+    <!-- Add more students here -->
+</gradebook>
+```
+
+Rating: Good
 
 ## Exercises
-1. In Example 3.2, ask Copilot to generate comments for the Point class without using the Javadoc format. That is, you want comments but do not plan on generating API documentation.
-
-
+1. Using copilot, create a Java program that reads a grade book file in XML and adds 10% to each student's score. There should be an output file (in XML) holding the new grade book. Be sure to test your solution and give copilot a rating of poor, fair, or good.
+2. Using copilot, create a Java program that reads a grade book in XML and allows a user (working at the terminal) to modify scores as they are presented. A new grade book, with the updated scores, will be generated. Be sure to test your solution and give copilot a rating of poor, fair, or good.
+3. Using copilot, replace the Document Type Definition (DTD) for gradebook.xml with an XML Schema Definition Language (XSDL) grammar.
+4. Ask copilot why XSDL may be preferable to DTD's.
+5. Find an example XML file on the web and ask copilot to generate code (in Python or Java) that allows you to interact with the document on some way.
+6. Ask copilot why a message marked up with XML may be better than a binary message. Rate the response from copilot as Poor, Fair, or Good. Ask copilot why a message marked up in binary may be better than the same message marked up in XML. Rate the response from copilot as Poor, Fair, or Good.
+7. Ask copilot to compare and contrast XML messages with JSON messages. Rate the response from copilot as Poor, Fair, or Good.
 
 ## References
-[1] Downey, Allen B., and Chris Mayfield, *Think Java: How to Think Like a Computer Scientist*, 2nd edn (Sebastopol, CA: O’Reilly Media, 2019), pp. 92, ISBN 978-1-492-07250-8.
-
-[2] Savitch, Walter, *JavaTM: An Introduction to Problem Solving & Programming*, 8th edn (London: Pearson Education, 2019), pp. 168, ISBN 978-1-292-24747-2.
+[1] Ellen Siever, Aaron Skonnard, and Andrew H. Watt, XML in a Nutshell, 3rd ed. (Sebastopol, CA: O’Reilly Media, 2004).
