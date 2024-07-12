@@ -99,10 +99,7 @@ The solution shows a document type definition (DTD) embedded in an XML document.
 is the correct way to do the embedding and the XML document is valid with respect to its grammar
 (as specified in the DTD). Rating: Good.
 
-### Example 3.4 prompt: Continuing with our discussion, I would like a Java class that
-wraps this grade book document. I want a method to read an entire XML document instance into
-a Java document object. I also want a method that writes such a Java document instance to
-a file passed as a parameter.  
+### Example 3.4 prompt: Continuing with our discussion, I would like a Java class that wraps this grade book document. I want a method to read an entire XML document instance into a Java document object. I also want a method that writes such a Java document instance to a file passed as a parameter.  
 
 ### Generated Java Code
 ```
@@ -314,6 +311,7 @@ Rating: Good
 5. Find an example XML file on the web and ask copilot to generate code (in Python or Java) that allows you to interact with the document on some way.
 6. Ask copilot why a message marked up with XML may be better than a binary message. Rate the response from copilot as Poor, Fair, or Good. Ask copilot why a message marked up in binary may be better than the same message marked up in XML. Rate the response from copilot as Poor, Fair, or Good.
 7. Ask copilot to compare and contrast XML messages with JSON messages. Rate the response from copilot as Poor, Fair, or Good.
+8. Give copilot the entire file that you are currently reading and ask it to build a similar file but one that uses JSON rather than XML. Rate the response from copilot as Poor, Fair, or Good.
 
 ## References
 [1] Ellen Siever, Aaron Skonnard, and Andrew H. Watt, XML in a Nutshell, 3rd ed. (Sebastopol, CA: O’Reilly Media, 2004).
