@@ -2,12 +2,14 @@
 ## Machine Learning and Software Development
 
 Artificial intelligence studies ways to computationally do what human intelligence does.
-Machine learning is a subfield of artificial intelligence.
-Neural networks is a subfield of machine learning.
-Copilot is a neural network.
+Machine learning is a subfield of artificial intelligence and
+neural networks are a subfield of machine learning. Copilot is a neural network.
 
 <img src="images/CopilotVennDiagram.png" width="400"/>
 
+Software development involves specifying, designing, programming, documenting, testing, and maintaining applications.
+
+In this book, we will experiment with how Copilot might assist in the software development process.
 
 # Updating a unit
 
