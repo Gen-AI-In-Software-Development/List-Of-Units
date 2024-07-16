@@ -341,6 +341,167 @@ The provided HTML code for the Photography Gallery is structurally sound and dem
 
 Rating: Fair
 
+### Prompt 9.4 :Create an HTML page that includes a form with the following features: A text input field that only accepts alphabets and spaces. A number input field that only accepts numbers within a specific range (e.g., 1 to 100). An email input field with basic validation. A date input field that only allows selecting a date within the current year.A submit button that displays an alert with the form data when clicked.
+
+### Generated HTML
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="number"], input[type="email"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Form Example</h1>
+        <form id="myForm">
+            <label for="name">Name (Alphabets and spaces only):</label>
+            <input type="text" id="name" name="name" pattern="[A-Za-z ]+" required>
+            <br>
+            <label for="age">Age (1 to 100):</label>
+            <input type="number" id="age" name="age" min="1" max="100" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="birthdate">Birthdate (within current year):</label>
+            <input type="date" id="birthdate" name="birthdate" max="2023-12-31" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            alert(JSON.stringify(formObject, null, 2));
+        });
+    </script>
+</body>
+</html>
+```
+
+### Critique 
+This code provides a well-structured form with clear input validations and a visually appealing layout. The use of pattern attributes and type-specific input fields ensures that only restricted input is accepted, making it robust and user-friendly.
+
+Rating: Good
+
+### Prompt 9.5 : Generate an HTML page that displays the scores of a bowling game for multiple players. Each player should have their scores for each frame displayed, along with a total score at the end. The layout should include a table with player names as rows and frames as columns, with the last column showing the total score for each player. Please include sample data for three players with ten frames each.Please generate code for all ten frames. Add a GIF from web related to bowling below the table
+
+### Generated HTML
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bowling Scores</title>
+</head>
+<body>
+    <h1>Bowling Scores</h1>
+    <table border='1'>
+        <tr>
+            <th>Player</th>
+            <th>Frame 1</th>
+            <th>Frame 2</th>
+            <th>Frame 3</th>
+            <th>Frame 4</th>
+            <th>Frame 5</th>
+            <th>Frame 6</th>
+            <th>Frame 7</th>
+            <th>Frame 8</th>
+            <th>Frame 9</th>
+            <th>Frame 10</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>Player 1</td>
+            <td>9</td>
+            <td>1</td>
+            <td>8</td>
+            <td>2</td>
+            <td>10</td>
+            <td>10</td>
+            <td>9</td>
+            <td>1</td>
+            <td>10</td>
+            <td>10</td>
+            <td>150</td>
+        </tr>
+        <tr>
+            <td>Player 2</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>300</td>
+        </tr>
+        <tr>
+            <td>Player 3</td>
+            <td>8</td>
+            <td>2</td>
+            <td>7</td>
+            <td>3</td>
+            <td>9</td>
+            <td>1</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+            <td>200</td>
+        </tr>
+    </table>
+    <br>
+    <img src="https://giphy.com/gifs/bowling" alt="Bowling GIF">
+</body>
+</html>
+```
+
+
+
+### Critique 
+This HTML code provides a clear and structured table for displaying bowling scores of multiple players, along with their total scores. However, the GIF link is incorrect and does not properly display an image, which detracts from the visual appeal of the page.
+
+Rating: Poor
 
 ## Exercises
 ## References
