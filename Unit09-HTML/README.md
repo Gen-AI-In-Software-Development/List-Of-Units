@@ -511,12 +511,12 @@ This HTML code provides a clear and structured table for displaying bowling scor
 Rating: Poor
 
 ## Exercises
-1.	For Prompt 9.1 Ask Copilot to implement a JavaScript function that calculates and updates the total scores for each player when the button is clicked.
+1.	For Prompt 9.1, ask Copilot to implement a JavaScript function that calculates and updates the total scores for each player when the button is clicked.
 2.	Use Microsoft Copilot to generate an HTML page that includes:
 	•	An image from an external source (e.g., Unsplash, Pixabay).
 	•	An embedded YouTube video.
 	•	An embedded Google Maps location.
-3. 1.	Use Microsoft Copilot to generate an HTML page that includes:
+3. 	Use Microsoft Copilot to generate an HTML page that includes:
 	•	A button that shows/hides additional content when clicked.
 	•	A dropdown menu that filters content on the page.
 	•	A modal window that displays additional information when triggered.
