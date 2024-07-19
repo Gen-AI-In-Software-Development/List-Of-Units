@@ -9,7 +9,7 @@ neural networks are a subfield of machine learning. Copilot is a neural network.
 
 Software development involves specifying, designing, programming, documenting, testing, and maintaining applications.
 
-In this book, we will experiment with how Copilot might assist in the software development process.
+In this repository, we will experiment with how Copilot might assist in the software development process.
 
 "A fool with a tool is still a fool." - Grady Booch
 
