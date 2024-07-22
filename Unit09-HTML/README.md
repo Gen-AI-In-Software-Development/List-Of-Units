@@ -608,7 +608,7 @@ setInterval(updateTrainSchedule, 30000);
 
 ### Critique
 
-The first visit using this we page caused an error because the API Key was not included. That was
+The first visit using this web page caused an error because the API Key was not included. That was
 expected because an API Key should be established separately. When the API Key was provided, the
 web page showed the error "Error retrieving train schedule". This error required a debugging effort.
 The code used in the HTML for the San Fransisco station was SFO. This needed to be changed to
