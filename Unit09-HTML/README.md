@@ -359,11 +359,11 @@ Rating: Fair
 
 The browser display appears next.
 
------
+----
 
-<img src="images/pg1.png" width="800"
+<img src="images/pg1.png" width="800"/>
 
------
+----
 
 
 Another browser display:
