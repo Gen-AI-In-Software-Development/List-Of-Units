@@ -626,7 +626,7 @@ The browser display appears next.
 The timing system worked in the web page. After 30 seconds, a new request was made. After debugging
 with console.log statements, it was discovered that the etd variable was always 0 after each fetch.
 
-The resulting HTML page was useful but significant debugging was still required.
+The resulting HTML page is useful but significant debugging is still required.
 
 Rating: Poor
 
