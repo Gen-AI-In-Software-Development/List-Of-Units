@@ -547,10 +547,9 @@ Rating: Good
 The browser display appears next.
 
 <img src="images/bowling2.png" width="800"/>
-
 ----
 
-Above is a line
+
 
 ### Critique
 This HTML code provides a clear and structured table for displaying bowling scores of multiple players, along with their total scores. However, the GIF link is incorrect and does not properly display an image, which detracts from the visual appeal of the page.
