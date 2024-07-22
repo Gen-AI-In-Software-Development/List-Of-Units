@@ -220,6 +220,7 @@ Rating: Good
 
 The browser display appears next.
 
+
 -----
 
 <img src="images/portfolio.png" width="800"/>
@@ -363,6 +364,7 @@ The browser display appears next.
 <img src="images/pg1.png" width="800"
 
 -----
+
 
 Another browser display:
 
@@ -546,10 +548,11 @@ The browser display appears next.
 
 -----
 
+
 <img src="images/bowling2.png" width="800"/>
 
------
 
+-----
 
 
 ### Critique
