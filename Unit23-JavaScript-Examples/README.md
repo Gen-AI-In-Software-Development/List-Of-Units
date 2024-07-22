@@ -241,12 +241,12 @@ document.addEventListener("keydown", (event) => {
 The JavaScript code effectively handles the inflation and deflation of a balloon emoji based on arrow key presses and implements an explosion feature when the balloon grows too large. It correctly uses event listeners and CSS manipulation for the desired behavior. Rating: Good
 
 ## Exercises
-1.For Prompt 23.1 ask Copilot to modify the FizzBuzz program to add a condition to print “BuzzFizz” for numbers divisible by 7. And allow the range of numbers (e.g., 1 to 100) to be 
+1. For Prompt 23.1 ask Copilot to modify the FizzBuzz program to add a condition to print “BuzzFizz” for numbers divisible by 7. And allow the range of numbers (e.g., 1 to 100) to be 
   specified via command line arguments.
-2.For Prompt 23.2 ask Copilot to define a binding size = 8 and change the program so that it works for any size, outputting a grid of the given width and height.
-3.For Prompt 23.3 ask Copilot to modify the countChar and countBs functions to perform case-insensitive counting of characters (e.g., count both ‘B’ and ‘b’).
-4.For Prompt 23.4 ask Copilot to extend the grep-like script to accept multiple regular expressions and search for files that match any of the expressions.
-5.For Prompt 23.4 ask Copilot to enhance the balloon game to include a feature where the balloon starts to deflate if it shrinks below a certain size, turning it back into a balloon emoji.
+2. For Prompt 23.2 ask Copilot to define a binding size = 8 and change the program so that it works for any size, outputting a grid of the given width and height.
+3. For Prompt 23.3 ask Copilot to modify the countChar and countBs functions to perform case-insensitive counting of characters (e.g., count both ‘B’ and ‘b’).
+4. For Prompt 23.4 ask Copilot to extend the grep-like script to accept multiple regular expressions and search for files that match any of the expressions.
+5. For Prompt 23.4 ask Copilot to enhance the balloon game to include a feature where the balloon starts to deflate if it shrinks below a certain size, turning it back into a balloon emoji.
 
 
 
