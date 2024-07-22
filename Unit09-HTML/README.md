@@ -641,3 +641,4 @@ Rating: Poor
 	•	A dropdown menu that filters content on the page.
 	•	A modal window that displays additional information when triggered.
 4.  Use Microsoft Copilot to create an HTML table that displays dynamic data fetched from an API. Use JavaScript to fetch data from a public API (e.g., JSONPlaceholder, OpenWeatherMap) and populate the table with the retrieved data.
+5. Using Copilot for assistance, debug the generated HTML of 9.6 so that it visits BART and works as described in the prompt. You will need to get an API key from the Bay Area Rapid Transit system.
