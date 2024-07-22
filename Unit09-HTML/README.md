@@ -569,9 +569,12 @@ SFIA. After that change, we received the message "No Train Coming". But, after r
 program, we learned that there was a train coming (in 6 minutes).
 
 The browser display appears next.
----
+
+-----
+
 <img src="images/BART_Visit_1.jpg" width="800"/>
----
+
+-----
 
 The timing system worked in the web page. After 30 seconds, a new request was made. After debugging
 with console.log statements, it was discovered that the etd variable was always 0 after each fetch.
