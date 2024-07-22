@@ -129,17 +129,56 @@ console.log(updatedStory);
 ```
 ### Critique 
 
-### Prompt 23.6 : Conway’s Game of Life is a simple simulation that creates artificial “life” on a grid, each cell of which is either alive or not. Each generation (turn), the following rules are applied:					
-• Any live cell with fewer than two or more than three live neighbors dies.	
-• Any live cell with two or three live neighbors lives on to the next gener- ation.
-• Any dead cell with exactly three live neighbors becomes a live cell.
-A neighbor is defined as any adjacent cell, including diagonally adjacent ones.
-Note that these rules are applied to the whole grid at once, not one square at a time. That means the counting of neighbors is based on the situation at the start of the generation, and changes happening to neighbor cells during this generation should not influence the new state of a given cell.
-Implement this game using whichever data structure you find appropriate. Use Math.random to populate the grid with a random pattern initially. Display it as a grid of checkbox fields, with a button next to it to advance to the next generation. When the user checks or unchecks the checkboxes, their changes should be included when computing the next generation. 
-
+### Prompt 23.6 : Write a page that displays a balloon (using the balloon emoji, 🎈). When you press the up arrow, it should inflate (grow) 10 percent, and when you press the down arrow, it should deflate (shrink) 10 percent.You can control the size of text (emoji are text) by setting the font-size CSS property (style.fontSize) on its parent element. Remember to include a unit in the value—for example, pixels (10px). The key names of the arrow keys are "ArrowUp" and "ArrowDown". Make sure the keys change only the balloon, without scrolling the page. When that works, add a feature where, if you blow up the balloon past a certain size, it explodes. In this case, exploding means that it is replaced with an 💥 emoji, and the event handler is removed (so that you can’t inflate or deflate the explosion). Write a Javascript program
 ### Generated Code
 ```
+// Get the balloon element
+const balloon = document.getElementById("balloon");
+
+// Initial font size (10px)
+let fontSize = 10;
+
+// Event listener for arrow keys
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp") {
+        // Inflate the balloon (increase font size by 10%)
+        fontSize *= 1.1;
+        // Prevent default to stop the page from scrolling
+        event.preventDefault();
+        balloon.style.fontSize = fontSize + "px";
+    } else if (event.key === "ArrowDown") {
+        // Deflate the balloon (decrease font size by 10%)
+        fontSize *= 0.9;
+        // Prevent default to stop the page from scrolling
+        event.preventDefault();
+        balloon.style.fontSize = fontSize + "px";
+    }
+
+    // Check if balloon has exploded
+    if (fontSize > 50) { // Set the explosion size limit
+        // Replace balloon with explosion emoji
+        balloon.textContent = "💥";
+        // Remove event listener to prevent further inflation/deflation
+        document.removeEventListener("keydown", event);
+    }
+});
+
+
 ```
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Balloon Fun</title>
+</head>
+<body>
+<span id="balloon" style="font-size: 10px;">🎈</span>
+<script src="path_to_your_javascript_file.js"></script>
+</body>
+</html>
+```
+
 ### Critique 
 ## Exercises
 1. For Prompt 23.2 ask Copilot to define a binding size = 8 and change the program so that it works for any size, outputting a grid
