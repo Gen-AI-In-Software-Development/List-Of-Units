@@ -97,14 +97,71 @@ getUserInput();
 ```
 ### Critique 
 
-### Prompt 23.4 : Dominant writing direction
-					
-Write a function that computes the dominant writing direction in a string of text. Remember that each script object has a direction property that can be "ltr" (left to right), "rtl" (right to left), or "ttb" (top to bottom).
-					
-The dominant direction is the direction of a majority of the characters that have a script associated with them. The characterScript and countBy func- tions defined earlier in the chapter are probably useful here. 
-
+### Prompt 23.4 : On Unix systems, there is a command line tool called grep that can be used to quickly search files for a regular expression. Write a Node script that can be run from the command line and acts some- what like grep. It treats its first command line argument as a regular expression and treats any further arguments as files to search. It should output the names of any file whose content matches the regular expression. When that works, extend it so that when one of the arguments is a directory, it searches through all files in that directory and its subdirectories. Use asynchronous or synchronous file system functions as you see fit. Setting things up so that multiple asynchronous actions are requested at the same time might speed things up a little, but not a huge amount, since most file systems can read only one thing at a time.
 ### Generated Code
 ```
+const fs = require('fs');
+const path = require('path');
+
+// Function to recursively read directories and search files
+function searchFiles(directory, regex) {
+  fs.readdir(directory, { withFileTypes: true }, (err, entries) => {
+    if (err) {
+      console.error(`Error reading directory ${directory}: ${err}`);
+      return;
+    }
+
+    entries.forEach(entry => {
+      const fullPath = path.join(directory, entry.name);
+      if (entry.isDirectory()) {
+        searchFiles(fullPath, regex); // Recurse into subdirectories
+      } else {
+        fs.readFile(fullPath, 'utf8', (err, content) => {
+          if (err) {
+            console.error(`Error reading file ${fullPath}: ${err}`);
+            return;
+          }
+          if (regex.test(content)) {
+            console.log(fullPath); // Output the file name if content matches
+          }
+        });
+      }
+    });
+  });
+}
+
+// Main script
+const regexPattern = process.argv[2];
+const searchPath = process.argv[3];
+
+if (!regexPattern || !searchPath) {
+  console.error('Usage: node grep.js <regex-pattern> <path>');
+  process.exit(1);
+}
+
+const regex = new RegExp(regexPattern);
+
+fs.stat(searchPath, (err, stats) => {
+  if (err) {
+    console.error(`Error accessing path ${searchPath}: ${err}`);
+    process.exit(1);
+  }
+
+  if (stats.isDirectory()) {
+    searchFiles(searchPath, regex);
+  } else {
+    fs.readFile(searchPath, 'utf8', (err, content) => {
+      if (err) {
+        console.error(`Error reading file ${searchPath}: ${err}`);
+        process.exit(1);
+      }
+      if (regex.test(content)) {
+        console.log(searchPath); // Output the file name if content matches
+      }
+    });
+  }
+});
+
 ```
 ### Critique 
 
