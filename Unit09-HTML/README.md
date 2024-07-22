@@ -547,6 +547,7 @@ Rating: Good
 The browser display appears next.
 
 <img src="images/bowling2.png" width="800"/>
+
 ----
 
 
