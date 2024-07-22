@@ -568,14 +568,10 @@ The code used in the HTML for the San Fransisco station was SFO. This needed to 
 SFIA. After that change, we received the message "No Train Coming". But, after running a correct
 program, we learned that there was a train coming (in 6 minutes).
 
+The browser display appears next.
+---
 <img src="images/BART_Visit_1.jpg" width="800"/>
-
-<figure>
-  <img src="images/BART_Visit_1.jpg" width="800" style="border: 2px solid #ffa500;"/>
-  <figcaption>Browser display from generated HTML</figcaption>
-</figure>
-
-
+---
 
 The timing system worked in the web page. After 30 seconds, a new request was made. After debugging
 with console.log statements, it was discovered that the etd variable was always 0 after each fetch.
