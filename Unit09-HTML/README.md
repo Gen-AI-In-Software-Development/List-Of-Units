@@ -513,6 +513,7 @@ Rating: Poor
 ### Prompt 9.6 :The Bay Area Rapid Transit (BART) API allows us to make queries for the time it takes for a train to arrive at a particular stop enroute to a particular destination. I would like an HTML web page that makes periodic visits to the BART legacy API. I am interested in the next train to arrive at the San Francisco International Airport and destined for the Richmond station. The periodic updates will show the time a traveler needs to wait at the airport station for a train destined for the Richmond station. Of course, the time should lower as the train approaches. If no train is coming the web page will display the string "No Train Coming".
 
 ### Generated HTML
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -556,6 +557,7 @@ setInterval(updateTrainSchedule, 30000);
 <div id="trainSchedule">Checking train schedule...</div>
 </body>
 </html>
+```
 
 ### Critique
 
