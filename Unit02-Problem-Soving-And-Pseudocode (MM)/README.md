@@ -110,10 +110,7 @@ the decode_message_with_parity. The parity bit is extracted and checked to see i
 Low level details have been left to the developer and this is expected in pseudocode.
 Rating: Good.
 
-### Example 2.3 prompt: I intend to program a microcontroller to control a traffic light. My traffic
-light has three colors: red, yellow, and green. The green light should be on for 30 seconds and, during this
-period, the other lights should be off. After 30 seconds of green, the yellow light should be turned on and the others off. The yellow light should remain on for 10 seconds. When the yellow light turns off, the red light should turn on for 30 seconds and the yellow and green light should be turned off.  This is repeated is repeated forever. Eventually, I want this code to be written in C++. But now, however, I want only pseudocode to show my manager. Please generate a
-pseudocode description of my microcontroller firmware.
+### Example 2.3 prompt: I intend to program a microcontroller to control a traffic light. My traffic light has three colors: red, yellow, and green. The green light should be on for 30 seconds and, during this period, the other lights should be off. After 30 seconds of green, the yellow light should be turned on and the others off. The yellow light should remain on for 10 seconds. When the yellow light turns off, the red light should turn on for 30 seconds and the yellow and green light should be turned off.  This is repeated is repeated forever. Eventually, I want this code to be written in C++. But now, however, I want only pseudocode to show my manager. Please generate a pseudocode description of my microcontroller firmware.
 
 ### Generated pseudocode:
 
