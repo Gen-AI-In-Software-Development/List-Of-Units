@@ -114,8 +114,7 @@ The browser display appears next.
 
 
 ### Critique
-The HTML code effectively displays a bowling game scoreboard with player names, frame scores, and total scores in a well-structured table. The use of CSS for table styling and alternating row colors enhances readability and visual appeal.
-Rating: Good
+The HTML code effectively displays a bowling game scoreboard with player names, frame scores, and total scores in a well-structured table. The use of CSS for table styling and alternating row colors enhances readability and visual appeal. However, the scores for Alice and Charlie are not correct according to the rules. Alice's and Charlie's scores do not follow the correct scoring pattern, particularly with strikes and spares. For example, spares should include the next ball's score, and strikes should include the next two balls' scores, leading to discrepancies in the total scores. Rating: Fair.
 
 ### Prompt 9.2 : I need a personal portfolio website to showcase my resume, projects, skills, and contact information. The website should have a home page with an introduction and summary, a projects page with descriptions, images, and links to live demos or GitHub repositories, a resume page with education, experience, and skills, and a contact form with email and social media links. Please create the HTML structure and include placeholder content for each section.
 
