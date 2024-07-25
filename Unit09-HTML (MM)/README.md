@@ -552,7 +552,7 @@ The browser display appears next.
 
 
 ### Critique
-This HTML code provides a clear and structured table for displaying bowling scores of multiple players, along with their total scores. However, the GIF link is incorrect and does not properly display an image, which detracts from the visual appeal of the page.
+This HTML code provides a clear and structured table for displaying bowling scores of multiple players, along with their total scores. However, the GIF link is incorrect and does not properly display an image, which detracts from the visual appeal of the page. The scores for Player 1 and Player 3 are not correct according to the rules. Specifically, spares should include the next ball’s score, and strikes should include the next two balls’ scores. For example, Player 1’s total of 150 and Player 3’s total of 200 do not align with the proper scoring pattern.
 
 Rating: Poor
 
