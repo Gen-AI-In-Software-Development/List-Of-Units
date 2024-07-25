@@ -629,7 +629,6 @@ The resulting HTML page is useful but significant debugging is still required.
 
 Rating: Poor
 
-Here is the corrected markdown with nested lists:
 
 ## Exercises
 
