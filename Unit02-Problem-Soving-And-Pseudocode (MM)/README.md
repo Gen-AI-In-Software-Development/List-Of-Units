@@ -110,13 +110,266 @@ the decode_message_with_parity. The parity bit is extracted and checked to see i
 Low level details have been left to the developer and this is expected in pseudocode.
 Rating: Good.
 
+### Example 2.3 prompt: I intend to program a microcontroller to control a traffic light. My traffic
+light has three colors: red, yellow, and green. The green light should be on for 30 seconds and, during this
+period, the other lights should be off. After 30 seconds of green, the yellow light should be turned on and the others off. The yellow light should remain on for 10 seconds. When the yellow light turns off, the red light should turn on for 30 seconds and the yellow and green light should be turned off.  This is repeated is repeated forever. Eventually, I want this code to be written in C++. But now, however, I want only pseudocode to show my manager. Please generate a
+pseudocode description of my microcontroller firmware.
+
+### Generated pseudocode:
+
+```
+BEGIN
+  // Initialize lights
+  SET greenLight TO OFF
+  SET yellowLight TO OFF
+  SET redLight TO OFF
+
+  WHILE true DO
+    // Green light on for 30 seconds
+    SET greenLight TO ON
+    SET yellowLight TO OFF
+    SET redLight TO OFF
+    WAIT 30 seconds
+
+    // Yellow light on for 10 seconds
+    SET greenLight TO OFF
+    SET yellowLight TO ON
+    SET redLight TO OFF
+    WAIT 10 seconds
+
+    // Red light on for 30 seconds
+    SET greenLight TO OFF
+    SET yellowLight TO OFF
+    SET redLight TO ON
+    WAIT 30 seconds
+  END WHILE
+END
+
+```
+### Critique
+This pseudocode captures the intent of the prompt but would run poorly. My concern is that the calls to the wait function will block the operating system from having time to run. I would prefer that the traffic light logic be included in a loop() function. The operating system on a microcontroller typically calls loop() and the loop() function is
+designed to run quickly. This code would not be good enough to show a manager. We will explore this issue in the next prompt. Rating: Poor
+
+### Example 2.4 prompt: Continuing our discussion, my manager wants to see how this logic can be incorporated into a loop() function that runs quickly. She believes that the loop() function is repeatedly called by the operating system and that the loop() function needs to run fast. Currently, your solution blocks with a call to wait(). Please provide pseudocode that describes this new program.
+
+### Generated pseudocode:
+
+```
+BEGIN
+  // Initialize lights
+  SET greenLight TO OFF
+  SET yellowLight TO OFF
+  SET redLight TO OFF
+
+  // Initialize timing variables
+  SET currentTime TO 0
+  SET lastChangeTime TO 0
+  SET state TO "GREEN"
+
+  FUNCTION loop()
+    currentTime = GET_CURRENT_TIME()
+
+    IF state == "GREEN" THEN
+      IF currentTime - lastChangeTime >= 30 seconds THEN
+        // Transition to yellow
+        SET greenLight TO OFF
+        SET yellowLight TO ON
+        SET redLight TO OFF
+        lastChangeTime = currentTime
+        state = "YELLOW"
+      ELSE
+        SET greenLight TO ON
+        SET yellowLight TO OFF
+        SET redLight TO OFF
+      END IF
+    ELSE IF state == "YELLOW" THEN
+      IF currentTime - lastChangeTime >= 10 seconds THEN
+        // Transition to red
+        SET greenLight TO OFF
+        SET yellowLight TO OFF
+        SET redLight TO ON
+        lastChangeTime = currentTime
+        state = "RED"
+      ELSE
+        SET greenLight TO OFF
+        SET yellowLight TO ON
+        SET redLight TO OFF
+      END IF
+    ELSE IF state == "RED" THEN
+      IF currentTime - lastChangeTime >= 30 seconds THEN
+        // Transition to green
+        SET greenLight TO ON
+        SET yellowLight TO OFF
+        SET redLight TO OFF
+        lastChangeTime = currentTime
+        state = "GREEN"
+      ELSE
+        SET greenLight TO OFF
+        SET yellowLight TO OFF
+        SET redLight TO ON
+      END IF
+    END IF
+  END FUNCTION
+END
+```
+### Critique
+This is much improved. It uses a state machine approach to coordinate the light. In the green state, the time is checked to see if 30 seconds has elapsed. If so, the state is changed to yellow. If not, the state remains as green and the function is complete - returning control to the operating system to do its work. The same logic is used for the yellow and red state. The yellow light only remains on for 10 seconds. Rating: Good.
+
+### Example 2.5 prompt: I plan on programming and deploying a smart contract to a distributed ledger. Eventually, I will write my solution in the Solidity programming language. But, for now, I would like to use only pseudocode to describe my code. I would like to create pseudocode for a simple smart contract that illustrates how a 50 fungible tokens can be assigned to the owner of the contract. I also need a way for the owner to transfer some number of tokens to another account.
+
+### Generated pseudocode:
+
+```
+// Define the smart contract
+Contract TokenContract {
+    // State variables
+    owner: Address
+    balance: Map<Address, Integer>
+
+    // Constructor to initialize the contract
+    Function constructor() {
+        owner = msg.sender
+        balance[owner] = 50
+    }
+
+    // Function to transfer tokens
+    Function transfer(to: Address, amount: Integer) {
+        // Ensure only the owner can transfer tokens
+        Require(msg.sender == owner, "Only the owner can transfer tokens")
+        // Ensure the owner has enough tokens
+        Require(balance[owner] >= amount, "Insufficient balance")
+
+        // Transfer the tokens
+        balance[owner] -= amount
+        balance[to] += amount
+    }
+
+    // Function to check the balance of an account
+    Function getBalance(account: Address) returns Integer {
+        return balance[account]
+    }
+}
+
+```
+### Critique
+I note that the mapping from an address to an integer. This is quite appropriate for a fungible token. Overall, this looks like a correct solution but is closer to actual Solidity code than we might like. In the next prompt, we will ask it to refine the solution into pseudocode. Rating: Poor.
+
+### Example 2.6 prompt: Continuing with our discussion, I was hoping for a pseudocode description that could be shown to a manager who is not familiar with the Solidity language. I want the pseudocode to help me explain how a fungible token can be represented and associated with an address.
+
+### Generated pseudocode
+```
+// Define the smart contract
+Contract TokenContract {
+    // State variables
+    owner: Address
+    balances: Map<Address, Integer>
+
+    // Constructor to initialize the contract
+    Function initialize() {
+        // Set the owner to the person who deploys the contract
+        owner = deployer
+        // Assign 50 tokens to the owner's address
+        balances[owner] = 50
+    }
+
+    // Function to transfer tokens
+    Function transferTokens(to: Address, amount: Integer) {
+        // Check if the sender is the owner
+        If sender == owner {
+            // Check if the owner has enough tokens
+            If balances[owner] >= amount {
+                // Deduct tokens from the owner's balance
+                balances[owner] = balances[owner] - amount
+                // Add tokens to the recipient's balance
+                balances[to] = balances[to] + amount
+            } Else {
+                // Not enough tokens to transfer
+                Print "Insufficient balance"
+            }
+        } Else {
+            // Only the owner can transfer tokens
+            Print "Unauthorized transfer attempt"
+        }
+    }
+
+    // Function to check the balance of an account
+    Function checkBalance(account: Address) returns Integer {
+        // Return the balance of the specified account
+        return balances[account]
+    }
+}
+```
+### Critique
+This is much improved. The require() function in Solidity, which acts as a pre-condition and may be hard to understand for a new user, has been removed and replaced with appropriate if statements. Comments have been added as well. Rating: Fair.
+
+### Example 2.6 prompt: Continuing with our discussion, your solution for a fungible token is exactly what I needed. Please provide pseudocode for a non-fungible token (NFT).
+
+### Generated pseudocode
+```
+// Define the smart contract
+Contract NFTContract {
+    // State variables
+    owner: Address
+    tokenIdCounter: Integer
+    tokenOwners: Map<Integer, Address>
+    tokenMetadata: Map<Integer, String>
+
+    // Constructor to initialize the contract
+    Function initialize() {
+        // Set the owner to the person who deploys the contract
+        owner = deployer
+        // Initialize the token ID counter
+        tokenIdCounter = 0
+    }
+
+    // Function to mint a new NFT
+    Function mintToken(metadata: String) returns Integer {
+        // Increment the token ID counter
+        tokenIdCounter = tokenIdCounter + 1
+        // Assign the new token ID to the owner
+        tokenOwners[tokenIdCounter] = owner
+        // Store the metadata for the new token
+        tokenMetadata[tokenIdCounter] = metadata
+        // Return the new token ID
+        return tokenIdCounter
+    }
+
+    // Function to transfer an NFT
+    Function transferToken(tokenId: Integer, to: Address) {
+        // Check if the sender is the owner of the token
+        If tokenOwners[tokenId] == sender {
+            // Transfer the token to the new owner
+            tokenOwners[tokenId] = to
+        } Else {
+            // Only the owner can transfer the token
+            Print "Unauthorized transfer attempt"
+        }
+    }
+
+    // Function to get the owner of a token
+    Function getTokenOwner(tokenId: Integer) returns Address {
+        // Return the owner of the specified token
+        return tokenOwners[tokenId]
+    }
+
+    // Function to get the metadata of a token
+    Function getTokenMetadata(tokenId: Integer) returns String {
+        // Return the metadata of the specified token
+        return tokenMetadata[tokenId]
+    }
+}
+```
+### Critique: This code is still at a lower level than we might like for pseudocode. But it does capture the idea of an NFT. Unlike a fungible token, which maps an address to an integer, we have an integer mapped to an address. That is, with an NFT, each integer has a single owner. In addition, each integer is associated with metadata. Rating: Fair
+
+
 ## Exercises
 1. A single parity bit is useful for detecting if exactly 1 bit was flipped during transmission. However, it does not tell the receiver which bit caused the error. Using Copilot, generate pseudocode on the sender side that will use a Hamming code to add some check bits to the three bit messages. These bits will allow the receiver to detect if a single error occurred and to know which bit got flipped.
 2. Following exercise 1, ask copilot to create a receiver for the message encoded with the Hamming code.
 3. Using a pencil and paper, desk check the sender and receiver code that was generated in Exercises 1 and 2. How do you rate the pseudocode? Poor, Fair, or Good?
 4. With respect to questions 1-3, is desk checking enough or do you feel that you need a deeper understanding of Hamming codes?
-
-
+5. Ask Copilot to provide pseudocode for the traffic light so that after two complete cycles of green, yellow, and red, a walk light is turned on for 15 seconds. How do you rate the result?
+6. To illustrate some of copilot's capabilities, ask copilot to provide you with a series of steps that could be used to deploy a smart contract to the Ethereum blockchain.
+7. To illustrate some of copilot's capabilities, ask copilot to describe any limitations on code that is deployed directly to the Bitcoin ledger. Are those same limitations in effect on the Ethereum blockchain?
 
 ## References
 [1] This example is motivated by the discussion in "Foundations of Computer Science", Aho, Ullman, pages 35-37.
