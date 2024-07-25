@@ -299,7 +299,7 @@ Contract TokenContract {
 ### Critique
 This is much improved. The require() function in Solidity, which acts as a pre-condition and may be hard to understand for a new user, has been removed and replaced with appropriate if statements. Comments have been added as well. Rating: Fair.
 
-### Example 2.6 prompt: Continuing with our discussion, your solution for a fungible token is exactly what I needed. Please provide pseudocode for a non-fungible token (NFT).
+### Example 2.6 prompt: Continuing with our discussion, your solution for a fungible token is exactly what I needed. Please provide pseudocode for a non-fungible token (NFT) [2].
 
 ### Generated pseudocode
 ```
@@ -372,3 +372,4 @@ This code is still at a lower level than we might like for pseudocode. But it do
 
 ## References
 [1] This example is motivated by the discussion in "Foundations of Computer Science", Aho, Ullman, pages 35-37.
+[2] A good article that compares non-fungible tokens with fungible tokens can be found here: https://www.moonpay.com/learn/blockchain/fungible-vs-non-fungible-tokens
