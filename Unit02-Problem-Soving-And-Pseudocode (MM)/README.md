@@ -373,4 +373,4 @@ This code is still at a lower level than we might like for pseudocode. But it do
 ## References
 [1] This example is motivated by the discussion in "Foundations of Computer Science", Aho, Ullman, pages 35-37.
 
-[2] A good article that compares non-fungible tokens with fungible tokens can be found here: https://www.moonpay.com/learn/blockchain/fungible-vs-non-fungible-tokens
+[2] A good article that compares non-fungible tokens (NFTs) with fungible tokens (FTs) can be found here: https://www.moonpay.com/learn/blockchain/fungible-vs-non-fungible-tokens
