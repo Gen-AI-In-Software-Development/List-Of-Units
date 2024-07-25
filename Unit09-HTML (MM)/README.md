@@ -632,14 +632,13 @@ Rating: Poor
 Here is the corrected markdown with nested lists:
 
 ## Exercises
-1. For Prompt 9.1, ask Copilot to implement a JavaScript function that calculates and updates the total scores for each player when the button is clicked.
-2. Use Microsoft Copilot to generate an HTML page that includes:
-    - An image from an external source (e.g., Unsplash, Pixabay).
-    - An embedded YouTube video.
-    - An embedded Google Maps location.
-3. Use Microsoft Copilot to generate an HTML page that includes:
-    - A button that shows/hides additional content when clicked.
-    - A dropdown menu that filters content on the page.
-    - A modal window that displays additional information when triggered.
-4. Use Microsoft Copilot to create an HTML table that displays dynamic data fetched from an API. Use JavaScript to fetch data from a public API (e.g., JSONPlaceholder, OpenWeatherMap) and populate the table with the retrieved data.
-5. Using Copilot for assistance, debug the generated HTML of 9.6 so that it visits BART and works as described in the prompt. You will need to get an API key from the Bay Area Rapid Transit system.
+
+1. For Prompt 9.1, ask Microsoft Copilot to create a JavaScript function that calculates and updates the total scores for each player when a button is clicked.
+
+2. Use Microsoft Copilot to generate an HTML page that includes an image from an external source like Unsplash or Pixabay, an embedded YouTube video, and an embedded Google Maps location.
+
+3. With the help of Microsoft Copilot, generate an HTML page featuring a button that can show or hide additional content when clicked, a dropdown menu that filters content on the page, and a modal window that displays additional information when triggered.
+
+4. Utilize Microsoft Copilot to create an HTML table that displays dynamic data fetched from a public API. Write JavaScript code to fetch data from a service such as JSONPlaceholder or OpenWeatherMap, and then populate the table with this data.
+
+5. For debugging the HTML from exercise 9.6, use Copilot to ensure the page correctly accesses BART information and functions as described in the prompt. To achieve this, you will need to obtain an API key from the Bay Area Rapid Transit system.
