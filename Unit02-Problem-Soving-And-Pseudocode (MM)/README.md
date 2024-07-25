@@ -356,7 +356,7 @@ Contract NFTContract {
     }
 }
 ```
-### Critique:
+### Critique
 
 This code is still at a lower level than we might like for pseudocode. But it does capture the idea of an NFT. Unlike a fungible token, which maps an address to an integer, we have an integer mapped to an address. That is, with an NFT, each integer has a single owner. In addition, each integer is associated with metadata. Rating: Fair
 
