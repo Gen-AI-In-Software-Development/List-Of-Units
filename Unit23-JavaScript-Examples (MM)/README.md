@@ -240,6 +240,46 @@ document.addEventListener("keydown", (event) => {
 ### Critique 
 The JavaScript code effectively handles the inflation and deflation of a balloon emoji based on arrow key presses and implements an explosion feature when the balloon grows too large. It correctly uses event listeners and CSS manipulation for the desired behavior. Rating: Good
 
+### Prompt 23.7: The Bay Area Rapid Transit (BART) API allows us to make queries for the time it takes for a train to arrive at a particular stop enroute to a particular destination. Please give a Node.js script that makes periodic visits to the BART legacy API. I am interested in the next train to arrive at the San Francisco International Airport and destined for the Richmond station. The periodic updates will show the time a traveler needs to wait at the airport station for a train destined for the Richmond station. Of course, the time should lower as the train approaches. If no train is coming the web page will display the string "No Train Coming".
+### Generated Code
+```
+const axios = require('axios');
+
+// Replace with your BART API key
+const BART_API_KEY = 'MW9S-E7SL-26DU-VV8V';
+
+// Define the station codes
+const SFO_AIRPORT = 'SFIA';
+const RICHMOND = 'RICH';
+
+// Function to get train arrival time
+async function getTrainArrivalTime() {
+    try {
+        const response = await axios.get(`https://api.bart.gov/api/etd.aspx?cmd=etd&orig=${SFO_AIRPORT}&key=${BART_API_KEY}`);
+        const etd = response.data.root.station[0].etd.find(train => train.abbreviation === RICHMOND);
+        if (etd && etd.estimate.length > 0) {
+            const nextTrain = etd.estimate[0];
+            return nextTrain.minutes;
+        } else {
+            return 'No Train Coming';
+        }
+    } catch (error) {
+        console.error('Error fetching data from BART API:', error.message);
+        return 'Error fetching data';
+    }
+}
+
+// Periodically check train arrival time
+setInterval(async () => {
+    const arrivalTime = await getTrainArrivalTime();
+    console.log(`Next train to Richmond: ${arrivalTime} minutes`);
+}, 60000); // Check every minute
+```
+
+### Critique
+The code provided has error fetching the data from the BART API. 
+
+
 ## Exercises
 1. For Prompt 23.1 ask Copilot to modify the FizzBuzz program to add a condition to print “BuzzFizz” for numbers divisible by 7. And allow the range of numbers (e.g., 1 to 100) to be 
   specified via command line arguments.
