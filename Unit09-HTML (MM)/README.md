@@ -375,7 +375,7 @@ Another browser display:
 
 
 ### Critique
-The provided HTML code for the Photography Gallery is structurally sound and demonstrates good use of HTML and CSS for layout and styling. However The featured photo is not sized properly and can appear stretched or not fit well in the designated area. The menu, along the top of the page, works well but due to the coloring, is almost impossible to read.
+The provided HTML code for the Photography Gallery is demonstrates good starting point for layout and styling. The Photo Gallery has a feature photo and some other photos captured by the photographer. However The featured photo is not sized properly and can appear stretched or not fit well in the designated area. The menu, along the top of the page, works well but due to the coloring, is almost impossible to read.
 
 Rating: Fair
 
