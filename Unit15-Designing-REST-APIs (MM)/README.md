@@ -9,7 +9,7 @@ These examples use Microsoft copilot provided here: [Microsoft copilot](https://
 
 ## Use Case
 
-The World Wide Web has been hugely successful. A browser is used to interact with a server via HTTP, URLs, and a standard data representations such as HTML.
+The World Wide Web has been hugely successful. A browser is used to interact with a server via HTTP, URLs, and a standard data representation such as HTML.
 
 RESTful APIs are based on the same principles that were used in the construction of the web. For the origination and detailed explanation of these principles, see Roy Fielding’s PhD thesis[1]. This approach to API design has become widely popular. For two examples, see OData[2] and Amazon S3[3], which both utilize RESTful principles in their APIs.
 
