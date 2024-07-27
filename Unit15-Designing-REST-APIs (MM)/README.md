@@ -123,7 +123,7 @@ public class BigIntegerClient {
 
 
 ```
-### Critique
+### Critique   
 
 ### Example 15.4 prompt: I like the client but can you encapsulate the communication code into two methods. One will be called readInt and the other will be called writeInt?
 
