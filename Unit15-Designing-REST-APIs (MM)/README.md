@@ -15,7 +15,7 @@ with a short critique and rating. The ratings will be Poor, Fair, or Good.
 ### Notes on Copilot response
 ```
 Copilot cited each comment with web URLs. It mentioned the following advantages:
-Interoperability
+Interoperability because REST is based on standard protocols
 Flexibility of integrating with different types of systems (web and mobile)
 Language independence from any particular programming language
 Easy maintenance allowing easy updates due to modular nature of REST API's
@@ -24,7 +24,7 @@ REST APIs are popular
 
 ```
 ### Critique
-While essentially correct, the answer did not mention that REST APIs are textual, providing human readability. And if by "request" and "response" it means the request and response messages, there is an error. The request and response messages may be more complicated in a REST APIs than in an API where the server tracks application state.  Also, copilot did
+While essentially correct, the answer did not mention that REST APIs are textual, providing human readability. And if by "request" and "response" it means the request and response messages, there is an error. The request and response messages may be more complicated in a REST API than in an API where the server tracks application state.  Also, copilot did
 not make clear what the distinction is between "interoperability" and "flexibility". Rating: Poor
 
 
