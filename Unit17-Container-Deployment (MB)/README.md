@@ -1,4 +1,4 @@
-#  Unit18-Container-Deployment
+#  Unit17-Container-Deployment
 
 ## Introduction
 
@@ -12,7 +12,7 @@ This unit illustrates how to take a simple program and containerize it using Doc
 
 ## Prompts and Code Critique
 
-### Example 18.1 prompt: Containerize the SimpleCalculator.java program in Java 17.
+### Example 17.1 prompt: Containerize the SimpleCalculator.java program in Java 17.
 
 ```
 // SimpleCalculator.java
@@ -106,7 +106,7 @@ This Dockerfile assumes that `SimpleCalculator.java` is a standalone application
 
 This prompt can generate detailed guidance on how to containerize a simple Java program. It also generates the Dockerfile and terminal commands used to containerize the program. The Dockerfile and commands work well. Rating: Good.
 
-### Example 18.2 prompt: Containerize the calculator program in Python 3.12.
+### Example 17.2 prompt: Containerize the calculator program in Python 3.12.
 
 ```
 // calculator.py
@@ -218,7 +218,7 @@ This prompt also generates detailed steps and guidance for containerizing, along
 
 For the next example, we will put the SimpleCalculator.java in a Maven project and test how Copilot works with Maven.
 
-### Example 18.3 prompt: Based on the pom.xml file, containerize this maven project.
+### Example 17.3 prompt: Based on the pom.xml file, containerize this maven project.
 
 ```
 // pom.xml
@@ -365,7 +365,7 @@ This will build your Maven project inside a Docker container and then run the re
 
 This prompt makes Copilot consider Maven as the build tool, so it includes Maven build commands in the Dockerfile and inherits from Maven’s Dockerfile. However, after building the container, the result shows that this process could not correctly build a container. Running the program resulted in the error ‘no main manifest attribute, in app.jar,’ indicating that the container lacks a main class identifier in the pom.xml file and cannot run correctly. Copilot did not resolve this issue. Rating: Poor.
 
-### Example 18.4 prompt: Fix the "no main manifest attribute" problem and containerize this maven project.
+### Example 17.4 prompt: Fix the "no main manifest attribute" problem and containerize this maven project.
 
 ### Generated Guidance:
 
@@ -438,7 +438,7 @@ This will package your application into a JAR file with the main manifest attrib
 
 After manually adding the error message and telling Copilot to fix the error, Copilot generates an update for the pom.xml file. The test shows that the Maven program could be containerized correctly. Rating: Good.
 
-### Example 18.5 prompt: Containerize this web application when using TomEE Plus 9.1.2
+### Example 17.5 prompt: Containerize this web application when using TomEE Plus 9.1.2
 
 ### Generated Guidance:
 
@@ -483,7 +483,7 @@ This will make your application accessible at `http://localhost:8080`.
 
 The guidance provided by Copilot is clear and detailed. The test shows that following the steps provided by Copilot can successfully containerize a web application. However, before packaging, it is necessary to manually package the .war file in the Maven plugin, for which detailed instructions were not provided. Rating: Good.
 
-### Example 18.6 prompt: From now on, I would like you to ask me questions to containerize a web application. When you have enough information to containerize it, create the dockerfile and tell me the step to containerize it.
+### Example 17.6 prompt: From now on, I would like you to ask me questions to containerize a web application. When you have enough information to containerize it, create the dockerfile and tell me the step to containerize it.
 
 ### Generated Content:
 
@@ -565,8 +565,8 @@ Based on this prompt, the guidance provided by Copilot is very comprehensive and
 
 ## Exercises
 
-1. In Example 18.1, try to write a program that can take a JSON string from an online API key and use Copilot to containerize it to see if it can still communicate with the API key.
-2. In Example 18.4, try to write a server program that uses TCP protocol, listens to port 12345, and prints all the messages from the client. Use Copilot to containerize the server and make it listen to port 6789.
+1. In Example 17.1, try to write a program that can take a JSON string from an online API key and use Copilot to containerize it to see if it can still communicate with the API key.
+2. In Example 17.4, try to write a server program that uses TCP protocol, listens to port 12345, and prints all the messages from the client. Use Copilot to containerize the server and make it listen to port 6789.
 
 ## References
 [1] https://www.docker.com/
