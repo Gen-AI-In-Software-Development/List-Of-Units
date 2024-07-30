@@ -9,6 +9,125 @@ TypeScript works well with existing JavaScript code, making it easy to adopt gra
 
 In this unit, we’ll show how to convert JavaScript examples to TypeScript, demonstrating key concepts and best practices. Our goal is to highlight TypeScript’s benefits and provide practical tips for using it in web development.
 
+
+## Installing and Running TypeScript
+
+### On macOS
+
+#### 1. Install Node.js and npm
+
+If you haven't installed Node.js and npm yet, you can do so using Homebrew:
+
+```bash
+brew install node
+```
+
+Alternatively, download the installer from the [Node.js website](https://nodejs.org/).
+
+#### 2. Install TypeScript
+
+Open Terminal and run:
+
+```bash
+npm install -g typescript
+```
+
+This installs TypeScript globally on your system.
+
+#### 3. Verify Installation
+
+Check if TypeScript is installed correctly by running:
+
+```bash
+tsc --version
+```
+
+#### 4. Create a TypeScript File
+
+Create a new TypeScript file with a `.ts` extension. For example, create a file named `app.ts` with the following content:
+
+```typescript
+let message: string = "Hello, TypeScript!";
+console.log(message);
+```
+
+#### 5. Compile the TypeScript File
+
+In Terminal, navigate to the directory where `app.ts` is located and run:
+
+```bash
+tsc app.ts
+```
+
+This command compiles `app.ts` into a JavaScript file named `app.js`.
+
+#### 6. Run the JavaScript File
+
+Execute the generated JavaScript file with Node.js:
+
+```bash
+node app.js
+```
+
+You should see the output: `Hello, TypeScript!`.
+
+### On Windows
+
+#### 1. Install Node.js and npm
+
+Download the Node.js installer from the [official website](https://nodejs.org/). Run the installer and follow the prompts to install Node.js and npm.
+
+#### 2. Install TypeScript
+
+Open Command Prompt or PowerShell and run:
+
+```bash
+npm install -g typescript
+```
+
+This installs TypeScript globally on your system.
+
+#### 3. Verify Installation
+
+Check if TypeScript is installed correctly by running:
+
+```bash
+tsc --version
+```
+
+#### 4. Create a TypeScript File
+
+Create a new TypeScript file with a `.ts` extension. For example, create a file named `app.ts` with the following content:
+
+```typescript
+let message: string = "Hello, TypeScript!";
+console.log(message);
+```
+
+#### 5. Compile the TypeScript File
+
+In Command Prompt or PowerShell, navigate to the directory where `app.ts` is located and run:
+
+```bash
+tsc app.ts
+```
+
+This command compiles `app.ts` into a JavaScript file named `app.js`.
+
+#### 6. Run the JavaScript File
+
+Execute the generated JavaScript file with Node.js:
+
+```bash
+node app.js
+```
+
+You should see the output: `Hello, TypeScript!`.
+
+---
+
+
+
 ## Prompts and Code Critique
 In this unit, we will build upon the JavaScript examples we explored previously and convert them into TypeScript. Leveraging the capabilities of Microsoft Copilot, we will translate and enhance these examples to illustrate how TypeScript can improve code quality and maintainability.
 
@@ -206,6 +325,12 @@ Rating: Good
 
 
 ## Exercises
+For all the following exercises write a JavaScript program and then convert it to to Typescript
+1. Write  program that generates a random password of a given length.
+2. Write a simple text-based Tic-Tac-Toe game for two players.
+3. Write a function that translates a string to Morse code.
+4. Write a function that performs binary search on a sorted array.
+5. Write a function that checks if a given Sudoku board is valid.
 
 ## References
 
