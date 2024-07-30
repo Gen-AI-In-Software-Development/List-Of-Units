@@ -34,6 +34,8 @@ for (let i: number = 1; i <= 100; i++) {
 ```
 
 ### Critique 
+The code is well-structured and leverages TypeScript's type annotations effectively. In this TypeScript version, Copilot has added `: number` and `: string` to explicitly declare the types of the variables `i` and `output`, respectively. This can help with type checking during compile time and can prevent certain types of bugs. Overall, this is a good implementation.
+Rating: Good
 
 ### Prompt 24.2 :Write a Node.js program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a "#" character. The characters should form a chessboard [2].
 
@@ -77,6 +79,9 @@ console.log(board);
 ```
 
 ### Critique 
+The code effectively creates a chessboard pattern using nested loops and TypeScript's type annotations. In this TypeScript version, Copilot has added type annotations `: number` and `: string` to the variables `size`, `board`, `y`, and `x` to ensure they are used consistently throughout the program. TypeScript’s static type checking will help catch errors at compile time, making the code more robust. This is a solid implementation.
+
+Rating: Good
 
 ### Prompt 24.3 :Bean counting You can get the Nth character, or letter, from a string by writing "string"[N]. The returned value will be a string containing only one character (for example, "b"). The first character has position 0, which causes the last one to be found at position string.length - 1. In other words, a two-character string has length 2, and its characters have positions 0 and 1. Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters there are in the string. Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase “B” characters). Rewrite countBs to make use of this new function [3]. 
 
@@ -161,11 +166,12 @@ getUserInput();
 ```
 
 ### Critique 
+The code effectively reads user input and counts character occurrences, benefiting from TypeScript’s static type checking. In this TypeScript version, Copilot has replaced require with the TypeScript import statement, added type annotations : string and : number to the function parameters and variables and renamed the readline interface to rl to avoid naming conflicts with the imported module. This implementation is well-structured and robust.
+Rating: Good
 
 
 
-
-### Prompt 24.5 :Quoting style, Imagine you have written a story and used single quotation marks throughout to mark pieces of dialogue. Now you want to replace all the dialogue quotes with double quotes, while keeping the single quotes used in contractions like aren’t. Think of a pattern that distinguishes these two kinds of quote usage and craft a call to the replace method that does the proper replacement [5]. 
+### Prompt 24.4 :Quoting style, Imagine you have written a story and used single quotation marks throughout to mark pieces of dialogue. Now you want to replace all the dialogue quotes with double quotes, while keeping the single quotes used in contractions like aren’t. Think of a pattern that distinguishes these two kinds of quote usage and craft a call to the replace method that does the proper replacement [4]. 
 
 ### Generated JavaScript Code
 ```
@@ -194,7 +200,19 @@ console.log(updatedStory);
 ```
 
 ### Critique 
+The code efficiently replaces single quotes with double quotes in a string using regular expressions. In this TypeScript version, Copilot has added type annotations `: string` to the `text`, `replacedText`, `story`, and `updatedStory` variables to ensure they are used consistently as strings throughout the program. This will help with type checking during compile time, enhancing code reliability.
+
+Rating: Good
 
 
 ## Exercises
+
 ## References
+
+[1] Haverbeke, Marijn, *Eloquent JavaScript*, 3rd edn (San Francisco: No Starch Press, 2018), pp. 38, ISBN 978-1-59327-950-9.
+
+[2] Haverbeke, Marijn, *Eloquent JavaScript*, 3rd edn (San Francisco: No Starch Press, 2018), pp. 38, ISBN 978-1-59327-950-9.
+
+[3] Haverbeke, Marijn, *Eloquent JavaScript*, 3rd edn (San Francisco: No Starch Press, 2018), pp. 56, ISBN 978-1-59327-950-9.
+
+[4] Haverbeke, Marijn, *Eloquent JavaScript*, 3rd edn (San Francisco: No Starch Press, 2018), pp. 165-166, ISBN 978-1-59327-950-9.
