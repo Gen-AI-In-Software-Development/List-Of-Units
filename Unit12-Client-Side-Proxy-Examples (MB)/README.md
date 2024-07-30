@@ -7,13 +7,15 @@ Variations on this style exist, but in this unit, we will only look at simple cl
 
 Other details that client-server code include the protocol used (TCP, UDP, or some higher-level protocol), the port number that the server is listening to, and the kind of data being transmitted (simple string data or something more complicated). The examples below will use the simplest values of each.
 
-## Compelling Use Case
+A client cannot work without a corresponding server. See Unit13 for examples of server code.
+
+## Use Case
 
 Suppose we have a simple smartphone app that queries a weather server for the current temperature. The app's job is simply to request those values and then display them once they have been received. The server's jobs is to send the current temperature back to the client.
 
 This simple client-server interaction uses text data for the temperature, which the client will convert to a floating point number. The details of the data usage and the data transmission can be different, as they are (very simply) here. For more complicated data, the server could package the data as JSON (see Unit08), XML (see Unit10), or in CSV format (see Unit 11).
 
-## Several Solved Examples Using Copilot
+## Prompts and Code Critique
 
 The first example starts small - the client simply sends the word "temperature" to the server and waits for the reply and displays it. Unit13 illustrates how to generate server code. For this example, to keep things simple, we'll assume that the server exists and is correct. Note that the prompt specifies TCP as the protocol, uses port 6789, and uses simple string data.
 
