@@ -1,48 +1,50 @@
-#  Unit13-Server-Side-Coding-In-Java
+#  Unit12-Client-Side-Proxy-Examples
 ## Introduction
-## Use Case
-## Prompts and Code Critique
 
-### Example 13.1 prompt: Write a server that uses UDP protocol listen to port 6789 and echo back whatever message it receives. Also, users can stop the server by sending the message "q".
+Client-server programming is one style used to connect two computers. In basic client-server, the client asks the server a question - compute some value, look up some data - and the server responds with the answer. After the client sends the question, it typically waits for the answer before proceeding. There may be many clients using the same server - for example, many users of a smartphone app would use the same server. The server should be able to handle multiple client requests simultaneously instead of one connection at a time. There are many examples on the web for how to do all this including [1].
 
-### Generated Code:
+Variations on this style exist, but in this unit, we will only look at simple clients first, then at clients that separate out the communication part of the code to a **proxy** - that is, a method or class that encapsulates the communication details so that the main part of the program only deals with the data handling, not the data transmission.
+
+Other details that client-server code include the protocol used (TCP, UDP, or some higher-level protocol), the port number that the server is listening to, and the kind of data being transmitted (simple string data or something more complicated). The examples below will use the simplest values of each.
+
+## Compelling Use Case
+
+Suppose we have a simple smartphone app that queries a weather server for the current temperature. The app's job is simply to request those values and then display them once they have been received. The server's jobs is to send the current temperature back to the client.
+
+This simple client-server interaction uses text data for the temperature, which the client will convert to a floating point number. The details of the data usage and the data transmission can be different, as they are (very simply) here. For more complicated data, the server could package the data as JSON (see Unit08), XML (see Unit10), or in CSV format (see Unit 11).
+
+## Several Solved Examples Using Copilot
+
+The first example starts small - the client simply sends the word "temperature" to the server and waits for the reply and displays it. Unit13 illustrates how to generate server code. For this example, to keep things simple, we'll assume that the server exists and is correct. Note that the prompt specifies TCP as the protocol, uses port 6789, and uses simple string data.
+
+### Example 12.1 Generate a simple client in Java using TCP on port 6789 that sends the message "temperature" to a server. The server should return "70". The client should receive that and print it.
 
 ```
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
 
-public class UDPEchoServer {
+public class SimpleClient {
     public static void main(String[] args) {
-        final int port = 6789;
-        byte[] buffer = new byte[1024];
+        String serverAddress = "localhost"; // Change this to the server's address if needed
+        int port = 6789;
+        String message = "temperature";
 
-        try (DatagramSocket socket = new DatagramSocket(port)) {
-            System.out.println("Server is listening on port " + port);
+        try (Socket socket = new Socket(serverAddress, port);
+             OutputStream outputStream = socket.getOutputStream();
+             PrintWriter writer = new PrintWriter(outputStream, true);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-            while (true) {
-                DatagramPacket request = new DatagramPacket(buffer, buffer.length);
-                socket.receive(request); // Receive packet from client
+            // Send the message to the server
+            writer.println(message);
+            System.out.println("Message sent to the server: " + message);
 
-                String received = new String(request.getData(), 0, request.getLength());
-                System.out.println("Received: " + received);
-
-                // Check if the received message is "q", then stop the server
-                if ("q".equals(received.trim())) {
-                    System.out.println("Server is shutting down.");
-                    break;
-                }
-
-                // Echo back the received message
-                DatagramPacket response = new DatagramPacket(
-                        request.getData(),
-                        request.getLength(),
-                        request.getAddress(),
-                        request.getPort());
-
-                socket.send(response);
-            }
+            // Receive the response from the server
+            String response = reader.readLine();
+            System.out.println("Response from the server: " + response);
         } catch (Exception e) {
-            System.out.println("An error occurred: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -51,282 +53,132 @@ public class UDPEchoServer {
 
 ### Critique
 
-This prompt provides a complete version of an Echo Server, which is able to correctly communicate with the written Echo Client, correctly display messages sent from the client side, and properly exit. Rating: Good.
+The generated code uses the Socket class that implements the TCP protocol. It assumes the server is running locally (the server address is "localhost") since we did not specify otherwise. The writing and reading to/from the Socket is wrapped using a PrintWriter and a BufferedReader to make that part easy. Rating: Good.
 
-### Example 13.2 prompt: Write a server that can do simple calculations for the client, including add, abstract, multiply, and divide. The server will store the calculation result and return the result after the calculation. The server can continuously receive multiple calculation requests from clients.
-
-### Generated Code:
+### Example 12.2 Generate a simple client in Java using TCP on port 6789 that sends the message "temperature" to a server. The server should return "70". The client should receive that and print it. Then the client should prompt the user "More?"; if the user replies "Yes", then the client should repeat the request; if the user responds with anything else, end the client.
 
 ```
-import java.io.*;
-import java.net.*;
+public class SimpleClient {
+    public static void main(String[] args) {
+        String serverAddress = "localhost"; // Change this to the server's address if needed
+        int port = 6789;
+        String message = "temperature";
+        Scanner scanner = new Scanner(System.in);
 
-public class CalculationServer {
-    public static void main(String[] args) throws IOException {
-        int port = 1234; // Server port
-        ServerSocket serverSocket = new ServerSocket(port);
-        System.out.println("Server started. Listening on port " + port);
+        try {
+            while (true) {
+                try (Socket socket = new Socket(serverAddress, port);
+                     OutputStream outputStream = socket.getOutputStream();
+                     PrintWriter writer = new PrintWriter(outputStream, true);
+                     BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
-        while (true) {
-            try (Socket clientSocket = serverSocket.accept();
-                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
-                System.out.println("Client connected");
+                    // Send the message to the server
+                    writer.println(message);
+                    System.out.println("Message sent to the server: " + message);
 
-                String inputLine;
-                while ((inputLine = in.readLine()) != null) {
-                    String[] parts = inputLine.split(" ");
-                    if (parts.length == 3) {
-                        try {
-                            double operand1 = Double.parseDouble(parts[1]);
-                            double operand2 = Double.parseDouble(parts[2]);
-                            double result = 0;
-
-                            switch (parts[0].toLowerCase()) {
-                                case "add":
-                                    result = operand1 + operand2;
-                                    break;
-                                case "subtract":
-                                    result = operand1 - operand2;
-                                    break;
-                                case "multiply":
-                                    result = operand1 * operand2;
-                                    break;
-                                case "divide":
-                                    if (operand2 == 0) throw new ArithmeticException("Cannot divide by zero.");
-                                    result = operand1 / operand2;
-                                    break;
-                                default:
-                                    out.println("Error: Invalid operation.");
-                                    continue;
-                            }
-
-                            out.println("Result: " + result);
-                        } catch (NumberFormatException e) {
-                            out.println("Error: Invalid number format.");
-                        } catch (ArithmeticException e) {
-                            out.println("Error: " + e.getMessage());
-                        }
-                    } else {
-                        out.println("Error: Invalid request format.");
-                    }
+                    // Receive the response from the server
+                    String response = reader.readLine();
+                    System.out.println("Response from the server: " + response);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } catch (IOException e) {
-                System.out.println("Exception caught when trying to listen on port " + port + " or listening for a connection");
-                System.out.println(e.getMessage());
+
+                // Prompt the user for more input
+                System.out.print("More? ");
+                String userInput = scanner.nextLine();
+                if (!userInput.equalsIgnoreCase("Yes")) {
+                    break;
+                }
             }
+        } finally {
+            scanner.close();
         }
     }
-}
 ```
 
 ### Critique
+The client code is now a bit more complicated, adding a loop to send additional requests to the server. Rating: Good.
 
-This prompt provides a server code that can correctly communicate with the client. It handles incorrect operators and numeric inputs from the client and addresses the case of division by zero. Rating: Good.
-
-### Example 13.3 prompt: Generate a Complex class that can do simple complex number calculations which will be used for a server that can do simple complex number calculations for the client. Also, based on the Complex class, write a server that can do simple complex number calculations for the client, including add, abstract, multiply, and divide. The server will store the calculation result and return the result after the calculation. The server can continuously receive multiple calculation requests from clients.
-
-### Generated Code:
+### Example 12.3 Refactor SimpleClient using the Proxy pattern to isolate the communication code in a separate method.
 
 ```
-// Complex.java
-public class Complex {
-    private double real;
-    private double imaginary;
-
-    public Complex(double real, double imaginary) {
-        this.real = real;
-        this.imaginary = imaginary;
-    }
-
-    public Complex add(Complex other) {
-        return new Complex(this.real + other.real, this.imaginary + other.imaginary);
-    }
-
-    public Complex subtract(Complex other) {
-        return new Complex(this.real - other.real, this.imaginary - other.imaginary);
-    }
-
-    public Complex multiply(Complex other) {
-        double newReal = this.real * other.real - this.imaginary * other.imaginary;
-        double newImaginary = this.real * other.imaginary + this.imaginary * other.real;
-        return new Complex(newReal, newImaginary);
-    }
-
-    public Complex divide(Complex other) {
-        Complex conjugate = new Complex(other.real, -other.imaginary);
-        Complex numerator = this.multiply(conjugate);
-        double denominator = other.real * other.real + other.imaginary * other.imaginary;
-        return new Complex(numerator.real / denominator, numerator.imaginary / denominator);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("(%f, %f)", real, imaginary);
-    }
-}
-```
-
-```
-// Server.java
-import java.io.*;
-import java.net.*;
-import java.util.StringTokenizer;
-
-public class Server {
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(5000);
-        System.out.println("Server started. Listening on port 5000...");
-
-        try (Socket clientSocket = serverSocket.accept();
-             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
-            String inputLine;
-            while ((inputLine = in.readLine()) != null) {
-                StringTokenizer st = new StringTokenizer(inputLine);
-                String operation = st.nextToken();
-                double real1 = Double.parseDouble(st.nextToken());
-                double imag1 = Double.parseDouble(st.nextToken());
-                double real2 = Double.parseDouble(st.nextToken());
-                double imag2 = Double.parseDouble(st.nextToken());
-                Complex result = null;
-
-                Complex c1 = new Complex(real1, imag1);
-                Complex c2 = new Complex(real2, imag2);
-
-                switch (operation) {
-                    case "add":
-                        result = c1.add(c2);
-                        break;
-                    case "subtract":
-                        result = c1.subtract(c2);
-                        break;
-                    case "multiply":
-                        result = c1.multiply(c2);
-                        break;
-                    case "divide":
-                        result = c1.divide(c2);
-                        break;
-                }
-
-                if (result != null) {
-                    out.println("Result: " + result);
-                } else {
-                    out.println("Invalid operation");
-                }
-            }
-        } catch (IOException e) {
-            System.out.println("Exception caught when trying to listen on port 5000 or listening for a connection");
-            System.out.println(e.getMessage());
-        }
-    }
-}
-```
-
-### Critique
-
-Copilot handled the request that generated two separate classes well, providing a Complex class for computations and a dedicated Server class for communicating with the client. The program runs well, but it can't handle the invalid numeric inputs from clients. Moreover,  in some situations, there might be instances where the port number provided by Copilot is already in use. Simply changing the port number in the code can solve this problem. Rating: Fair.
-
-### Example 13.4 prompt: Generate a Complex class that can do simple complex number calculations which will be used for a server that can do simple complex number calculations for the client. The Complex object will be able to be transferred between a server and a client. Also, based on the Complex class, write a server that can do simple complex number calculation for the client, including add, abstract, multiply, and divide. The server will be able to receive an Complex object to client and store the calculation result and return the result after the calculation. The server can continuously receives multiple calculation request from client.
-
-### Generated Code:
-
-```
-// Complex.java
-import java.io.Serializable;
-
-public class Complex implements Serializable {
-    private double real;
-    private double imaginary;
-
-    public Complex(double real, double imaginary) {
-        this.real = real;
-        this.imaginary = imaginary;
-    }
-
-    public Complex add(Complex other) {
-        return new Complex(this.real + other.real, this.imaginary + other.imaginary);
-    }
-
-    public Complex subtract(Complex other) {
-        return new Complex(this.real - other.real, this.imaginary - other.imaginary);
-    }
-
-    public Complex multiply(Complex other) {
-        double newReal = this.real * other.real - this.imaginary * other.imaginary;
-        double newImaginary = this.real * other.imaginary + this.imaginary * other.real;
-        return new Complex(newReal, newImaginary);
-    }
-
-    public Complex divide(Complex other) {
-        Complex conjugate = new Complex(other.real, -other.imaginary);
-        Complex numerator = this.multiply(conjugate);
-        double denominator = other.real * other.real + other.imaginary * other.imaginary;
-        return new Complex(numerator.real / denominator, numerator.imaginary / denominator);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%f + %fi", real, imaginary);
-    }
-}
-```
-
-```
-// ComplexServer.java
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.net.ServerSocket;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ComplexServer {
-    public static void main(String[] args) throws Exception {
-        ServerSocket serverSocket = new ServerSocket(12345);
-        System.out.println("Server started. Listening on port 12345.");
+public class ServerProxy {
+    private String serverAddress;
+    private int port;
 
-        while (true) {
-            try (Socket clientSocket = serverSocket.accept();
-                 ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
-                 ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream())) {
-                
-                String operation = ois.readUTF();
-                Complex c1 = (Complex) ois.readObject();
-                Complex c2 = (Complex) ois.readObject();
-                Complex result = null;
+    public ServerProxy(String serverAddress, int port) {
+        this.serverAddress = serverAddress;
+        this.port = port;
+    }
 
-                switch (operation) {
-                    case "add":
-                        result = c1.add(c2);
-                        break;
-                    case "subtract":
-                        result = c1.subtract(c2);
-                        break;
-                    case "multiply":
-                        result = c1.multiply(c2);
-                        break;
-                    case "divide":
-                        result = c1.divide(c2);
-                        break;
+    public String sendMessage(String message) {
+        try (Socket socket = new Socket(serverAddress, port);
+             OutputStream outputStream = socket.getOutputStream();
+             PrintWriter writer = new PrintWriter(outputStream, true);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+
+            // Send the message to the server
+            writer.println(message);
+            System.out.println("Message sent to the server: " + message);
+
+            // Receive the response from the server
+            return reader.readLine();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class SimpleClient {
+    public static void main(String[] args) {
+        String serverAddress = "localhost"; // Change this to the server's address if needed
+        int port = 6789;
+        String message = "temperature";
+        Scanner scanner = new Scanner(System.in);
+
+        ServerProxy serverProxy = new ServerProxy(serverAddress, port);
+
+        try {
+            while (true) {
+                // Use ServerProxy to send the message and receive the response
+                String response = serverProxy.sendMessage(message);
+                System.out.println("Response from the server: " + response);
+
+                // Prompt the user for more input
+                System.out.print("More? ");
+                String userInput = scanner.nextLine();
+                if (!userInput.equalsIgnoreCase("Yes")) {
+                    break;
                 }
-
-                oos.writeObject(result);
-                oos.flush();
-            } catch (Exception e) {
-                System.err.println("Error handling client: " + e.getMessage());
             }
+        } finally {
+            scanner.close();
         }
     }
 }
 ```
 
 ### Critique
-
-Copilot generate a Complex class that implements the Serializable interface, allowing this class to be properly transferred between the server and client. However, the server code still cannot handle incorrect client input and provide error messages to the client.
+Copilot went a step further than what the prompt requested: it created a new class, ServerProxy, that contains the method ***sendMessage()*** that encapsulates the communication code (the class constructor simply sets the address and port number). Now the SimpleClient code is simplified: its job is to interact with the user; it delegates the communication to the ServerProxy class, which it instantiates before using. Rating: Good.
 
 ## Exercises
+1. Write a client for the Point class from Unit06. The client should prompt the user for the two points; the server will return the distance between those points, which the client should display.
 
-1. In Example 13.1, change the prompt to ask Copilot to generate a server using TCP protocol and change all the lowercase letters in the messages from the client to uppercase letters.
-2. In Example 13.2, ask Copilot to generate a server that can handle matrix calculation.
-3. In Example 13.3 and 13.4, change the prompt to handle the invalid numeric input problem.
+2. Write a client that implements the user interface for the calculator program from Unit06. The client should prompt the user for the operation and the operands and send that, as a string, to the server, then display the answer returned by the server. (See Unit13 for the corresponding server example.)
 
 ## References
+[1] https://docs.oracle.com/cd/F49540_01/DOC/inter.815/a67296/im_examp.htm
