@@ -365,7 +365,7 @@ This code is still at a lower level than we might like for pseudocode. But it do
 1. A single parity bit is useful for detecting if exactly 1 bit was flipped during transmission. However, it does not tell the receiver which bit caused the error. Using Copilot, generate pseudocode on the sender side that will use a Hamming code to add some check bits to the three bit messages. These bits will allow the receiver to detect if a single error occurred and to know which bit got flipped.
 2. Following exercise 1, ask copilot to create a receiver for the message encoded with the Hamming code.
 3. Using a pencil and paper, desk check the sender and receiver code that was generated in Exercises 1 and 2. How do you rate the pseudocode? Poor, Fair, or Good?
-4. With respect to questions 1-3, is desk checking enough or do you feel that you need a deeper understanding of Hamming codes?
+4. With respect to questions 1-3, is desk checking enough to convince you that copilot has the right solution or do you feel that you need a deeper understanding of Hamming codes?
 5. Ask Copilot to provide pseudocode for the traffic light so that after two complete cycles of green, yellow, and red, a walk light is turned on for 15 seconds. How do you rate the result?
 6. To illustrate some of copilot's capabilities, ask copilot to provide you with a series of steps that could be used to deploy a smart contract to the Ethereum blockchain.
 7. To illustrate some of copilot's capabilities, ask copilot to describe any limitations on code that is deployed directly to the Bitcoin ledger. Are those same limitations in effect on the Ethereum blockchain?
