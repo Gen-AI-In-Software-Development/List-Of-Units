@@ -249,7 +249,7 @@ Contract TokenContract {
 
 ```
 ### Critique
-I note that the mapping from an address to an integer. This is quite appropriate for a fungible token. Overall, this looks like a correct solution but is closer to actual Solidity code than we might like. In the next prompt, we will ask it to refine the solution into pseudocode. Rating: Poor.
+Note the mapping from an address to an integer. This is quite appropriate for a fungible token. Each address, representing a user account, is mapped to a certain number of tokens. What matters here is not what tokens an address may have but how many. Overall, this looks like a correct solution but is closer to actual Solidity code than we might like. In the next prompt, we will ask it to refine the solution into pseudocode. Rating: Poor.
 
 ### Example 2.6 prompt: Continuing with our discussion, I was hoping for a pseudocode description that could be shown to a manager who is not familiar with the Solidity language. I want the pseudocode to help me explain how a fungible token can be represented and associated with an address.
 
