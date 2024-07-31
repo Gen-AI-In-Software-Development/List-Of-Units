@@ -224,7 +224,7 @@ public class BigIntegerClient {
 The HTTP response code of 204 is being used correctly because the POST request does not return any output. This client
 side program works well but the communication code is mixed in with the application code. Rating: Fair.
 
-In the next prompt, we will attempt to have Copilot isolate the communication code with a proxy design pattern. 
+In the next prompt, we will attempt to have Copilot isolate the communication code with a proxy design pattern.
 
 ### Example 15.5 prompt: Continuing with our discussion, I would like the client side code to have all communication related logic in separate methods. Currently the client mixes application logic with communication code. I would like to use a proxy design in my client side code. Please give me a new Java client. Thank you.
 
@@ -313,5 +313,7 @@ will be simple string data, i.e., no JSON will be used.
 
 ## References
 [1] See Roy Fielding's PhD thesis: https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
+
 [2] OData: https://www.odata.org/
+
 [3] Amazon Simple Storage Service: https://aws.amazon.com/s3/
