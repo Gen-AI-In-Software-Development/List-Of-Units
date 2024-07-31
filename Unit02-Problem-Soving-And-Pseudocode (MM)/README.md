@@ -210,7 +210,7 @@ BEGIN
 END
 ```
 ### Critique
-This is much improved. It uses a state machine approach to coordinate the light. In the green state, the time is checked to see if 30 seconds has elapsed. If so, the state is changed to yellow. If not, the state remains as green and the function is complete - returning control to the operating system to do its work. The same logic is used for the yellow and red state. The yellow light only remains on for 10 seconds. Rating: Good.
+This is much improved. It uses a state machine approach to coordinate the light. In the green state, the time is checked to see if 30 seconds have elapsed. If so, the state is changed to yellow. If not, the state remains as green and the function is complete - returning control to the operating system to do its work. The same logic is used for the yellow and red state. The yellow light only remains on for 10 seconds. Rating: Good.
 
 ### Example 2.5 prompt: I plan on programming and deploying a smart contract to a distributed ledger. Eventually, I will write my solution in the Solidity programming language. But, for now, I would like to use only pseudocode to describe my code. I would like to create pseudocode for a simple smart contract that illustrates how a 50 fungible tokens can be assigned to the owner of the contract. I also need a way for the owner to transfer some number of tokens to another account.
 
