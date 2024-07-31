@@ -1,7 +1,547 @@
 #  Unit08-JSON
 ## Introduction
-## Compelling Use Case
-## Several Solved Examples Using Copilot
-## Critical Evaluations of the Examples
+
+There are many ways to package up data. XML and JSON are two popular ways. This unit discusses JSON (JavaScript Object Notation) [1] and uses Google's implementation of it, GSON, available on github [2]. Despite its name, JSON does not require programming in the JavaScript language. There are JSON implementations in many languages, including Java and Python.
+
+To use JSON in a Java program, a library for it must be installed. See Unit01 for instructions on installing GSON for Java. Examples 8.1 - 8.5 use Java and GSON.
+
+To use JSON in a Python program, the statement
+```
+import json
+```
+is required. Examples 8.6 - 8.7 illustrates how to use this library in a Python program.
+
+## Use Case
+
+When data is required as input or output for a program, raw data (just numbers or strings) is not always the best solution, especially when that data must be transmitted across the Web. Raw data has no context - that is, there is nothing in raw data that says, "these values represent ages", except perhaps by file naming or some other external method. JSON is a data formatting technology that tags data values with keys - that is, every data item is a <key, value> pair - so that each data value has a corresponding clue about its semantics.
+
+For example, suppose an app stores the simple record <name, userid>. The corresponding JSON record for user Mary Smith with user id msmith would be
+
+```
+{
+"name": "Mary Smith",
+"userid": "msmith"
+}
+```
+
+The brackets and commas are required; note the use of quotes around the strings.
+
+When the JSON data is used in conjunction with a Java class (though this is not required), the key names correspond to the data names in the class. For the example:
+
+```
+public class User {
+   private String name;
+   private String userid;
+   // Constructors, getters, and setters next
+}
+```
+
+A common use for JSON is a web site API that, when given a request, returns a JSON record. The challenge then is to send requests to the site and retrieve the JSON answer, then to extract the data fields into some useful format - again, possibly into a class, but more simply into some variables.
+
+## Prompts and Code Critique
+
+For the next few examples, we will go through the steps that guide Copilot to write code that communicates with an API key to return some random dog facts in JSON format and process the returned JSON data.
+
+### Example 8.1 prompt: Write a class to retrieve 1 random dog fact as a JSON string from APIKey: http://dog-api.kinduff.com/api/facts which accepts ?number=5 as a parameter and returns a JSON object with a specific number of dog facts. Print the JSON object out.
+
+### Generated Code:
+
+```
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Random;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
+public class DogFactFetcher {
+
+    public static void main(String[] args) {
+        DogFactFetcher fetcher = new DogFactFetcher();
+        try {
+            String fact = fetcher.getRandomDogFact(5);
+            System.out.println(fact);
+        } catch (Exception e) {
+            System.out.println("Failed to fetch dog fact: " + e.getMessage());
+        }
+    }
+
+    public String getRandomDogFact(int numberOfFacts) throws Exception {
+        String apiUrl = "http://dog-api.kinduff.com/api/facts?number=" + numberOfFacts;
+        URL url = new URL(apiUrl);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+
+        int responseCode = con.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) { // success
+            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            // Parse JSON response
+            Gson gson = new Gson();
+            JsonObject jsonResponse = gson.fromJson(response.toString(), JsonObject.class);
+            if (jsonResponse.get("success").getAsBoolean()) {
+                String[] facts = gson.fromJson(jsonResponse.get("facts"), String[].class);
+                if (facts.length > 0) {
+                    // Return a random fact from the array
+                    Random random = new Random();
+                    return facts[random.nextInt(facts.length)];
+                } else {
+                    throw new Exception("No facts found");
+                }
+            } else {
+                throw new Exception("API call was not successful");
+            }
+        } else {
+            throw new Exception("GET request not worked");
+        }
+    }
+}
+```
+
+### Critique
+
+Copilot generated a piece of code for retrieving a JSON object, but after experimenting, it was found that the code generated by Copilot could not successfully communicate with the server and instead displayed "Get request not worked." Upon investigation, it was discovered that the URL provided in the API key documentation was incorrect. Accessing the URL in Java returned a 302 status code, which indicates that the requested resource has been temporarily moved to a different URI. When the API key was accessed in a browser, it was found that the link automatically redirected from http:// to https://, and Copilot was unable to detect and correct this issue, which caused the error. Rating: Poor
+
+### Example 8.2 prompt: Write a class to retrieve 1 random dog fact as a JSON string from API Key: [https://dog-api.kinduff.com/api/facts](vscode-file://vscode-app/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) which accepts?number=5 as a parameter and returns a JSON object with a specific number of dog facts. Print the JSON object out.
+
+### Generated Code:
+
+```
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Random;
+
+public class DogFactFetcher {
+
+    public static void fetchRandomDogFact() {
+        try {
+            // Construct the URL with the parameter for 5 dog facts
+            URL url = new URL("https://dog-api.kinduff.com/api/facts?number=5");
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            // Set request headers if necessary, e.g., for API keys or authentication
+            // con.setRequestProperty("Authorization", "Bearer YOUR_API_KEY_HERE");
+
+            int responseCode = con.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) { // success
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                // Print the complete JSON response
+                System.out.println("Response: " + response.toString());
+
+                // Assuming the response JSON structure is {"facts":["fact1", "fact2", ...]}
+                // Extract and print one random fact from the JSON object
+                // This part requires a JSON parsing library like Gson or org.json
+                Gson gson = new Gson();
+                DogFacts facts = gson.fromJson(response.toString(), DogFacts.class);
+                Random random = new Random();
+                int randomIndex = random.nextInt(facts.facts.length); // Assuming there's at least one fact
+                System.out.println("Random Dog Fact: " + facts.facts[randomIndex]);
+            } else {
+                System.out.println("GET request not worked");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Helper class to map the JSON response to Java object
+    class DogFacts {
+        String[] facts;
+    }
+
+    public static void main(String[] args) {
+        fetchRandomDogFact();
+    }
+}
+```
+
+### Critique
+
+After manually modifying the URL, Copilot provided a piece of code that could communicate with the server and retrieve the JSON data. After verification, it correctly retrieves the desired number of Dog Facts. Rating: Fair.
+
+### Example 8.3 prompt: Based on the response, write a class to print the facts and allow users to input the required number of facts entries:
+
+```
+{"facts":["Dogs who bark the most: Miniature Schnauzers, Cairn Terriers, Yorkshire Terriers, Fox Terriers and West Highland White Terriers.","The phrase \"raining cats and dogs\" originated in seventeenth-century England. During heavy rainstorms, many homeless animals would drown and float down the streets, giving the appearance that it had actually rained cats and dogs.","A dog's sense of smell is reduced by up to 40 percent when he's overheated and panting.","Dachshunds were originally bred for fighting badgers.","A dog could detect a teaspoon of sugar if you added it to an Olympic-sized swimming pool full of water."],"success":true}
+```
+
+### Generated Code:
+
+```
+package com.example;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+import com.google.gson.Gson;
+
+public class DogFactFetcher {
+
+    public static void fetchDogFacts(int numberOfFacts) {
+        try {
+            // Construct the URL with the parameter for the desired number of dog facts
+            URL url = new URL("https://dog-api.kinduff.com/api/facts?number=" + numberOfFacts);
+            HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setRequestMethod("GET");
+
+            int responseCode = con.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) { // success
+                BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                String inputLine;
+                StringBuilder response = new StringBuilder();
+
+                while ((inputLine = in.readLine()) != null) {
+                    response.append(inputLine);
+                }
+                in.close();
+
+                // Parse the JSON response
+                Gson gson = new Gson();
+                DogFacts facts = gson.fromJson(response.toString(), DogFacts.class);
+
+                // Check if the response was successful
+                if (facts.success) {
+                    // Print each fact
+                    for (String fact : facts.facts) {
+                        System.out.println(fact);
+                    }
+                } else {
+                    System.out.println("Failed to fetch dog facts.");
+                }
+            } else {
+                System.out.println("GET request not worked");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Helper class to map the JSON response to Java object
+    class DogFacts {
+        String[] facts;
+        boolean success;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of dog facts you want to retrieve:");
+        int numberOfFacts = scanner.nextInt();
+
+        fetchDogFacts(numberOfFacts);
+    }
+}
+```
+
+### Critique
+
+After obtaining the JSON data returned in the previous example, the JSON object was provided to Copilot to analyze its structure. Copilot was asked to write a class to store the JSON data and accept user input to determine how many Dog Facts to retrieve. The copilot successfully analyzed the data and wrote the code. After running tests, the code worked successfully.
+
+However, there are still some failure situations, for example, when users enter -1 for the number of dog facts the program will show "Failed to fetch dog facts." Rating: Good.
+
+For the next few examples, we will investigate another API key that can search Disney characters' information based on the search term users input. The API key returns relatively complex JSON format data and we will see how Copilot deals with the data.
+
+### Example 8.4 prompt: Write a class to get input from users and search the character name in Disney from an API key: [https://api.disneyapi.dev/character](vscode-file://vscode-app/Applications/Visual Studio Code.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.html) which accepts a parameter name. Print the received JSON string.
+
+### Generated Code:
+
+```
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class DisneyCharacterSearch {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the name of the Disney character to search for:");
+        String characterName = scanner.nextLine();
+        scanner.close();
+
+        searchDisneyCharacter(characterName);
+    }
+
+    private static void searchDisneyCharacter(String characterName) {
+        try {
+            String urlString = "https://api.disneyapi.dev/characters?name=" + characterName;
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setRequestProperty("Accept", "application/json");
+
+            if (connection.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : " + connection.getResponseCode());
+            }
+
+            BufferedReader br = new BufferedReader(new InputStreamReader((connection.getInputStream())));
+            String output;
+            System.out.println("Output from Server .... \n");
+            while ((output = br.readLine()) != null) {
+                System.out.println(output);
+            }
+
+            connection.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Critique
+
+Copilot provided a very basic code for using the API key. This code can communicate with the server and obtain JSON data. Rating: Fair
+
+### Example 8.5 prompt: Transform the response JSON string into class and show the search result:
+
+```
+{"info":{"count":3,"totalPages":1,"previousPage":null,"nextPage":null},"data":[{"*_id":3942,"films":[],"shortFilms":[],"tvShows":["Mickey Mouse Works"],"videoGames":[],"parkAttractions":[],"allies":[],"enemies":[],"sourceUrl":"https://disney.fandom.com/wiki/Lion_*(Mickey_Mouse_Works)","name":"Lion (Mickey Mouse Works)","imageUrl":"https://static.wikia.nocookie.net/disney/images/b/bf/Char_79257.jpg","createdAt":"2021-04-12T02:22:52.650Z","updatedAt":"2021-12-20T20:39:57.135Z","url":"https://api.disneyapi.dev/characters/3942","__v":0},{"_id":4505,"films":[],"shortFilms":[],"tvShows":["Mickey Mouse (TV series)"],"videoGames":[],"parkAttractions":[],"allies":[],"enemies":[],"sourceUrl":"https://disney.fandom.com/wiki/Mickey%27s_Scooter","name":"Mickey's Scooter","imageUrl":"https://static.wikia.nocookie.net/disney/images/4/4c/MickeysScooter.png","createdAt":"2021-04-12T02:30:22.019Z","updatedAt":"2021-12-20T20:40:02.608Z","url":"https://api.disneyapi.dev/characters/4505","__v":0},{"_id":4703,"films":["Hollywood Party","Fantasia","Fun and Fancy Free","TRON","Who Framed Roger Rabbit","Oliver & Company","The Little Mermaid","Toy Story","A Goofy Movie","Mickey's Once Upon a Christmas","Fantasia 2000","Mickey's Magical Christmas: Snowed in at the House of Mouse","Mickey's House of Villains","Teacher's Pet (film)","The Lion King 1½","101 Dalmatians II: Patch's London Adventure","Mickey, Donald, Goofy: The Three Musketeers","Mickey's Twice Upon a Christmas","Chicken Little (film)","Meet the Robinsons","Wreck-It Ralph (film)","Saving Mr. Banks","Frozen","Zootopia","Ralph Breaks the Internet"],"shortFilms":[],"tvShows":["Walt Disney anthology series","The Mickey Mouse Club","The Mouse Factory","Adventures of the Gummi Bears","Bonkers","101 Dalmatians: The Series","Mickey Mouse Works","House of Mouse","Mickey Mouse Clubhouse","Imagination Movers","Mickey's Letter Time","Have a Laugh!","Mickey’s Mousekersize","A Poem Is...","Mickey Mouse (TV series)","Minnie's Bow-Toons","Once Upon a Time","Frozen: Northern Lights","At Home With Olaf","Mickey Mouse Mixed-Up Adventures","DuckTales (2017 series)","Mickey Go Local","The Wonderful World of Mickey Mouse","WandaVision","Mickey Mouse Funhouse"],"videoGames":["Mickey Mouse: The Computer Game","Mickey Mousecapade","Adventures in the Magic Kingdom","Illusion (series)","The Magical Quest starring Mickey Mouse","Mickey Mania: The Timeless Adventures of Mickey Mouse","Mickey's Speedway USA","Mickey's Racing Adventure","Disney's Party","Disney's Magical Mirror Starring Mickey Mouse","Disney's Hide and Sneak","Disney Friends","Kingdom Hearts (series)","Epic Mickey (series)","Kinect Disneyland Adventures","Disney Infinity (series)","Disney Magical World","Disney Magical World 2","Where's My Mickey?","Disney Tsum Tsum (game)","Disney Magical Dice","Disney Heroes: Battle Mode","Disney Mirrorverse","Disney Sorcerer's Arena"],"parkAttractions":["Mickey and Minnie's Runaway Railway","Fantasmic!","Mickey's PhilharMagic","Mickey's Royal Friendship Faire","World of Color","Main Street Electrical Parade","Mickey Mouse Revue","Town Square Theater","Mickey's House and Meet Mickey","One Man's Dream II: The Magic Lives On!","Midship Detective Agency","My Friend Duffy","The Golden Mickeys","Festival of Fantasy Parade","Paint the Night Parade","Mickey and the Magical Map","Wonderful World of Animation"],"allies":[],"enemies":[],"sourceUrl":"https://disney.fandom.com/wiki/Mickey_Mouse","name":"Mickey Mouse","imageUrl":"https://static.wikia.nocookie.net/disney/images/9/99/Mickey_Mouse_Disney_3.jpeg","createdAt":"2021-04-12T02:33:01.829Z","updatedAt":"2021-12-20T20:40:04.583Z","url":"https://api.disneyapi.dev/characters/4703","__v":0}]}
+```
+
+### Generated Code:
+
+```
+// Additional imports
+import com.google.gson.Gson;
+
+// Define the CharacterInfo class
+class CharacterInfo {
+    int count;
+    int totalPages;
+    String previousPage;
+    String nextPage;
+}
+
+// Define the DisneyCharacter class
+class DisneyCharacter {
+    int _id;
+    String name;
+    String imageUrl;
+    String sourceUrl;
+    // Add other fields as necessary
+}
+
+// Define the CharacterSearchResponse class
+class CharacterSearchResponse {
+    CharacterInfo info;
+    List<DisneyCharacter> data;
+}
+
+// Modify the searchDisneyCharacter method to parse and display the JSON response
+private static void searchDisneyCharacter(String characterName) {
+    try {
+        // Existing code to make the HTTP request and get the JSON response string
+        // Assume the JSON response is stored in a variable named jsonResponse
+
+        Gson gson = new Gson();
+        CharacterSearchResponse response = gson.fromJson(jsonResponse, CharacterSearchResponse.class);
+
+        System.out.println("Search Results:");
+        for (DisneyCharacter character : response.data) {
+            System.out.println("Name: " + character.name);
+            System.out.println("Image URL: " + character.imageUrl);
+            System.out.println("Source URL: " + character.sourceUrl);
+            System.out.println("-----");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
+
+### Critique
+
+Copilot was able to analyze the format of the JSON data and provide a basic framework. However, it did not offer a complete class to store each piece of data from the JSON. Instead, it only suggested "Add other fields as necessary," which is incomplete. Rating: Poor.
+
+Next, we will be exploring JSON in Python programming using the json library. To facilitate using a web site API, the requests library is also need to make the https connection.
+
+### Example 8.6 prompt: Write a python program to retrieve the book information as a JSON string of a book with specific isbn that users provide from an API key https://www.googleapis.com/books/v1/volumes which accepts a parameter ?q=isbn: and returns a JSON object with the given ISBN. Print the JSON object out.
+
+### Generated Code:
+
+```
+import requests
+import json
+
+def get_book_info(isbn):
+    # Define the base URL and the query parameter
+    base_url = "https://www.googleapis.com/books/v1/volumes"
+    query = f"?q=isbn:{isbn}"
+
+    # Make the request to the API
+    response = requests.get(base_url + query)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the JSON response
+        book_info = response.json()
+        # Print the JSON object
+        print(json.dumps(book_info, indent=4))
+    else:
+        print(f"Failed to retrieve book information. Status code: {response.status_code}")
+
+if __name__ == "__main__":
+    # Prompt the user to enter an ISBN
+    isbn = input("Enter the ISBN of the book: ")
+    get_book_info(isbn)
+```
+
+### Critique
+
+This API key works correctly, and Copilot provides the code that can retrieve the required JSON string, which has been tested and runs well. Rating: Fair.
+
+### Example 8.7 prompt: Base on the response, write a program to get what book isbn users want and print a search result and a basic introduction of each search result.
+
+```
+{
+  "kind": "books#volumes",
+  "totalItems": 1,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "2BYfvgAACAAJ",
+      "etag": "x58xsqOEbxc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/2BYfvgAACAAJ",
+      "volumeInfo": {
+        "title": "Python for Data Analysis",
+        "subtitle": "Data Wrangling with Pandas, Numpy, and Ipython",
+        "authors": [
+          "Wes McKinney"
+        ],
+        "publisher": "O'Reilly Media",
+        "publishedDate": "2017-10",
+        "description": "Get complete instructions for manipulating, processing, cleaning, and crunching datasets in Python. Updated for Python 3.6, the second edition of this hands-on guide is packed with practical case studies that show you how to solve a broad set of data analysis problems effectively. You'll learn the latest versions of pandas, NumPy, IPython, and Jupyter in the process. Written by Wes McKinney, the creator of the Python pandas project, this book is a practical, modern introduction to data science tools in Python. It's ideal for analysts new to Python and for Python programmers new to data science and scientific computing. Data files and related material are available on GitHub. Use the IPython shell and Jupyter notebook for exploratory computing Learn basic and advanced features in NumPy (Numerical Python) Get started with data analysis tools in the pandas library Use flexible tools to load, clean, transform, merge, and reshape data Create informative visualizations with matplotlib Apply the pandas groupby facility to slice, dice, and summarize datasets Analyze and manipulate regular and irregular time series data Learn how to solve real-world data analysis problems with thorough, detailed examples",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1491957662"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781491957660"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 550,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=2BYfvgAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=2BYfvgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=2BYfvgAACAAJ&dq=isbn:9781491957660&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=2BYfvgAACAAJ&dq=isbn:9781491957660&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Python_for_Data_Analysis.html?hl=&id=2BYfvgAACAAJ"
+      },
+      "saleInfo": {
+        "country": "US",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "US",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=2BYfvgAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Presents case studies and instructions on how to solve data analysis problems using Python, in a book that explains how to: use the IPython shell and Jupyter notebook for exploratory computing; learn basic and advanced NumPy (Numerical ..."
+      }
+    }
+  ]
+}
+```
+
+### Generated Code:
+
+```
+import requests
+import json
+
+def get_book_info(isbn):
+    base_url = "https://www.googleapis.com/books/v1/volumes"
+    query = f"?q=isbn:{isbn}"
+
+    response = requests.get(base_url + query)
+
+    if response.status_code == 200:
+        book_info = response.json()
+        if book_info['totalItems'] > 0:
+            for item in book_info['items']:
+                volume_info = item['volumeInfo']
+                title = volume_info.get('title', 'N/A')
+                authors = ', '.join(volume_info.get('authors', ['N/A']))
+                description = volume_info.get('description', 'No description available.')
+                print(f"Title: {title}")
+                print(f"Authors: {authors}")
+                print(f"Description: {description}")
+                print("-" * 40)
+        else:
+            print("No books found for the provided ISBN.")
+    else:
+        print(f"Failed to retrieve book information. Status code: {response.status_code}")
+
+if __name__ == "__main__":
+    isbn = input("Enter the ISBN number of the book: ")
+    get_book_info(isbn)
+```
+
+### Critique
+
+Based on the previous code, Copilot provides a Python program that can display the book title, authors, and description from the search results, which means Copilot can correctly analyze the provided JSON object and extract specific information. Rating: Good.
+
 ## Exercises
+
+1. As Example 8.1, find a simple API key that can return simple JSON data and ask Copilot to generate query code.
+2. In Example 8.5, try to modify the prompt, such as manually simplifying the complex JSON data, shortening its length, and retaining only the most basic structure. Or, provide further prompts to Copilot to eliminate the "Add other fields as necessary".
+
 ## References
+[1] https://www.json.org/json-en.html
+
+[2] https://github.com/google/gson
