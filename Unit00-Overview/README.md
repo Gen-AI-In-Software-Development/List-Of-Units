@@ -1,19 +1,71 @@
 # Unit00-Overview
-## Machine Learning and Software Development
+## Revolutionizing Code Creation: Generative AI in Software Development
 
-Artificial intelligence studies ways to computationally do what human intelligence does.
-Machine learning is a subfield of artificial intelligence and
-neural networks are a subfield of machine learning. Copilot is a neural network.
+Description: Generative AI has the potential to significantly enhance developer productivity.
+This course delves into how Microsoft Copilot can be used for various tasks, including code generation, chat assistance, refactoring, unit testing, data file manipulation, and documentation.
+Examples will span multiple programming languages, such as Java and Python. Additionally, we'll explore ethical considerations (code ownership, privacy concerns, bias and fairness),
+integration with existing tools (e.g. Git), and real-world use cases.
 
-<img src="images/CopilotVennDiagram.png" width="400"/>
+Prerequisites: While there is no formal prerequisite, it will be assumed that students have some
+programming background. Specifically, each student should already be familiar with concepts such as variables, data types, iteration, and functions in at least one programming language (not necessarily limited to Python or Java).
 
-Software development involves specifying, designing, programming, documenting, testing, and maintaining applications.
+—-------------------------------------------------------------------------------------------------------
 
-In this repository, we will experiment with how Copilot might assist in the software development process.
+Schedule: Weekend micro courses could be offered near the beginning of the fall and spring semesters.
 
-"A fool with a tool is still a fool." - Grady Booch
+Proposal: We propose creating lab exercises that introduce LLM generated code and other artifacts using Copilot running in an IDE for Python and for Java. Each unit will have a similar structure: an introduction, a compelling use case, several solved examples using Copilot, critical evaluations of those examples, student exercises similar to the examples, and references. The examples and exercises will range from easy beginner problems to more moderate problems, with a few complicated problems that will illustrate the limitations of using Copilot.
 
-Important papers:
+Details: Each of the three of us will work on several units separately but with input from each other as needed. We will use github as a repository for the materials to allow collaboration and later to facilitate student access. If there's interest, these materials could be used by other instructors at Heinz.
+
+The list of units follows. We will complete the first four parts this summer.  The other parts are not immediately useful in intro Python and Java courses; they are more applicable to distributed systems and other courses.
+
+The three of us are willing to co-teach a micro course on this material in the fall and spring semesters. Each of us would cover several units from the topics below.
+
+—---------------------------------------------------------------------------------------------------------------------
+
+Part 1. Introduction
+Unit 1. Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup
+Unit 2. Problem solving and generating pseudocode from problem statements
+
+Part 2. Programming
+Unit 3. Java examples
+Unit 4. Python examples
+Unit 5. Generating documentation from code and code from documentation
+
+Part 3. Testing
+Unit 6. JUnit for Java
+Unit 7. Pytest for Python
+
+Part 4. Common Data Formats
+Unit 8. JSON
+Unit 9.  HTML
+Unit 10. XML
+Unit 11. CSV
+
+Part 5. Distributed Systems
+Unit 12. Client side proxy examples
+Unit 13. Server side coding in Java
+Unit 14. Peer to peer coding
+Unit 15. Designing REST APIs
+Unit 16. Detecting security vulnerabilities in client server code
+
+Part 6. Software engineering
+Unit 17. Generate SE artifacts - UML, and architecture diagrams
+Unit 18. Container deployment
+Unit 19. Refactor code by introducing design patterns into existing code
+
+Part 7. Machine Learning
+Unit 20. Generate Python code that uses AI libraries
+
+Part 8. Other Topics
+Unit 21. C++ Examples
+Unit 22. Testing C++ with Google Test and Boost
+Unit 23. Javascript Examples
+Unit 24. Translating JavaScript to TypeScript
+Unit 25. Testing Javascript with Mocha
+
+
+# Important papers
 
 "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"
 See https://arxiv.org/abs/2302.11382
@@ -21,7 +73,15 @@ See https://arxiv.org/abs/2302.11382
 "Content in Crisis: The Rapid Decline of the AI Data Commons"
 See https://www.nytimes.com/2024/07/19/technology/ai-data-restrictions.html
 
+# Appropriate image
 
+<img src="images/CopilotVennDiagram.png" width="400"/>
+
+Software development involves specifying, designing, programming, documenting, testing, and maintaining applications.
+
+In this repository, we will experiment with how Copilot might assist in the software development process.
+
+Always keep in mind: "A fool with a tool is still a fool." - Grady Booch
 
 
 # Updating a unit
@@ -97,7 +157,6 @@ Unit tests are needed. Now, we will see more of this with LLM's.
 
 Other software engineering activities => Requirements documents from a large body of text, policy document analysis, code, looking for inconsistencies, architecture documents (may be incorrect with glossy beauty)
 
-A fool with a tool is still a fool.
 
 Test driven development with LLMs.
 
