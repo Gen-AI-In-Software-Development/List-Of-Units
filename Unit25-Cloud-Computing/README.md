@@ -108,5 +108,7 @@ On the plus side, these directions took us to a web site that did not require a 
 
 ## References
 [1] Oracle Cloud Infrastructure (OCI) https://www.oracle.com/cloud/
+
 [2] Google Cloud Functions https://cloud.google.com/functions
+
 [3] AWS Lambda https://aws.amazon.com/lambda/
