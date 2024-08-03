@@ -6,7 +6,7 @@ In this unit, we will ask copilot to assist us in deploying a function to Micros
 ## Use Case
 
 Serverless computing involves the use of a server that is in the cloud and is managed by another party.
-The user of a serverless computing platform is charged based on resources used and is freed up from having to administrate the servers.
+The user of a serverless computing platform is charged based on the resources used and is freed from having to administer the servers.
 
 This use case involves the deployment and execution of a function to Microsoft's Azure Functions. Microsoft Azure Functions is a function as a service (FaaS) cloud platform.
 
