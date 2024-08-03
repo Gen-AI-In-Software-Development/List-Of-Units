@@ -73,9 +73,11 @@ See https://arxiv.org/abs/2302.11382
 "Content in Crisis: The Rapid Decline of the AI Data Commons"
 See https://www.nytimes.com/2024/07/19/technology/ai-data-restrictions.html
 
-# Appropriate image
+# Where does Copilot fit?
 
 <img src="images/CopilotVennDiagram.png" width="400"/>
+
+# Notes
 
 Software development involves specifying, designing, programming, documenting, testing, and maintaining applications.
 
@@ -83,8 +85,7 @@ In this repository, we will experiment with how Copilot might assist in the soft
 
 Always keep in mind: "A fool with a tool is still a fool." - Grady Booch
 
-
-# Updating a unit
+# GitHub Mechanics: Updating a Unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
 directory for you.
