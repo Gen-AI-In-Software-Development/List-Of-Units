@@ -125,6 +125,23 @@ node app.js
 You should see the output: `Hello, TypeScript!`.
 
 ---
+## Copilot Instructions
+### For Mac:
+1. **Download Node.js** for macOS by clicking the “Macintosh Installer” option from the [Node.js official website](https://nodejs.org/en/).
+2. Run the downloaded **Node.js.pkg Installer**.
+3. Once Node.js is installed, open the **Terminal**.
+4. Install TypeScript by running the command: `npm install -g typescript`
+5. Verify the installation by typing `tsc -v` in the Terminal. You should see the installed TypeScript version.
+
+### For Windows:
+1. **Install Node.js** from its [official website](https://nodejs.org/en/) and follow the installation wizard.
+2. Open **Command Prompt**.
+3. Install TypeScript globally by running the command: `npm install -g typescript`
+4. Verify the installation by typing `tsc -v` in the Command Prompt. You should see the installed TypeScript version.
+
+These steps will set up TypeScript on your system, allowing you to compile TypeScript files into JavaScript. Remember, TypeScript files have a `.ts` extension and need to be compiled to `.js` files before they can be executed. The `tsc` command is used for compiling TypeScript files.
+
+---
 
 
 
