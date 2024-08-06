@@ -4,7 +4,9 @@
 ## Part 1. Introduction
 
 Unit 0. Description, pre-requisites, and readings
+
 Unit 1. Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup
+
 Unit 2. Problem solving and generating pseudocode from problem statements
 
 ## Part 2. Programming
