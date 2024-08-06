@@ -71,7 +71,7 @@ Unit 25. Testing Javascript with Mocha
 https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/
 
 "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"
-See https://arxiv.org/abs/2302.11382
+https://arxiv.org/abs/2302.11382
 
 
 # Where does Copilot fit?
