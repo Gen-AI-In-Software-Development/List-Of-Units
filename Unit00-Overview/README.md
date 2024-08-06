@@ -65,7 +65,7 @@ Unit 24. Translating JavaScript to TypeScript
 Unit 25. Testing Javascript with Mocha
 
 
-# Readings:
+# Readings
 
 "Harnessing the Power of Generative AI in Transforming Software Engineering Productivity"
 https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/
