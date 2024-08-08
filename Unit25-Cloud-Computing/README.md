@@ -269,6 +269,9 @@ The solution provided worked well. It should be noted, however, that the solutio
 ## References
 
 [1] Azure Functions https://azure.microsoft.com/en-us/products/functions
+
 [2] AWS Lambda https://aws.amazon.com/lambda/
+
 [3] Google Cloud Functions https://cloud.google.com/functions
+
 [4] FN Project https://fnproject.io/
