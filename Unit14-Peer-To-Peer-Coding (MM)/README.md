@@ -109,7 +109,7 @@ public class Peer implements Runnable {
 
 
 ## Exercises
-1. In Example 3.2,
+1. In Example 14.1, ....
 
 ## References
-[1] Downey,
+[1] Downey,...
