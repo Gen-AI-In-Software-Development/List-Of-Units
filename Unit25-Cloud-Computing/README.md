@@ -264,7 +264,7 @@ The solution provided worked well. It should be noted, however, that the solutio
 1. Interact with Copilot to create and deploy a "Hello World" function on Microsoft Azure. How would you rate this interaction? Poor, Fair, or Good?
 2. Interact with Copilot to create and deploy a "Hello World" function on AWS Lambda. How would you rate this interaction? Poor, Fair, or Good?
 3. Interact with Copilot to create and deploy a "Hello World" function on Google Cloud Platform. How would you rate this interaction? Poor, Fair, or Good?
-4. Interact with Copilot to create and deploy a "Hello World" function using the FN Project and use Copilot to learn how you you might deploy that service remotely. How would you rate this interaction? Poor, Fair, or Good?
+4. Interact with Copilot to create and deploy a "Hello World" function using the FN Project and use Copilot to learn how you can deploy that service remotely. How would you rate this interaction? Poor, Fair, or Good?
 
 ## References
 
