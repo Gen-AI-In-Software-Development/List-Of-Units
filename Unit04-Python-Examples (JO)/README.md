@@ -12,9 +12,9 @@ with a short critique and rating. The ratings will be Poor, Fair, or Good.
 
 ### Example 3.1 prompt:  Write a Python program that displays the text
 
-hello, world!
+### hello, world!
 
-on the user's screen.
+### on the user's screen.
 
 ### Generated Code
 ```
@@ -48,7 +48,7 @@ for temp_f in test_temperatures:
     print(f"{temp_f}°F is approximately {temp_c:.2f}°C")
 ```
 ### Critique
-This time, was ask for a function that performs a calculation, and for five "random" but reasonable tests to be performed.  Notice that we did not specify the conversion formula: we relied on Copilot to figure out what Fahrenheit and Celsius mean and how to do the conversion.  Copilot produces a cleanly defined function with an appropriate name, a clear docstring that tells how to use the function, and a correct conversion formula.  The "random" but reasonable test cases include 32 (freezing), 212 (boiling), and three intermediate temperatures: 50 (cool), 68 (pleasant), and 100 (hot).  The resulting output is nicely formatted with two digits of precision after the decimal point for the Celsius conversion.  Overall: This code is quite remarkable, given the complete but sparse nature of the prompt.  Rating: Good.
+This time, we ask for a function that performs a calculation, and for five "random" but reasonable tests to be performed.  Notice that we did not specify the conversion formula: we relied on Copilot to figure out what Fahrenheit and Celsius mean and how to do the conversion.  Copilot produces a cleanly defined function with an appropriate name, a clear docstring that tells how to use the function, and a correct conversion formula.  The "random" but reasonable test cases include 32 (freezing), 212 (boiling), and three intermediate temperatures: 50 (cool), 68 (pleasant), and 100 (hot).  The resulting output is nicely formatted with two digits of precision after the decimal point for the Celsius conversion.  Overall: This code is quite remarkable, given the complete but sparse nature of the prompt.  Rating: Good.
 ### Example 3.3 prompt:  In the Fahrenheit to Celsius conversion code, instead of displaying five conversions on the screen, write a table of conversions to an output file named F_to_C.csv.  The name of the first output column should be Fahr, and the second output column should be Cels.  Perform conversions for temperatures ranging from 0 to 200, in steps of 5.
 
 ### Generated Code
@@ -83,11 +83,11 @@ with open("F_to_C.csv", mode="w", newline="") as csvfile:
 ```
 ### Critique
 With this prompt, we require Copilot to remember what it did for us previously, and to make changes.  The output is to be written to a comma-separated value file, but we don't say that explicitly: we imply it via the requested output file name, F_to_C.csv.  Copilot knows how to import the csv module and use the csv.writer() to get this to work.  For the celsius_values list, Copilot makes nice use of a list comprehension.  Overall: a clean, well written, well commented program, that does exactly as desired.  Rating: Good.
-### Example 3.4 prompt:  The patients.csv file contains patient information for a doctor's office.  Write Python code that reads the contents of the patients.csv file, and that then displays the following:
-a.  The entire patient list, ordered by age.
-b.  The list of women, ordered by height.
-c.  The average age of the men.
-d.  The median weight of the women.
+### Example 3.4 prompt:  The patients.csv file contains patient information for a doctor's office.  Write Python code that reads the contents of the patients.csv file, and that then displays the following:  
+### a.  The entire patient list, ordered by age.  
+### b.  The list of women, ordered by height.  
+### c.  The average age of the men.  
+### d.  The median weight of the women.  
 ### Generated Results
 ```
 Certainly! Let’s break down the tasks and write Python code to accomplish each one:
@@ -140,33 +140,33 @@ print(f"Median weight of women: {median_weight_women:.2f}")
 ### Critique
 With this prompt, we ask Copilot to analyze a comma separated data file that it does not know anything about, except that it is "patient data" for a doctor's office.  Copilot analyzes the patients.csv file itself, and draws conclusions about the content.  Here is what the file contains:
 
-Name,Age,Gender,Height,Weight
-Alan,30,M,67,125
-Betty,29,F,64,115
-Carl,25,M,69,165
-Donna,42,F,60,105
-Eric,27,M,71,180
-Fred,29,M,69,168
-Gina,33,F,65,133
-Harry,40,M,68,203
-Ida,54,F,62,144
-John,67,M,70,222
-Karla,48,F,69,142
-Lars,37,M,73,191
+Name,Age,Gender,Height,Weight  
+Alan,30,M,67,125  
+Betty,29,F,64,115  
+Carl,25,M,69,165  
+Donna,42,F,60,105  
+Eric,27,M,71,180  
+Fred,29,M,69,168  
+Gina,33,F,65,133  
+Harry,40,M,68,203  
+Ida,54,F,62,144  
+John,67,M,70,222  
+Karla,48,F,69,142  
+Lars,37,M,73,191  
 
-Copilot's attempt (a) using the csv module is close, but not correct: for some reason, Copilot thinks the Age is column sub-2 rather than sub-1 (columns in Python are indexed 0, 1, 2, ...).  Hence, the code as written will not execute, producing:
-
-Traceback (most recent call last):
-  File "C:/Users/jostlund/Downloads/disp_patients.py", line 9, in <module>
-    sorted_patient_list = sorted(patient_list[1:], key=lambda x: int(x[2]))  # Assuming age is in column 2
-  File "C:/Users/jostlund/Downloads/disp_patients.py", line 9, in <lambda>
-    sorted_patient_list = sorted(patient_list[1:], key=lambda x: int(x[2]))  # Assuming age is in column 2
-ValueError: invalid literal for int() with base 10: 'M'
-
+Copilot's attempt (a) using the csv module is close, but not correct: for some reason, Copilot thinks the Age is column sub-2 rather than sub-1 (columns in Python are indexed 0, 1, 2, ...).  Hence, the code as written fails, producing this error:  
+  
+Traceback (most recent call last):  
+  File "C:/Users/jostlund/Downloads/disp_patients.py", line 9, in <module>  
+    sorted_patient_list = sorted(patient_list[1:], key=lambda x: int(x[2]))  # Assuming age is in column 2  
+  File "C:/Users/jostlund/Downloads/disp_patients.py", line 9, in <lambda>  
+    sorted_patient_list = sorted(patient_list[1:], key=lambda x: int(x[2]))  # Assuming age is in column 2  
+ValueError: invalid literal for int() with base 10: 'M'  
+  
 A skilled Python programmer will catch that Age is column sub-1, and Gender is column sub-2, and can correct the program by making changes in two lines of code.  This code using the csv module also only tries to display the entire patient list, not the other three statistics.
-
+  
 Copilot's attempt (b) using the pandas module is better, with one flaw: even after examining the input file, Copilot assumes the possible genders are 'Male' and 'Female' rather than the actual 'M' and 'F'.  If corrected by a skilled programmer, the version (b) code runs correctly.
-
+  
 Overall:  Very useful, but not perfect.  In both cases (a) and (b) the code can be corrected easily by a skilled Python programmer.  Rating: Fair.
 ### Example 3.5 prompt:  Repeat the code for patients.csv, but notice that 'Age' is in column 1 (counting from 0) and 'Gender' is in column 2.  Also, notice that the two 'Gender' values are 'M' and 'F' rather than 'Male' and 'Female'.
 ### Generated Results
@@ -292,7 +292,7 @@ print("Search for 4:", bst.search(4))
 print("Search for 6:", bst.search(6))
 ```
 ### Critique
-Copilot provides a working implementation of a Binary Search Tree of numbers, in which at each node lesser values are stored in the left subtree and greater values in the right.  The BST uses a hierarchy of TreeNode objects, where the TreeNode class is defined outside of the BST class.  This is okay but not ideal: we would prefer that TreeNode be internal to BST.  As example methods, Copilot provides working implementations of __init__() (constructor), insert(), inorder_traversal() returning a list, and search() returning True or False.  These are the minimum necessary methods for a useful Binary Search Tree.  Copilot also creates test code to create an empty BST, insert six unique integer values into it, display the inorder_traversal() list, and search() for one value that exists and one value that does not exist in the BST.  This is a reasonable minimum sequence of tests.  We would prefer that this test code be incorporated in such a way that it is not executed if another program imports this BST code as a module.  The code is neatly written, well commented, and uses good variable and method names.  Overall:  Remarkably good code from such a terse prompt.  Of course, the Binary Search Tree is a very well known data structure.  Rating: Good.
+Copilot provides a working implementation of a Binary Search Tree of numbers, in which at each node lesser values are stored in the left subtree and greater values in the right.  The BST uses a hierarchy of TreeNode objects, where the TreeNode class is defined outside of the BST class.  This is okay but not ideal: we would prefer that TreeNode be internal to BST.  As example methods, Copilot provides working implementations of \_\_init\_\_() (constructor), insert(), inorder_traversal() returning a list, and search() returning True or False.  These are the minimum necessary methods for a useful Binary Search Tree.  Copilot also creates test code to create an empty BST, insert six unique integer values into it, display the inorder_traversal() list, and search() for one value that exists and one value that does not exist in the BST.  This is a reasonable minimum sequence of tests.  We would prefer that this test code be incorporated in such a way that it is not executed if another program imports this BST code as a module.  The code is neatly written, well commented, and uses good variable and method names.  Overall:  Remarkably good code from such a terse prompt.  Of course, the Binary Search Tree is a very well known data structure.  Rating: Good.
 ### Example 3.7 prompt:  Revise the Python BST class so that TreeNode is internal to BST, and so that the test code followig the BST class is only executed if this BST class code is the main module.  Add another dozen test values, including some duplicate values, to demonstrate that duplicate values are not stored in the BST.
 ### Generated Results
 ```
