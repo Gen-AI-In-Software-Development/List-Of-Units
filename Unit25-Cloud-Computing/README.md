@@ -7,7 +7,7 @@ In this unit, we will ask copilot to assist us in deploying a simple function to
 
 Serverless computing involves the use of a server that is in the cloud and managed by another party. This can be hugely convenient for an organization that wants to focus on code development and would prefer to avoid dealing with the many issues surrounding server administration. This can reduce operational overhead.
 
-The user of the cloud resource (the one who deploys the service) only pays for the resources used.
+The deployer of the cloud resource only pays for the resources used.
 
 This use case involves attempting to deploy functions to Azure Functions[1], AWS Lambda[2], Google Cloud Platform[3], and the Oracle supported open source FN Project[4]. If successful, we want to make calls to the functions from a local client.
 
