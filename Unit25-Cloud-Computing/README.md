@@ -185,7 +185,7 @@ Save Changes: Click Save to apply the changes
 ```
 
 ### Critique
-The solution provided does not mention that an administrator account is required to
+The first solution provided did not mention that an administrator account was required to
 approve the use of these services. Rating: poor.
 
 ### Example 2.5 I would like to deploy a simple hello world service to FN project. Please provide directions.
