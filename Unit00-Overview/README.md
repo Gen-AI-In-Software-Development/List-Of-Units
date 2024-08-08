@@ -65,13 +65,14 @@ Unit 24. Translating JavaScript to TypeScript
 Unit 25. Testing Javascript with Mocha
 
 
-# Important papers
+# Readings
+
+"Harnessing the Power of Generative AI in Transforming Software Engineering Productivity"
+https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/
 
 "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"
-See https://arxiv.org/abs/2302.11382
+https://arxiv.org/abs/2302.11382
 
-"Content in Crisis: The Rapid Decline of the AI Data Commons"
-See https://www.nytimes.com/2024/07/19/technology/ai-data-restrictions.html
 
 # Where does Copilot fit?
 
