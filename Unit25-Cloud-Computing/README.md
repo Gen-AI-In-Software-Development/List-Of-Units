@@ -9,7 +9,7 @@ Serverless computing involves the use of a server that is in the cloud and manag
 
 The user of the cloud resource (the one who deploys the service) only pays for the resources used.
 
-This use case involves attempting to deploy functions to Azure Functions[1], AWS Lambda[2], Google Cloud Platform[3], and Oracle supported open source FN Project[4]. If successful, we want to make calls to the functions from a local client.
+This use case involves attempting to deploy functions to Azure Functions[1], AWS Lambda[2], Google Cloud Platform[3], and the Oracle supported open source FN Project[4]. If successful, we want to make calls to the functions from a local client.
 
 Systems such as these are called function-as-a-service (FaaS) cloud platforms.
 
