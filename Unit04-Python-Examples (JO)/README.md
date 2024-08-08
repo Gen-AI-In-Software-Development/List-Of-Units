@@ -12,9 +12,9 @@ with a short critique and rating. The ratings will be Poor, Fair, or Good.
 
 ### Example 3.1 prompt:  Write a Python program that displays the text
 
-hello, world!
+### hello, world!
 
-on the user's screen.
+### on the user's screen.
 
 ### Generated Code
 ```
@@ -84,10 +84,10 @@ with open("F_to_C.csv", mode="w", newline="") as csvfile:
 ### Critique
 With this prompt, we require Copilot to remember what it did for us previously, and to make changes.  The output is to be written to a comma-separated value file, but we don't say that explicitly: we imply it via the requested output file name, F_to_C.csv.  Copilot knows how to import the csv module and use the csv.writer() to get this to work.  For the celsius_values list, Copilot makes nice use of a list comprehension.  Overall: a clean, well written, well commented program, that does exactly as desired.  Rating: Good.
 ### Example 3.4 prompt:  The patients.csv file contains patient information for a doctor's office.  Write Python code that reads the contents of the patients.csv file, and that then displays the following:  
-a.  The entire patient list, ordered by age.  
-b.  The list of women, ordered by height.  
-c.  The average age of the men.  
-d.  The median weight of the women.  
+### a.  The entire patient list, ordered by age.  
+### b.  The list of women, ordered by height.  
+### c.  The average age of the men.  
+### d.  The median weight of the women.  
 ### Generated Results
 ```
 Certainly! Let’s break down the tasks and write Python code to accomplish each one:
@@ -292,7 +292,7 @@ print("Search for 4:", bst.search(4))
 print("Search for 6:", bst.search(6))
 ```
 ### Critique
-Copilot provides a working implementation of a Binary Search Tree of numbers, in which at each node lesser values are stored in the left subtree and greater values in the right.  The BST uses a hierarchy of TreeNode objects, where the TreeNode class is defined outside of the BST class.  This is okay but not ideal: we would prefer that TreeNode be internal to BST.  As example methods, Copilot provides working implementations of \__init__() (constructor), insert(), inorder_traversal() returning a list, and search() returning True or False.  These are the minimum necessary methods for a useful Binary Search Tree.  Copilot also creates test code to create an empty BST, insert six unique integer values into it, display the inorder_traversal() list, and search() for one value that exists and one value that does not exist in the BST.  This is a reasonable minimum sequence of tests.  We would prefer that this test code be incorporated in such a way that it is not executed if another program imports this BST code as a module.  The code is neatly written, well commented, and uses good variable and method names.  Overall:  Remarkably good code from such a terse prompt.  Of course, the Binary Search Tree is a very well known data structure.  Rating: Good.
+Copilot provides a working implementation of a Binary Search Tree of numbers, in which at each node lesser values are stored in the left subtree and greater values in the right.  The BST uses a hierarchy of TreeNode objects, where the TreeNode class is defined outside of the BST class.  This is okay but not ideal: we would prefer that TreeNode be internal to BST.  As example methods, Copilot provides working implementations of \_\_init\_\_() (constructor), insert(), inorder_traversal() returning a list, and search() returning True or False.  These are the minimum necessary methods for a useful Binary Search Tree.  Copilot also creates test code to create an empty BST, insert six unique integer values into it, display the inorder_traversal() list, and search() for one value that exists and one value that does not exist in the BST.  This is a reasonable minimum sequence of tests.  We would prefer that this test code be incorporated in such a way that it is not executed if another program imports this BST code as a module.  The code is neatly written, well commented, and uses good variable and method names.  Overall:  Remarkably good code from such a terse prompt.  Of course, the Binary Search Tree is a very well known data structure.  Rating: Good.
 ### Example 3.7 prompt:  Revise the Python BST class so that TreeNode is internal to BST, and so that the test code followig the BST class is only executed if this BST class code is the main module.  Add another dozen test values, including some duplicate values, to demonstrate that duplicate values are not stored in the BST.
 ### Generated Results
 ```
