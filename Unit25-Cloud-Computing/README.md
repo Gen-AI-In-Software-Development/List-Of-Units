@@ -256,7 +256,7 @@ That’s it! You’ve successfully deployed a simple “Hello World” service u
 
 ```
 ### Critique
-The solution provided worked well. It should be noted, however, that the solution involved running a local docker container and deploying the function to the container. This is a local cloud FaaS. Rating: Good.
+The solution provided worked well. It should be noted, however, that the solution involved running a local docker container and deploying the function to the container. This is a local cloud FaaS. Since we did not explicitly ask for a remote cloud deployment, the proposed solution was a good one. Our next step, of course, would be to ask how we can deploy the container to the cloud. See exercise 4. Rating: Good.
 
 
 ## Exercises
