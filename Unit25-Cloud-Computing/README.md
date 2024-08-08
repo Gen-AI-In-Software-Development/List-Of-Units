@@ -7,9 +7,9 @@ In this unit, we will ask copilot to assist us in deploying a simple function to
 
 Serverless computing involves the use of a server that is in the cloud and managed by another party. This can be hugely convenient for an organization that wants to focus on code development and would prefer to avoid dealing with the many issues surrounding server administration. This can reduce operational overhead.
 
-The user of the cloud resource (the one who deploys the service) only pays for the resources used.
+The deployer of the cloud resource only pays for the resources used.
 
-This use case involves attempting to deploy functions to Azure Functions[1], AWS Lambda[2], Google Cloud Platform[3], and Oracle supported open source FN Project[4]. If successful, we want to make calls to the functions from a local client.
+This use case involves attempting to deploy functions to Azure Functions[1], AWS Lambda[2], Google Cloud Platform[3], and the Oracle supported open source FN Project[4]. If successful, we want to make calls to the functions from a local client.
 
 Systems such as these are called function-as-a-service (FaaS) cloud platforms.
 
@@ -185,7 +185,7 @@ Save Changes: Click Save to apply the changes
 ```
 
 ### Critique
-The solution provided does not mention that an administrator account is required to
+The first solution provided did not mention that an administrator account was required to
 approve the use of these services. Rating: poor.
 
 ### Example 2.5 I would like to deploy a simple hello world service to FN project. Please provide directions.
@@ -264,11 +264,14 @@ The solution provided worked well. It should be noted, however, that the solutio
 1. Interact with Copilot to create and deploy a "Hello World" function on Microsoft Azure. How would you rate this interaction? Poor, Fair, or Good?
 2. Interact with Copilot to create and deploy a "Hello World" function on AWS Lambda. How would you rate this interaction? Poor, Fair, or Good?
 3. Interact with Copilot to create and deploy a "Hello World" function on Google Cloud Platform. How would you rate this interaction? Poor, Fair, or Good?
-4. Interact with Copilot to create and deploy a "Hello World" function using the FN Project and use Copilot to learn how you you might deploy that service remotely. How would you rate this interaction? Poor, Fair, or Good?
+4. Interact with Copilot to create and deploy a "Hello World" function using the FN Project and use Copilot to learn how you can deploy that service remotely. How would you rate this interaction? Poor, Fair, or Good?
 
 ## References
 
 [1] Azure Functions https://azure.microsoft.com/en-us/products/functions
+
 [2] AWS Lambda https://aws.amazon.com/lambda/
+
 [3] Google Cloud Functions https://cloud.google.com/functions
+
 [4] FN Project https://fnproject.io/
