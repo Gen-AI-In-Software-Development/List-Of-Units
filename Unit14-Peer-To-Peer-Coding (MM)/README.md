@@ -376,7 +376,9 @@ This is much improved. The first peer to run will try to connect to the second p
 
 ## Exercises
 1. Provide Copilot with the code in 14.1 and ask it to generate code that allows the listener to be stopped. Without this code, the listener will continue to listen even after the program halts. How do you rate Copilot's solution? Do you rate it Poor, Fair, or Good?
-2. Use Copilot to help debug 14.3. We want each peer to run for 20 seconds before halting. How do you rate Copilot's solution? Do you rate it Poor, Fair, or Good?
+2. Use Copilot to help debug the chat application in 14.3. We want each peer to run for 20 seconds before halting. How do you rate Copilot's solution? Do you rate it Poor, Fair, or Good?
+3. Peer-to-peer chat is one peer-to-peer application. Ask Copilot to generate code for a different peer-to-peer application. You might look at P2P file sharing or distributed hash tables (DHTs).
+4. How do you rate Copilots ability to generate simple peer-to-peer solutions? Do you rate it Poor, Fair, or Good?  
 
 ## References
 [1] Peer-to-peer networking: https://en.wikipedia.org/wiki/Peer-to-peer
