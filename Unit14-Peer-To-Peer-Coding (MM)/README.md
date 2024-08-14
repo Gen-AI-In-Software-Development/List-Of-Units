@@ -108,7 +108,7 @@ public class Peer implements Runnable {
 This program is written so that a peer is created that listens on port 5000 for incoming requests.
 This listening on port 5000 occurs in a separate thread. The main thread then attempts to visit port 6000. But there is no peer listening on port 6000 and so the main thread crashes and brings down the program.
 
-If we change the main routine's thread to visit port 5000, where we know there is a listening thread, we get an error when we run the program. This is because, on the second run, the thread from the previous attempt is still running and so the port is busy.
+If we now change the main routine's thread to visit port 5000, where we know there is a listening thread, we get an error when we run the program. This is because, on the second run, the thread from the previous attempt is still running and so the port is busy.
 
 To fix these errors, we need to create a listener on a fresh port and visit that port in the main thread.
 
