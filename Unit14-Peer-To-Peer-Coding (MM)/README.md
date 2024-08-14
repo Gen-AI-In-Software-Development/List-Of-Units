@@ -105,11 +105,278 @@ public class Peer implements Runnable {
 ```
 ### Critique
 
+This program is written so that a peer is created that listens on port 5000 for incoming requests.
+This listening on port 5000 occurs in a separate thread. The main thread then attempts to visit port 6000. But there is no peer listening on port 6000 and so the main thread crashes and brings down the program.
 
+If we change the main routine's thread to visit port 5000, where we know there is a listening thread, we get an error when we run the program. This is because, on the second run, the thread from the previous attempt is still running and so the port is busy.
+
+To fix these errors, we need to create a listener on a fresh port and visit that port in the main thread.
+
+The solution proposed by Copilot is not working and will require more debugging. However, it does show how a single program (a peer) can be broken into a client and a server running in separate threads. Rating: Fair.
+
+### Example 14.2 prompt: Please generate a Java program that I can use as a peer to peer chat application. I want to be able to run the same code twice and have two users interact with the two applications.
+
+### Generated Code
+```
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+public class Peer implements Runnable {
+    private ServerSocket serverSocket;
+    private Socket clientSocket;
+    private final int port;
+    private volatile boolean running = true;
+
+    public Peer(int port) {
+        this.port = port;
+    }
+
+    public void startServer() {
+        try {
+            serverSocket = new ServerSocket(port);
+            System.out.println("Server started on port: " + port);
+            while (running) {
+                Socket socket = serverSocket.accept();
+                new Thread(new ConnectionHandler(socket)).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            stopServer();
+        }
+    }
+
+    public void stopServer() {
+        running = false;
+        if (serverSocket != null && !serverSocket.isClosed()) {
+            try {
+                serverSocket.close();
+                System.out.println("Server stopped.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void connectToPeer(String host, int port) {
+        try {
+            clientSocket = new Socket(host, port);
+            System.out.println("Connected to peer: " + host + ":" + port);
+            new Thread(new ConnectionHandler(clientSocket)).start();
+            sendMessage(clientSocket);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendMessage(Socket socket) {
+        try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+             Scanner scanner = new Scanner(System.in)) {
+            String message;
+            while (true) {
+                message = scanner.nextLine();
+                out.println(message);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void run() {
+        startServer();
+    }
+
+    private static class ConnectionHandler implements Runnable {
+        private final Socket socket;
+
+        public ConnectionHandler(Socket socket) {
+            this.socket = socket;
+        }
+
+        @Override
+        public void run() {
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+                String receivedMessage;
+                while ((receivedMessage = in.readLine()) != null) {
+                    System.out.println("Received: " + receivedMessage);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.out.println("Usage: java Peer <port> <peer_port>");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+        int peerPort = Integer.parseInt(args[1]);
+
+        Peer peer = new Peer(port);
+        Thread serverThread = new Thread(peer);
+        serverThread.start();
+
+        // Connect to another peer at the specified port
+        peer.connectToPeer("localhost", peerPort);
+
+        // Stop the server after some time (for demonstration purposes)
+        try {
+            Thread.sleep(10000); // Run the server for 10 seconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        peer.stopServer();
+    }
+}
+```
+### Critique
+In this example, the idea is for two peers to be started with command line arguments representing ports. The first peer might be started with the command: java peer 8090 8092. We intend for the first peer to listen on 8090 and visit port 8092. The second peer will be started with the command: java peer 8092 8090. We intend for it to listen on 8092 and visit 8090. This will work but there is a problem. When the first peer is run, the second has not yet been started. This will cause the first peer to fail - unable to connect to the second peer. Rating: poor.
+
+### Example 14.3 prompt: Continuing with our discussion, will not the first peer to run try to connect to the second peer (that has not yet run) and then crash because the second peer is not yet listening for requests?
+
+### Generated Response with Code
+```
+You’re right! The first peer will indeed try to connect to the second peer, which might not be running yet, leading to a connection failure. To handle this, we can add a retry mechanism to the connectToPeer method, allowing the first peer to keep trying to connect until the second peer is ready.
+
+Here’s an updated version of the Peer class with a retry mechanism:
+
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+public class Peer implements Runnable {
+    private ServerSocket serverSocket;
+    private Socket clientSocket;
+    private final int port;
+    private volatile boolean running = true;
+
+    public Peer(int port) {
+        this.port = port;
+    }
+
+    public void startServer() {
+        try {
+            serverSocket = new ServerSocket(port);
+            System.out.println("Server started on port: " + port);
+            while (running) {
+                Socket socket = serverSocket.accept();
+                new Thread(new ConnectionHandler(socket)).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            stopServer();
+        }
+    }
+
+    public void stopServer() {
+        running = false;
+        if (serverSocket != null && !serverSocket.isClosed()) {
+            try {
+                serverSocket.close();
+                System.out.println("Server stopped.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void connectToPeer(String host, int port) {
+        while (true) {
+            try {
+                clientSocket = new Socket(host, port);
+                System.out.println("Connected to peer: " + host + ":" + port);
+                new Thread(new ConnectionHandler(clientSocket)).start();
+                sendMessage(clientSocket);
+                break;
+            } catch (IOException e) {
+                System.out.println("Failed to connect to peer. Retrying in 2 seconds...");
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ie) {
+                    ie.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private void sendMessage(Socket socket) {
+        try (PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+             Scanner scanner = new Scanner(System.in)) {
+            String message;
+            while (true) {
+                message = scanner.nextLine();
+                out.println(message);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void run() {
+        startServer();
+    }
+
+    private static class ConnectionHandler implements Runnable {
+        private final Socket socket;
+
+        public ConnectionHandler(Socket socket) {
+            this.socket = socket;
+        }
+
+        @Override
+        public void run() {
+            try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+                String receivedMessage;
+                while ((receivedMessage = in.readLine()) != null) {
+                    System.out.println("Received: " + receivedMessage);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.out.println("Usage: java Peer <port> <peer_port>");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+        int peerPort = Integer.parseInt(args[1]);
+
+        Peer peer = new Peer(port);
+        Thread serverThread = new Thread(peer);
+        serverThread.start();
+
+        // Connect to another peer at the specified port
+        peer.connectToPeer("localhost", peerPort);
+
+        // Stop the server after some time (for demonstration purposes)
+        try {
+            Thread.sleep(10000); // Run the server for 10 seconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        peer.stopServer();
+    }
+}
+
+```
+### Critique
+This is much improved. The first peer to run will try to connect to the second peer. If it fails to do so it sleeps for 2 seconds and tries again - repeatedly. But notice that peer.stopServer() never gets called. This will cause confusion and have to be debugged. See Exercise 2. Rating: poor.
 
 
 ## Exercises
-1. In Example 14.1, ....
+1. Provide Copilot with the code in 14.1 and ask it to generate code that allows the listener to be stopped. Without this code, the listener will continue to listen even after the program halts. How do you rate Copilot's solution? Do you rate it Poor, Fair, or Good?
+2. Use Copilot to help debug 14.3. We want each peer to run for 20 seconds before halting. How do you rate Copilot's solution? Do you rate it Poor, Fair, or Good?
 
 ## References
-[1] Downey,...
+[1] Peer-to-peer networking: https://en.wikipedia.org/wiki/Peer-to-peer
