@@ -321,12 +321,13 @@ Rating: Good
 
 
 ## Exercises
-For all the following exercises write a JavaScript program and then convert it to to Typescript
-1. Write  program that generates a random password of a given length.
-2. Write a simple text-based Tic-Tac-Toe game for two players.
-3. Write a function that translates a string to Morse code.
-4. Write a function that performs binary search on a sorted array.
-5. Write a function that checks if a given Sudoku board is valid.
+For all the following exercises use Copilot to write a JavaScript program and then convert it to Typescript.
+1. A program is needed that generates a random password of a given length.
+2. A program is needed that provides simple text-based Tic-Tac-Toe game for two players.
+3. A function is needed that translates a string into Morse code.
+4. A function is needed that performs binary search on a sorted array of integers.
+5. A function is needed that checks if a given Sudoku board is valid.
+6. A main routine is needed that interacts with a user to read a Sudoku board and call the function in exercise 5.
 
 ## References
 
