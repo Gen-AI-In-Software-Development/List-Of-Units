@@ -149,5 +149,4 @@ with a short critique and rating. The ratings will be Poor, Fair, or Good.
 1. In Example 26... To Be Completed
 
 ## References
-[1] A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT
-https://www.dre.vanderbilt.edu/~schmidt/PDF/prompt-patterns.pdf
+[1] White, Jules, Quchen Fu, Sam Hays, Michael Sandborn, Carlos Olea, Henry Gilbert, Ashraf Elnashar, Jesse Spencer-Smith, and Douglas C. Schmidt. “A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT.” arXiv (2023). https://doi.org/10.48550/arXiv.2302.11382
