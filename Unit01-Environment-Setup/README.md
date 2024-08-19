@@ -1,4 +1,4 @@
-# Environment Set Up
+# Unit01 Environment Set Up
 
 ## Introduction
 This module shows how to set up the tools needed to do the rest of the units. You may not need all of the tools - for example, you may need Java but not Python. The two main tools are Copilot, discussed in Part 1, and VS Code, discussed in Part 2. Note that IDE's other than VS Code - for example, IntelliJ or PyCharm, can be set up to use Copilot, but those are not covered here.
