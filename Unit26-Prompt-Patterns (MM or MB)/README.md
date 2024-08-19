@@ -1,6 +1,8 @@
-#  Unit25-Testing-JavaScript-With-Mocha
+#  Unit26-Prompt-Patterns
 
 ## Introduction
+
+The prompts in this unit are motivated by the paper "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"[1].
 
 ## Use Case
 
