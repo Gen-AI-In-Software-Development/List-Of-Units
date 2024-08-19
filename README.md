@@ -3,7 +3,7 @@
 
 ## Part 0. Introduction
 
-[Unit 0. Overview: Description, pre-requisites, and readings](./Unit00-Overview)
+Unit 0. [Overview: Description, pre-requisites, and readings](./Unit00-Overview)
 
 Unit 1. Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup
 
