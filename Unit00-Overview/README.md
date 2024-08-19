@@ -67,11 +67,11 @@ Unit 25. Testing Javascript with Mocha
 
 # Readings
 
-"Harnessing the Power of Generative AI in Transforming Software Engineering Productivity"
-https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/
+[Harnessing the Power of Generative AI in Transforming Software Engineering Productivity]
+(https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/)
 
-"A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"
-https://arxiv.org/abs/2302.11382
+[A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT]
+(https://arxiv.org/abs/2302.11382)
 
 
 # Where does Copilot fit?
