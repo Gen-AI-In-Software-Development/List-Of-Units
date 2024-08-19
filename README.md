@@ -5,7 +5,7 @@
 
 Unit 0. [Overview: Description, pre-requisites, and readings](./Unit00-Overview)
 
-Unit 1. Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup
+Unit 1. [Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup](./Unit01-Environment-Setup (MB))
 
 Unit 2. Problem solving and generating pseudocode from problem statements
 
