@@ -171,7 +171,7 @@ Test Your Cloud Function:
 After deployment, you will receive a URL for your function. Open this URL in your browser to see the “Hello, World!” message.
 ```
 
-An error resulted and was posted back to Copilot. Copilot suggested:
+The deployment step (gcloud functions deploy) caused an error. The error message was posted back to Copilot.  Copilot suggested the following:
 
 ```
 It looks like the ability to create new projects in Google Cloud Platform (GCP) has been disabled by your administrator. To resolve this, you’ll need to ask your administrator to enable project creation. Here are the steps they can follow:
@@ -185,8 +185,8 @@ Save Changes: Click Save to apply the changes
 ```
 
 ### Critique
-The first solution provided did not mention that an administrator account was required to
-approve the use of these services. Rating: poor.
+The first solution that was provided made no mention of the need for an administrator to
+approve the use of the service. Now, we learn that we need one. Rating: poor.
 
 ### Example 2.5 I would like to deploy a simple hello world service to FN project. Please provide directions.
 
