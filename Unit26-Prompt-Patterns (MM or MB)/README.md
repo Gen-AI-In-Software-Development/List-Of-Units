@@ -146,7 +146,7 @@ with a short critique and rating. The ratings will be Poor, Fair, or Good.
 
 
 ## Exercises
-1. In Example 25.
+1. In Example 25... To Be Completed
 
 ## References
 [1] A Prompy Pattern Catalog to Enhance Prompt Engineering with ChatGPT
