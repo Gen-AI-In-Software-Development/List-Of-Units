@@ -2,6 +2,8 @@
 ## Introduction
 In this unit, we’ll learn how to convert JavaScript code to TypeScript using Microsoft Copilot. We’ll review the TypeScript code to ensure it follows best practices and effectively uses TypeScript features.
 
+These examples use Microsoft copilot provided here: [Microsoft copilot](https://copilot.microsoft.com/).
+
 ## Use Case
 TypeScript is a superset of JavaScript that adds static typing and other features. It helps developers catch errors early, write more maintainable code, and improve overall code quality. TypeScript is especially useful for large projects and teams, as it enforces coding standards and reduces bugs.
 
@@ -138,6 +140,9 @@ for (let i = 1; i <= 100; i++) {
 }
 
 ```
+
+Please convert the JavaScript to TypeScript.
+
 ### Generated TypeScript Code
 ```
 for (let i: number = 1; i <= 100; i++) {
@@ -173,9 +178,12 @@ for (let y = 0; y < size; y++) {
 console.log(board);
 
 ```
+
+Please convert the JavaScript to TypeScript.
+
 ### Generated TypeScript Code
 ```
- let size: number = 8;
+let size: number = 8;
 let board: string = "";
 
 for (let y: number = 0; y < size; y++) {
@@ -239,6 +247,8 @@ getUserInput();
 
 ```
 
+Please convert the JavaScript to TypeScript.
+
 ### Generated TypeScript Code
 ```
 import * as readline from 'readline';
@@ -301,6 +311,9 @@ var updatedStory = replaceQuotes(story);
 console.log(updatedStory);
 
 ```
+
+Please convert the JavaScript to TypeScript.
+
 ### Generated TypeScript Code
 ```
 function replaceQuotes(text: string): string {
@@ -328,6 +341,7 @@ For all the following exercises use Copilot to write a JavaScript program and th
 4. A function is needed that performs binary search on a sorted array of integers.
 5. A function is needed that checks if a given Sudoku board is valid.
 6. A main routine is needed that interacts with a user to read a Sudoku board and call the function in exercise 5.
+7. A program is needed that solves a standard Sudoku puzzle provided by a user.
 
 ## References
 
