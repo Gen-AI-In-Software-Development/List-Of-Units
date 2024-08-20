@@ -8,7 +8,7 @@ These examples use Microsoft copilot provided here: [Microsoft copilot](https://
 ## Use Case
 In Units 12 and 13 we explored some systems that used a client-server model. In this Unit, we consider systems where each node acts as both a client and a server.
 
-Peer-to-peer (P2P) [1] computer systems provide a more decentralized network where computation and resources exist on multiple servers. P2P systems can be designed to avoid a single point of failure, which improves resiliency and scalability. If one node fails, the system can continue to operate. If one node fails, the system can continue to operate. To increase capacity for resources or computation, more nodes can be added.
+Peer-to-peer (P2P) [1] computer systems provide a more decentralized network where computation and resources exist on multiple servers. P2P systems can be designed to avoid a single point of failure, which improves resiliency and scalability. If one node fails, the system can continue to operate. To increase capacity for resources or computation, more nodes can be added.
 
 Examples of peer-to-peer systems include Bitcoin, Ethereum, BitTorrent, Gnutella, Napster, and decentralized hash tables such as Kademlia and Microsoft Pastry. These systems enable applications such as decentralized file sharing, table lookup services, and cryptocurrencies.
 
