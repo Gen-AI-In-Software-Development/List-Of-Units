@@ -178,9 +178,9 @@ public class SimpleClient {
 Copilot went a step further than what the prompt requested: it created a new class, ServerProxy, that contains the method ***sendMessage()*** that encapsulates the communication code (the class constructor simply sets the address and port number). Now the SimpleClient code is simplified: its job is to interact with the user; it delegates the communication to the ServerProxy class, which it instantiates before using. Rating: Good.
 
 ## Exercises
-1. Write a client for the Point class from Unit06. The client should prompt the user for the two points; the server will return the distance between those points, which the client should display.
+1. Using Copilot, write a client for the Point class from Unit06. The client should prompt the user for the two points; the server will return the distance between those points, which the client should display.
 
-2. Write a client that implements the user interface for the calculator program from Unit06. The client should prompt the user for the operation and the operands and send that, as a string, to the server, then display the answer returned by the server. (See Unit13 for the corresponding server example.)
+2. Using Copilot, write a client that implements the user interface for the calculator program from Unit06. The client should prompt the user for the operation and the operands and send that, as a string, to the server, then display the answer returned by the server. (See Unit13 for the corresponding server example.)
 
 ## References
 [1] https://docs.oracle.com/cd/F49540_01/DOC/inter.815/a67296/im_examp.htm
