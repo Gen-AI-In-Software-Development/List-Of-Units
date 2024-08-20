@@ -308,7 +308,7 @@ Rating: Good
 2. Using copilot, create a Java program that reads a grade book in XML and allows a user (working at the terminal) to modify scores as they are presented. A new grade book, with the updated scores, will be generated. Be sure to test your solution and give copilot a rating of poor, fair, or good.
 3. Using copilot, replace the Document Type Definition (DTD) for gradebook.xml with an XML Schema Definition Language (XSDL) grammar.
 4. Ask copilot why XSDL may be preferable to DTD's.
-5. Find an example XML file on the web and ask copilot to generate code (in Python or Java) that allows you to interact with the document on some way.
+5. Find an example XML file on the web and ask copilot to generate code (in Python or Java) that allows you to interact with the document in some way. You might ask for it to read and then display the document without showing angle brackets (elements). Or, you might request that it allows the user to change the values of attributes. Attributes are found within elements. For example, the anchor element in HTML has an href attribute.
 6. Ask copilot why a message marked up with XML may be better than a binary message. Rate the response from copilot as Poor, Fair, or Good. Ask copilot why a message marked up in binary may be better than the same message marked up in XML. Rate the response from copilot as Poor, Fair, or Good.
 7. Ask copilot to compare and contrast XML messages with JSON messages. Rate the response from copilot as Poor, Fair, or Good.
 8. Give copilot the entire file that you are currently reading and ask it to build a similar file but one that uses JSON rather than XML. Rate the response from copilot as Poor, Fair, or Good.
