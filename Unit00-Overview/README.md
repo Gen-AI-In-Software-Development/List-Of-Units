@@ -84,6 +84,11 @@ In this repository, we will experiment with how Copilot might assist in the soft
 
 Always keep in mind: "A fool with a tool is still a fool." - Grady Booch
 
+To do:
+
+    Look at Google's tools to include LLMs in IDE.
+    Consider feeding code and error back into the LLM.
+    
 # GitHub Mechanics: Updating a Unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
