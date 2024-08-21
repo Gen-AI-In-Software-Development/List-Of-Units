@@ -88,6 +88,10 @@ To do:
 
     Look at Google's tools to include LLMs in IDE.
     Consider feeding code and error back into the LLM.
+    Meet with Dan and review List-Of-Units.
+    Prepare 5 slides for Faculty meeting.
+    Add two units: Data Structures, Algorithms
+
     
 # GitHub Mechanics: Updating a Unit
 
