@@ -1,5 +1,5 @@
 # Unit00-Overview
-## Revolutionizing Code Creation: Generative AI in Software Development
+## Investigating Generative AI in Software Development
 
 Description: Generative AI has the potential to significantly enhance developer productivity.
 This course delves into how Microsoft Copilot can be used for various tasks, including code generation, chat assistance, refactoring, unit testing, data file manipulation, and documentation.
@@ -92,7 +92,7 @@ To do:
     Prepare 5 slides for Faculty meeting.
     Add two units: Data Structures, Algorithms
 
-    
+
 # GitHub Mechanics: Updating a Unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
