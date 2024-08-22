@@ -1,4 +1,4 @@
-#  Unit22-Generate-Python-Code-That-Uses-AI-Libraries
+#  Unit22-Algorithms
 ## Introduction
 ## Compelling Use Case
 ## Several Solved Examples Using Copilot
