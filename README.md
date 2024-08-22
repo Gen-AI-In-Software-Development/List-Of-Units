@@ -56,18 +56,25 @@ Unit 18. [Refactor code by introducing design patterns into existing code](./Uni
 
 Unit 19. [Generate Python code that uses AI libraries](./Unit19-Generate-Python-Code-That-Uses-AI-Libraries)
 
+Unit 20. [Building a neural network in Java](./Unit20-Neural_Network_in_Java)
+
+## Part 7. Data Structures and Algorithms
+
+Unit 21. [Data Structures](./Unit19-Data-Structures)
+Unit 22. [Algorithms](./Unit20-Algorithms)
+
 ## Part 7. Other Topics
 
-Unit 20. [C++ Examples](./Unit20-C++-Examples)
+Unit 23. [C++ Examples](./Unit20-C++-Examples)
 
-Unit 21. [Testing C++ with Google Test and Boost](./Unit21-Testing-C++-With-Google-Test-And-Boost)
+Unit 24. [Testing C++ with Google Test and Boost](./Unit21-Testing-C++-With-Google-Test-And-Boost)
 
-Unit 22. [Javascript Examples](./Unit22-JavaScript-Examples)
+Unit 25. [Javascript Examples](./Unit22-JavaScript-Examples)
 
-Unit 23. [Translating JavaScript to TypeScript](./Unit23-Translating-JavaScript-To-TypeScript)
+Unit 26. [Translating JavaScript to TypeScript](./Unit23-Translating-JavaScript-To-TypeScript)
 
-Unit 24. [Detecting security vulnerabilities in client server code](./Unit24-Detecting-Security-Vulnerablities-In-Client-Server-Code)
+Unit 27. [Detecting security vulnerabilities in client server code](./Unit24-Detecting-Security-Vulnerablities-In-Client-Server-Code)
 
-Unit 25. [Cloud Computing](./Unit25-Cloud-Computing)
+Unit 28. [Cloud Computing](./Unit25-Cloud-Computing)
 
-Unit 26. [Prompt Patterns](./Unit26-Prompt-Patterns)
+Unit 29. [Prompt Patterns](./Unit26-Prompt-Patterns)
