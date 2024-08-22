@@ -60,21 +60,22 @@ Unit 20. [Building a neural network in Java](./Unit20-Neural_Network_in_Java)
 
 ## Part 7. Data Structures and Algorithms
 
-Unit 21. [Data Structures](./Unit19-Data-Structures)
-Unit 22. [Algorithms](./Unit20-Algorithms)
+Unit 21. [Data Structures](./Unit21-Data-Structures)
+
+Unit 22. [Algorithms](./Unit22-Algorithms)
 
 ## Part 7. Other Topics
 
-Unit 23. [C++ Examples](./Unit20-C++-Examples)
+Unit 23. [C++ Examples](./Unit23-C++-Examples)
 
-Unit 24. [Testing C++ with Google Test and Boost](./Unit21-Testing-C++-With-Google-Test-And-Boost)
+Unit 24. [Testing C++ with Google Test and Boost](./Unit24-Testing-C++-With-Google-Test-And-Boost)
 
-Unit 25. [Javascript Examples](./Unit22-JavaScript-Examples)
+Unit 25. [Javascript Examples](./Unit25-JavaScript-Examples)
 
-Unit 26. [Translating JavaScript to TypeScript](./Unit23-Translating-JavaScript-To-TypeScript)
+Unit 26. [Translating JavaScript to TypeScript](./Unit26-Translating-JavaScript-To-TypeScript)
 
-Unit 27. [Detecting security vulnerabilities in client server code](./Unit24-Detecting-Security-Vulnerablities-In-Client-Server-Code)
+Unit 27. [Detecting security vulnerabilities in client server code](./Unit27-Detecting-Security-Vulnerablities-In-Client-Server-Code)
 
-Unit 28. [Cloud Computing](./Unit25-Cloud-Computing)
+Unit 28. [Cloud Computing](./Unit28-Cloud-Computing)
 
-Unit 29. [Prompt Patterns](./Unit26-Prompt-Patterns)
+Unit 29. [Prompt Patterns](./Unit29-Prompt-Patterns)
