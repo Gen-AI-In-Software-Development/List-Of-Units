@@ -1,4 +1,4 @@
-# Unit-28-Cloud-Computing
+# Unit-25-Cloud-Computing
 ## Introduction
 
 In this unit, we will ask copilot to assist us in deploying a simple function to Azure Functions, AWS Lambda, Google Cloud Platform, and the FN Project.

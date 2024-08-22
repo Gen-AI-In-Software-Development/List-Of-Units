@@ -1,4 +1,4 @@
-#  Unit26-Translating-JavaScript-To-TypeScript
+#  Unit23-Translating-JavaScript-To-TypeScript
 ## Introduction
 In this unit, we’ll learn how to convert JavaScript code to TypeScript using Microsoft Copilot. We’ll review the TypeScript code to ensure it follows best practices and effectively uses TypeScript features.
 
