@@ -116,7 +116,7 @@ int main() {
 
 
 
-### Critique: The complaints from Copilot are correct and its proposed solution, ignoring the complaint about hardcoding credentials, is also fine. Using the fgets() function rather than gets() will ensure that the correct number of characters are read from the keyboard. Note that a modern compiler will also warn the developer that this code is insecure. But Copilot goes a step further. It sees that this program is attempting to authentic a user and provides suggestions on how to improve the authentication code. It is working at a higher level than a compiler. Rating: Good.
+### Critique: The complaints from Copilot are correct and its proposed solution, ignoring the complaint about hardcoding credentials, is also fine. Using the fgets() function rather than gets() will ensure that the correct number of characters are read from the keyboard. Note that a modern compiler will also warn the developer that this code is insecure. But Copilot goes a step further. It sees that this program is attempting to authenticate a user and provides suggestions on how to improve the authentication code. It is working at a higher level than a compiler. Rating: Good.
 
 
 ## Exercises
