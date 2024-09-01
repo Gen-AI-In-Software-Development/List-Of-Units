@@ -125,7 +125,7 @@ int main() {
 
 2. Search the web for an example of a Cross Site Scripting attack. Give it to Copilot and ask it to evaluate the code for security vulnerabilities . How did it do? Poor, Fair, or Good?
 
-3. Search the web for an example of a Insecure Deserialization attack. Give it to Copilot and ask it to evaluate the code for security vulnerabilities . How did it do? Poor, Fair, or Good?
+3. Search the web for an example of an Insecure Deserialization attack. Give it to Copilot and ask it to evaluate the code for security vulnerabilities . How did it do? Poor, Fair, or Good?
 
 # References
 [1] [Cyber Security and Infrastructure Security Agency](https://www.cisa.gov/known-exploited-vulnerabilities-catalog)
