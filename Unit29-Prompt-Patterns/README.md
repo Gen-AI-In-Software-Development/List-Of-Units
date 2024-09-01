@@ -111,13 +111,18 @@ Feel free to try another Linux command!
 ```
 ### Critique: Copilot acted as if it were a linux terminal and provided the corresponding DOS command. Rating: Good.
 
-### Example 26.5 The Question Refinement Pattern prompt:
+### Example 26.5 The Question Refinement Pattern prompt: From now on, whenever I ask a question, suggest a better version of the question to use instead. Prompt me if I would like to use the better version instead. Question: How can my IoT devices communicate with a wider variety of systems?
 
 ### Generated Code
 ```
+Sure, I can help with that! Here’s a refined version of your question:
+
+“What are the best methods to enable my IoT devices to communicate with a broader range of systems?”
+
+Would you like to use this version instead?
 
 ```
-### Critique
+### Critique: This pattern gives copilot a chance to propose a better question than that which was originally proposed. Rating: Fair
 
 ### Example 26.6 The Alternative Approaches prompt:
 
@@ -212,6 +217,7 @@ Feel free to try another Linux command!
 
 ```
 ### Critique
+
 
 
 ## Exercises
