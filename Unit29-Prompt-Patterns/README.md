@@ -35,16 +35,45 @@ So, the path from A to F is: A → B → C → E → D → F.
 ### Example 26.2 The Output Automater Pattern prompt: I am performing the following steps using the command line on my MAC. I would like the steps to be properly placed in a batch file. I am using the bash shell and want to execute the steps with one command. The only command line parameter will be the name of the directory whose README.md has been modified. Every time I work on a README.md file in a directory, I do the following from just above that directory:
 
 git add MyModifiedDirectory
+
+git commit -m "Made improvements to my unit"
+
+git fetch origin
+
+git merge origin/master -m "Some good commit message here"
+
+git push origin master
+
+### Generated Code
+```
+#!/bin/bash
+
+# Check if the directory name is provided
+if [ -z "$1" ]; then
+  echo "Usage: $0 <directory>"
+  exit 1
+fi
+
+DIRECTORY=$1
+
+# Navigate to the parent directory
+cd "$(dirname "$DIRECTORY")"
+
+# Perform the git operations
+git add "$DIRECTORY"
 git commit -m "Made improvements to my unit"
 git fetch origin
 git merge origin/master -m "Some good commit message here"
 git push origin master
 
-### Generated Code
-```
+To use this script:
+
+Save the script to a file named update_readme.sh.
+Make the script executable by running chmod +x update_readme.sh.
+Execute the script with the directory name as a parameter, like this: ./update_readme.sh MyModifiedDirectory.
 
 ```
-### Critique
+### Critique: This script and the included directions worked. 
 
 ### Example 26.3 The Flipped Interaction Pattern prompt:
 
