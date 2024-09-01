@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The prompts in this unit are motivated by the paper "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"[1]. The pattern names are from that paper and here, we provide example prompts and responses based on those patterns.
+The prompts in this unit are inspired by the paper "A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT"[1]. The pattern names are taken from that paper, and here we provide example prompts and responses based on those patterns.
 
 For a complete explanation of each pattern, the reader should consult the paper[1].
 
