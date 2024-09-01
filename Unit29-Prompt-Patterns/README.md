@@ -73,23 +73,43 @@ Make the script executable by running chmod +x update_readme.sh.
 Execute the script with the directory name as a parameter, like this: ./update_readme.sh MyModifiedDirectory.
 
 ```
-### Critique: This script and the included directions worked. 
+### Critique: This script and the included directions work. A minor concern is the inclusion of the line cd "$(dirname "$DIRECTORY")". This will make the current working directory the parent of the selected specified directory. This is fine but is unnecessary since we are executing these commands from just above the specified directory. It is more than what we requested and may cause confusion. Rating: Fair.
 
-### Example 26.3 The Flipped Interaction Pattern prompt:
+### Example 26.3 The Flipped Interaction Pattern prompt: From now on, I would like for you to ask me questions about a Java application that I would like to use to demonstrate cryptographic hashing. When you have enough information from me, please generate the solution.
+
+### Generated Response
+```
+Got it! Let’s start by gathering some details about your Java application. Here are a few questions to get us going:
+
+What specific cryptographic hashing algorithm would you like to demonstrate (e.g., SHA-256, MD5, etc.)?
+What is the main purpose of your application? Is it for educational purposes, a specific project, or something else?
+What kind of data will you be hashing (e.g., text, files, passwords)?
+Do you have any specific requirements for the user interface? Should it be a console application, a GUI, or something else?
+Are there any additional features you want to include, such as verifying hashes, comparing hashes, or generating salts?
+Feel free to answer these questions, and we can proceed from there!
+
+```
+### Critique: These questions are all appropriate and would allow the tool to generate a Java solution. Rating: Good.
+
+### Example 26.4 The Persona Pattern prompt: I would like to teach DOS commands to a linux user. Please pretend to be a linux terminal. When I type a linux command do two things: show the result of the command and provide the corresponding DOS command.
 
 ### Generated Code
 ```
+Sent by you:
+ls
+Copilot
+Sent by Copilot:
+# Linux Terminal Output
+file1.txt  file2.txt  directory1  directory2
+
+DOS Command:
+
+dir
+
+Feel free to try another Linux command!
 
 ```
-### Critique
-
-### Example 26.4 The Persona Pattern prompt:
-
-### Generated Code
-```
-
-```
-### Critique
+### Critique: Copilot acted as if it were a linux terminal and provided the corresponding DOS command. Rating: Good.
 
 ### Example 26.5 The Question Refinement Pattern prompt:
 
