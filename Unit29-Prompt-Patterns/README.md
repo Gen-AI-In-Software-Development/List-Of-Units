@@ -438,6 +438,9 @@ Would you like to use this version instead?
 
 2. Continue with Example 26.1 and ask Copilot to find the longest path between two vertices in a graph. Use a larger graph than is shown in the example and include edge weights. Note that the longest path problem is NP-Hard. Evaluate its performance as Poor, Fair, or Good.
 
+3. See 26.11 and ask Copilot to generate the correct HTML/MathML that shows that the integral of x is x to the second power plus a constant. We want to view the integral as it would look in a calculus text. How did Copilot do? Was it poor, fair, or good?
+
+4. See 26.11 and ask Copilot to generate the correct HTML/MathML that shows that the sum of 1/n^2 for all integers n from 1 to infinity is pi^2 over 6. In a browser, it should appear as it would in a text book. How did Copilot do? Was it poor, fair, or good?  
 
 
 ## References
