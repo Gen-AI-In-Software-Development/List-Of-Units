@@ -163,13 +163,226 @@ Would you like to use this version instead?
 
 ```
 ### Critique
-### Example 26.11 The Visualization Generator Pattern prompt:
+
+### Example 26.11.1 The Visualization Generator Pattern prompt: Newton's Binomial Expansion states that the quantity (a + b) to the n'th power is the sum, for r = 0 to n, of the quantity n choose r times a to the n minus r times b to the r. Please provide me with an html document, containing mathml, that shows Netwon's binomial expansion using sigma notation. I expect to be able to view the result in a browser with the label "Newton's Binomial Expansion". Thank you.
 
 ### Generated Code
 ```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Binomial Expansion</title>
+</head>
+<body>
+    <h1>Newton's Binomial Expansion</h1>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <msup>
+                <mrow>
+                    <mo>(</mo>
+                    <mi>a</mi>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                    <mo>)</mo>
+                </mrow>
+                <mi>n</mi>
+            </msup>
+            <mo>=</mo>
+            <mo>∑</mo>
+            <mrow>
+                <mrow>
+                    <mi>r</mi>
+                    <mo>=</mo>
+                    <mn>0</mn>
+                </mrow>
+                <mrow>
+                    <mi>n</mi>
+                </mrow>
+            </mrow>
+            <mrow>
+                <mrow>
+                    <mo>(</mo>
+                    <mfrac linethickness="0">
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>r</mi>
+                        </mrow>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+                <msup>
+                    <mi>a</mi>
+                    <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mi>r</mi>
+                    </mrow>
+                </msup>
+                <msup>
+                    <mi>b</mi>
+                    <mi>r</mi>
+                </msup>
+            </mrow>
+        </mrow>
+    </math>
+</body>
+</html>
 
 ```
-### Critique
+
+<img src="images/Attempt1.png" width="600"/>
+
+### Critique: The HTML document contains mathml and, when loaded into a browser, shows Newton's Binomial Expansion. However, it does not show r = 0 to n on the summation symbol. Rating: poor.
+
+### Example 26.11.2: In the answer that you provided, I cannot see r = 0 to r = n on the summation symbol. Please provide a better solution.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Binomial Expansion</title>
+</head>
+<body>
+    <h1>Newton's Binomial Expansion</h1>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <msup>
+                <mrow>
+                    <mo>(</mo>
+                    <mi>a</mi>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                    <mo>)</mo>
+                </mrow>
+                <mi>n</mi>
+            </msup>
+            <mo>=</mo>
+            <munder>
+                <mo>∑</mo>
+                <mrow>
+                    <mrow>
+                        <mi>r</mi>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                    </mrow>
+                    <mrow>
+                        <mi>n</mi>
+                    </mrow>
+                </mrow>
+            </munder>
+            <mrow>
+                <mrow>
+                    <mo>(</mo>
+                    <mfrac linethickness="0">
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>r</mi>
+                        </mrow>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+                <msup>
+                    <mi>a</mi>
+                    <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mi>r</mi>
+                    </mrow>
+                </msup>
+                <msup>
+                    <mi>b</mi>
+                    <mi>r</mi>
+                </msup>
+            </mrow>
+        </mrow>
+    </math>
+</body>
+</html>
+
+```
+<img src="images/Attempt2.png" width="600"/>
+
+### Critique: The HTML/MathML loads into a browser but the variable n should appear on the top of the summation symbol. Rating: poor.
+
+### Example 26.11.3 Please place the value n on top of the summation symbol.
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newton's Binomial Expansion</title>
+</head>
+<body>
+    <h1>Newton's Binomial Expansion</h1>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <msup>
+                <mrow>
+                    <mo>(</mo>
+                    <mi>a</mi>
+                    <mo>+</mo>
+                    <mi>b</mi>
+                    <mo>)</mo>
+                </mrow>
+                <mi>n</mi>
+            </msup>
+            <mo>=</mo>
+            <munderover>
+                <mo>∑</mo>
+                <mrow>
+                    <mi>r</mi>
+                    <mo>=</mo>
+                    <mn>0</mn>
+                </mrow>
+                <mi>n</mi>
+            </munderover>
+            <mrow>
+                <mrow>
+                    <mo>(</mo>
+                    <mfrac linethickness="0">
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                        <mrow>
+                            <mi>r</mi>
+                        </mrow>
+                    </mfrac>
+                    <mo>)</mo>
+                </mrow>
+                <msup>
+                    <mi>a</mi>
+                    <mrow>
+                        <mi>n</mi>
+                        <mo>-</mo>
+                        <mi>r</mi>
+                    </mrow>
+                </msup>
+                <msup>
+                    <mi>b</mi>
+                    <mi>r</mi>
+                </msup>
+            </mrow>
+        </mrow>
+    </math>
+</body>
+</html>
+```
+
+<img src="images/Final.png" width="600"/>
+
+### Critique: This provides a nice display of the formula. Rating: Good
+
+
 ### Example 26.12 The Game Play Pattern prompt:
 
 ### Generated Code
