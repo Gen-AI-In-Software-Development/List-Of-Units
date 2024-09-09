@@ -236,7 +236,7 @@ Would you like to use this version instead?
 
 <img src="images/Attempt1.png" width="600"/>
 
-### Critique: The HTML document contains mathml and, when loaded into a browser, shows Newton's Binomial Expansion. However, it does not show r = 0 to n on the summation symbol. Rating: poor.
+### Critique: The HTML document contains mathml and, when loaded into a browser, shows Newton's Binomial Expansion. However, it does not show r = 0 to n on the summation symbol. The "0n" makes no sense. Rating: poor.
 
 ### Example 26.11.2: In the answer that you provided, I cannot see r = 0 to r = n on the summation symbol. Please provide a better solution.
 
