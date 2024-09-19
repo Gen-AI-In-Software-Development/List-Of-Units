@@ -6,7 +6,7 @@ These examples use Microsoft copilot provided here: [Microsoft copilot](https://
 
 ## Use Case
 
-In some case, we write code but need to add documentation. In other cases, we might want to write documentation first and have Copilot generate the code.
+We often write code and need to add documentation. In other cases, we might want to write documentation first and have Copilot generate the code.
 
 In this unit, we explore these two use cases.
 
@@ -82,7 +82,7 @@ server.listen(port, function() {
 ```
 
 ### Critique
-This is very well done. Copilot explained that messages are not sent back to the message sender. In addition, the two event listeners handle different event types and Copilot explained this well. Rating: Good. 
+This is very well done. Copilot explained that messages are not sent back to the message sender. In addition, the two event listeners handle different event types and Copilot explained this well. Rating: Good.
 
 
 
