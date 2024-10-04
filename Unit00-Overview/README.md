@@ -71,6 +71,7 @@ Unit 25. Testing Javascript with Mocha
 
 [A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT](https://arxiv.org/abs/2302.11382)
 
+[A Paper critical of this approach](https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html)
 
 # Where does Copilot fit?
 
