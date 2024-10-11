@@ -84,10 +84,164 @@ server.listen(port, function() {
 ### Critique
 This is very well done. Copilot explained that messages are not sent back to the message sender. In addition, the two event listeners handle different event types and Copilot explained this well. Rating: Good.
 
+### Example 5.2 prompt: Please generate a complete Java program from the following documentation:
 
+// Post-condition: An empty X and O board is displayed in the console
+void showBoard()
+
+// Pre-condition: An X and O board is provided as input.
+// Post-condition: The board is modified with a new X at a new row and column.
+void getXMoveFromUser(char board[][])
+
+// Pre-condition: An X and O board is provided as input.
+// Post-condition: The board is modified with a new O at a new row and column.
+void getOMoveFromUser(char board[][])
+
+// Post-condition: returns true if X is a winner
+boolean x-is-a-winner(char board[])
+
+// Post-condition: returns true if O is a winner
+boolean o-is-a-winner(char board[])
+
+// interact with a user and allow the user to select moves.
+// the x moves always move first.
+// Stop when we have a winner
+public void main()
+
+```
+import java.util.Scanner;
+
+public class TicTacToe {
+
+    public static void main(String[] args) {
+        char[][] board = new char;
+        initializeBoard(board);
+        showBoard(board);
+
+        while (true) {
+            getXMoveFromUser(board);
+            showBoard(board);
+            if (xIsAWinner(board)) {
+                System.out.println("X is the winner!");
+                break;
+            }
+            if (isBoardFull(board)) {
+                System.out.println("It's a draw!");
+                break;
+            }
+
+            getOMoveFromUser(board);
+            showBoard(board);
+            if (oIsAWinner(board)) {
+                System.out.println("O is the winner!");
+                break;
+            }
+            if (isBoardFull(board)) {
+                System.out.println("It's a draw!");
+                break;
+            }
+        }
+    }
+
+    // Initialize the board with empty spaces
+    public static void initializeBoard(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                board[i][j] = ' ';
+            }
+        }
+    }
+
+    // Display the board
+    public static void showBoard(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                System.out.print(board[i][j]);
+                if (j < board[i].length - 1) System.out.print("|");
+            }
+            System.out.println();
+            if (i < board.length - 1) System.out.println("-----");
+        }
+    }
+
+    // Get X move from user
+    public static void getXMoveFromUser(char[][] board) {
+        Scanner scanner = new Scanner(System.in);
+        int row, col;
+        while (true) {
+            System.out.print("Enter row and column for X (0, 1, or 2): ");
+            row = scanner.nextInt();
+            col = scanner.nextInt();
+            if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ') {
+                board[row][col] = 'X';
+                break;
+            } else {
+                System.out.println("Invalid move. Try again.");
+            }
+        }
+    }
+
+    // Get O move from user
+    public static void getOMoveFromUser(char[][] board) {
+        Scanner scanner = new Scanner(System.in);
+        int row, col;
+        while (true) {
+            System.out.print("Enter row and column for O (0, 1, or 2): ");
+            row = scanner.nextInt();
+            col = scanner.nextInt();
+            if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == ' ') {
+                board[row][col] = 'O';
+                break;
+            } else {
+                System.out.println("Invalid move. Try again.");
+            }
+        }
+    }
+
+    // Check if X is a winner
+    public static boolean xIsAWinner(char[][] board) {
+        return checkWinner(board, 'X');
+    }
+
+    // Check if O is a winner
+    public static boolean oIsAWinner(char[][] board) {
+        return checkWinner(board, 'O');
+    }
+
+    // Check if the board is full
+    public static boolean isBoardFull(char[][] board) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // Check if a player has won
+    public static boolean checkWinner(char[][] board, char player) {
+        // Check rows and columns
+        for (int i = 0; i < 3; i++) {
+            if ((board[i] == player && board[i] == player && board[i] == player) ||
+                    (board[i] == player && board[i] == player && board[i] == player)) {
+                return true;
+            }
+        }
+        // Check diagonals
+        if ((board == player && board == player && board == player) ||
+                (board == player && board == player && board == player)) {
+            return true;
+        }
+        return false;
+    }
+}
+```
+### Critique
+This appears to be on the right track. However, the compiler gives a syntax error on the line "char[][] board = new char;". This is not correct Java code.
 
 ## Exercises
-1. A
+1. Can you get CoPilot to generate a good TicTacToe program from documentation?
 
 ## References
-[1] This
