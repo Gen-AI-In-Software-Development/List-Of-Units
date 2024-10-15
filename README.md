@@ -68,7 +68,7 @@ Unit 21. [Data Structures and Algorithms](./Unit21-Data-Structures-And-Algorithm
 
 Unit 22. [C++ Examples](./Unit22-C++-Examples)
 
-Unit 23. [C++ Examples](./Unit23-Theoretical-Computer-Science)
+Unit 23. [Theoretical Computer Science](./Unit23-Theoretical-Computer-Science)
 
 Unit 24. [JavaScript Examples](./Unit24-JavaScript-Examples)
 
