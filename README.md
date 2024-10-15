@@ -64,7 +64,7 @@ Unit 20. [Building a neural network in Java](./Unit20-Neural_Network_in_Java)
 
 Unit 21. [Data Structures and Algorithms](./Unit21-Data-Structures-And-Algorithms)
 
-## Part 7. Other Topics
+## Part 8. Other Topics
 
 Unit 22. [C++ Examples](./Unit22-C++-Examples)
 
