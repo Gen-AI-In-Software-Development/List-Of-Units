@@ -1,4 +1,4 @@
-# Revolutionizing Code Creation: Generative AI in Software Development
+# Learning Generative AI in Software Development
 
 
 ## Part 0. Introduction
