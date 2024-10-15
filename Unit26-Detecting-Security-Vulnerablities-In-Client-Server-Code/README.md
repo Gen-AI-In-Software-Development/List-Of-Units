@@ -1,4 +1,4 @@
-#  Unit27-Detecting-Security-Vulnerablities-In-Client-Server-Code
+#  Unit26-Detecting-Security-Vulnerablities-In-Client-Server-Code
 
 ## Introduction
 
@@ -16,7 +16,7 @@ The source code examples provided to Copilot have well known vulnerabilities.
 
 We will show each prompt that includes source code and show Copilot's response.  We will follow each example with a short critique and rating. The ratings will be Poor, Fair, or Good.
 
-### Example 27.1 prompt: I am concerned about security vulnerabilities in my code. Please check the following C program:
+### Example 26.1 prompt: I am concerned about security vulnerabilities in my code. Please check the following C program:
 
 ```
 #include <stdio.h>
