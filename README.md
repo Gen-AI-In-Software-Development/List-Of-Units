@@ -7,9 +7,11 @@ Unit 0. [Overview: Description, pre-requisites, and readings](./Unit00-Overview)
 
 Unit 1. [Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup](./Unit01-Environment-Setup)
 
-Unit 2. [Problem solving and generating pseudocode from problem statements](./Unit02-Problem-Soving-And-Pseudocode)
+
 
 ## Part 1. Programming
+
+Unit 2. [Problem solving and generating pseudocode from problem statements](./Unit02-Problem-Soving-And-Pseudocode)
 
 Unit 3. [Java examples](Unit03-Java-Examples)
 
@@ -60,22 +62,20 @@ Unit 20. [Building a neural network in Java](./Unit20-Neural_Network_in_Java)
 
 ## Part 7. Data Structures and Algorithms
 
-Unit 21. [Data Structures](./Unit21-Data-Structures)
-
-Unit 22. [Algorithms](./Unit22-Algorithms)
+Unit 21. [Data Structures and Algorithms](./Unit21-Data-Structures-And-Algorithms)
 
 ## Part 7. Other Topics
 
-Unit 23. [C++ Examples](./Unit23-C++-Examples)
+Unit 22. [C++ Examples](./Unit22-C++-Examples)
 
-Unit 24. [Testing C++ with Google Test and Boost](./Unit24-Testing-C++-With-Google-Test-And-Boost)
+Unit 23. [C++ Examples](./Unit23-Theoretical-Computer-Science)
 
-Unit 25. [Javascript Examples](./Unit25-JavaScript-Examples)
+Unit 24. [JavaScript Examples](./Unit24-JavaScript-Examples)
 
-Unit 26. [Translating JavaScript to TypeScript](./Unit26-Translating-JavaScript-To-TypeScript)
+Unit 25. [Translating JavaScript to TypeScript](./Unit26-Translating-JavaScript-To-TypeScript)
 
-Unit 27. [Detecting security vulnerabilities in client server code](./Unit27-Detecting-Security-Vulnerablities-In-Client-Server-Code)
+Unit 26. [Detecting security vulnerabilities in client server code](./Unit27-Detecting-Security-Vulnerablities-In-Client-Server-Code)
 
-Unit 28. [Cloud Computing](./Unit28-Cloud-Computing)
+Unit 27. [Cloud Computing](./Unit28-Cloud-Computing)
 
-Unit 29. [Prompt Patterns](./Unit29-Prompt-Patterns)
+Unit 28. [Prompt Patterns](./Unit29-Prompt-Patterns)
