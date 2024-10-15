@@ -1,4 +1,4 @@
-#  Unit26-Translating-JavaScript-To-TypeScript
+#  Unit25-Translating-JavaScript-To-TypeScript
 ## Introduction
 In this unit, we’ll learn how to convert JavaScript code to TypeScript using Microsoft Copilot. We’ll review the TypeScript code to ensure it follows best practices and effectively uses TypeScript features.
 
@@ -129,7 +129,7 @@ You should see the output: `Hello, TypeScript!`.
 ## Prompts and Code Critique
 In this unit, we will build upon the JavaScript examples we explored previously and convert them into TypeScript. Leveraging the capabilities of Microsoft Copilot, we will translate and enhance these examples to illustrate how TypeScript can improve code quality and maintainability.
 
-### Prompt 24.1 : Write a Node.js program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.When you have that working, modify your program to print "FizzBuzz" for numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for numbers divisible by only one of those) [1].
+### Prompt 25.1 : Write a Node.js program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.When you have that working, modify your program to print "FizzBuzz" for numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz" for numbers divisible by only one of those) [1].
 ### Generated JavaScript Code
 ```
 for (let i = 1; i <= 100; i++) {
@@ -157,7 +157,7 @@ for (let i: number = 1; i <= 100; i++) {
 The code is well-structured and leverages TypeScript's type annotations effectively. In this TypeScript version, Copilot has added `: number` and `: string` to explicitly declare the types of the variables `i` and `output`, respectively. This can help with type checking during compile time and can prevent certain types of bugs. Overall, this is a good implementation.
 Rating: Good
 
-### Prompt 24.2 :Write a Node.js program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a "#" character. The characters should form a chessboard [2].
+### Prompt 25.2 :Write a Node.js program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a "#" character. The characters should form a chessboard [2].
 
 ### Generated JavaScript Code
 ```
@@ -206,7 +206,7 @@ The code effectively creates a chessboard pattern using nested loops and TypeScr
 
 Rating: Good
 
-### Prompt 24.3 :Bean counting You can get the Nth character, or letter, from a string by writing "string"[N]. The returned value will be a string containing only one character (for example, "b"). The first character has position 0, which causes the last one to be found at position string.length - 1. In other words, a two-character string has length 2, and its characters have positions 0 and 1. Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters there are in the string. Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase “B” characters). Rewrite countBs to make use of this new function [3].
+### Prompt 25.3 :Bean counting You can get the Nth character, or letter, from a string by writing "string"[N]. The returned value will be a string containing only one character (for example, "b"). The first character has position 0, which causes the last one to be found at position string.length - 1. In other words, a two-character string has length 2, and its characters have positions 0 and 1. Write a function countBs that takes a string as its only argument and returns a number that indicates how many uppercase “B” characters there are in the string. Next, write a function called countChar that behaves like countBs, except it takes a second argument that indicates the character that is to be counted (rather than counting only uppercase “B” characters). Rewrite countBs to make use of this new function [3].
 
 ### Generated JavaScript Code
 ```
@@ -296,7 +296,7 @@ Rating: Good
 
 
 
-### Prompt 24.4 :Quoting style, Imagine you have written a story and used single quotation marks throughout to mark pieces of dialogue. Now you want to replace all the dialogue quotes with double quotes, while keeping the single quotes used in contractions like aren’t. Think of a pattern that distinguishes these two kinds of quote usage and craft a call to the replace method that does the proper replacement [4].
+### Prompt 25.4 :Quoting style, Imagine you have written a story and used single quotation marks throughout to mark pieces of dialogue. Now you want to replace all the dialogue quotes with double quotes, while keeping the single quotes used in contractions like aren’t. Think of a pattern that distinguishes these two kinds of quote usage and craft a call to the replace method that does the proper replacement [4].
 
 ### Generated JavaScript Code
 ```
