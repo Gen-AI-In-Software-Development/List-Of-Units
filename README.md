@@ -72,10 +72,10 @@ Unit 23. [C++ Examples](./Unit23-Theoretical-Computer-Science)
 
 Unit 24. [JavaScript Examples](./Unit24-JavaScript-Examples)
 
-Unit 25. [Translating JavaScript to TypeScript](./Unit26-Translating-JavaScript-To-TypeScript)
+Unit 25. [Translating JavaScript to TypeScript](./Unit25-Translating-JavaScript-To-TypeScript)
 
-Unit 26. [Detecting security vulnerabilities in client server code](./Unit27-Detecting-Security-Vulnerablities-In-Client-Server-Code)
+Unit 26. [Detecting security vulnerabilities in client server code](./Unit26-Detecting-Security-Vulnerablities-In-Client-Server-Code)
 
-Unit 27. [Cloud Computing](./Unit28-Cloud-Computing)
+Unit 27. [Cloud Computing](./Unit27-Cloud-Computing)
 
-Unit 28. [Prompt Patterns](./Unit29-Prompt-Patterns)
+Unit 28. [Prompt Patterns](./Unit28-Prompt-Patterns)
