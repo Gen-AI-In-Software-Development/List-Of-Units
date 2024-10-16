@@ -4,6 +4,8 @@
 
 In this unit, we will ask copilot to generate some Turing machines and ask questions about theoretical computer science.
 
+One of the goals of theoretical computer science is to understand the limits of computation. That is, what problems can be solved by algorithms and what problems cannot be solved by algorithms. In this unit, we consider a problem that can be solved and one that cannot.
+
 These examples use Microsoft copilot provided here: [Microsoft copilot](https://copilot.microsoft.com/).
 
 ## Use Case
