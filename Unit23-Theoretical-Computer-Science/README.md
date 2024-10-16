@@ -87,4 +87,5 @@ The proposed solution does not work as specified. The initial tape has an infini
 
 ## References
 [1] Computability and Logic, Boolos and Jeffrey, Cambridge University Press, second edition, pg. 26.
+
 [2][Busy Beaver well explained on Wikipedia](https://en.wikipedia.org/wiki/Busy_beaver)
