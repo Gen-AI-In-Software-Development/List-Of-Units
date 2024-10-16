@@ -85,14 +85,7 @@ In this repository, we will experiment with how Copilot might assist in the soft
 
 Always keep in mind: "A fool with a tool is still a fool." - Grady Booch
 
-To do:
-
-    Look at Google's tools to include LLMs in IDE.
-    Consider feeding code and error back into the LLM.
-    Meet with Dan and review List-Of-Units.
-    Prepare 5 slides for Faculty meeting.
-    Add two units: Data Structures, Algorithms
-
+AI pioneer and ACM A.M. Turing Award laureate Yann LeCun says some experts are exaggerating AI's power and risks. LeCun believes today’s AI models lack the intelligence of pets. When an OpenAI researcher stressed the need to control ultra-intelligent AI, LeCun responded, “It seems to me that before ‘urgently figuring out how to control AI systems much smarter than us’ we need to have the beginning of a hint of a design for a system smarter than a house cat."
 
 # GitHub Mechanics: Updating a Unit
 
