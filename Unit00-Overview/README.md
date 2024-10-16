@@ -23,47 +23,82 @@ The three of us are willing to co-teach a micro course on this material in the f
 
 —---------------------------------------------------------------------------------------------------------------------
 
-Part 1. Introduction
-Unit 1. Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup
-Unit 2. Problem solving and generating pseudocode from problem statements
+## Part 0. Introduction
 
-Part 2. Programming
-Unit 3. Java examples
-Unit 4. Python examples
-Unit 5. Generating documentation from code and code from documentation
+Unit 0. [Overview: Description, pre-requisites, and readings](./Unit00-Overview)
 
-Part 3. Testing
-Unit 6. JUnit for Java
-Unit 7. Pytest for Python
+Unit 1. [Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyCharm setup](./Unit01-Environment-Setup)
 
-Part 4. Common Data Formats
-Unit 8. JSON
-Unit 9.  HTML
-Unit 10. XML
-Unit 11. CSV
+## Part 1. Programming
 
-Part 5. Distributed Systems
-Unit 12. Client side proxy examples
-Unit 13. Server side coding in Java
-Unit 14. Peer to peer coding
-Unit 15. Designing REST APIs
-Unit 16. Detecting security vulnerabilities in client server code
+Unit 2. [Problem solving and generating pseudocode from problem statements](./Unit02-Problem-Soving-And-Pseudocode)
 
-Part 6. Software engineering
-Unit 17. Generate SE artifacts - UML, and architecture diagrams
-Unit 18. Container deployment
-Unit 19. Refactor code by introducing design patterns into existing code
+Unit 3. [Java examples](Unit03-Java-Examples)
 
-Part 7. Machine Learning
-Unit 20. Generate Python code that uses AI libraries
+Unit 4. [Python examples](Unit04-Python-Examples)
 
-Part 8. Other Topics
-Unit 21. C++ Examples
-Unit 22. Testing C++ with Google Test and Boost
-Unit 23. Javascript Examples
-Unit 24. Translating JavaScript to TypeScript
-Unit 25. Testing Javascript with Mocha
+Unit 5. [Generating documentation from code and code from documentation](./Unit05-Generating-Documentation-From-Code-And-Code-From-Documentation)
 
+## Part 2. Testing
+
+Unit 6. [JUnit for Java](./Unit06-JUnit-For-Java)
+
+Unit 7. [Pytest for Python](./Unit07-Pytest-For-Python)
+
+## Part 3. Common Data Formats
+
+Unit 8. [JSON](./Unit08-JSON)
+
+Unit 9. [HTML](./Unit09-HTML)
+
+Unit 10. [XML](./Unit10-XML)
+
+Unit 11. [CSV](./Unit11-CSV)
+
+## Part 4. Distributed Systems
+
+Unit 12. [Client side proxy examples](./Unit12-Client-Side-Proxy-Examples)
+
+Unit 13. [Server side coding in Java](./Unit13-Server-Side-Coding-In-Java)
+
+Unit 14. [Peer to peer coding](./Unit14-Peer-To-Peer-Coding)
+
+Unit 15. [Designing REST APIs](./Unit15-Designing-REST-APIs)
+
+
+## Part 5. Software engineering
+
+Unit 16. [Generate SE artifacts - UML, and architecture diagrams](./Unit16-Generating-SE-Artifacts-UML-and-Architecture-Diagrams)
+
+Unit 17. [Container deployment](./Unit17-Container-Deployment)
+
+Unit 18. [Refactor code by introducing design patterns into existing code](./Unit18-Refractor-Code-By-Introducing-Design-Patterns-Into-Existing-Code)
+
+## Part 6. Machine Learning
+
+Unit 19. [Generate Python code that uses AI libraries](./Unit19-Generate-Python-Code-That-Uses-AI-Libraries)
+
+Unit 20. [Building a neural network in Java](./Unit20-Neural_Network_in_Java)
+
+## Part 7. Data Structures and Algorithms
+
+Unit 21. [Data Structures and Algorithms](./Unit21-Data-Structures-And-Algorithms)
+
+## Part 8. Other Topics
+
+Unit 22. [C++ Examples](./Unit22-C++-Examples)
+
+Unit 23. [Theoretical Computer Science](./Unit23-Theoretical-Computer-Science)
+
+Unit 24. [JavaScript Examples](./Unit24-JavaScript-Examples)
+
+Unit 25. [Translating JavaScript to TypeScript](./Unit25-Translating-JavaScript-To-TypeScript)
+
+Unit 26. [Detecting security vulnerabilities in client server code](./Unit26-Detecting-Security-Vulnerablities-In-Client-Server-Code)
+
+Unit 27. [Cloud Computing](./Unit27-Cloud-Computing)
+
+Unit 28. [Prompt Patterns](./Unit28-Prompt-Patterns)
 
 # Readings
 
@@ -77,13 +112,9 @@ Unit 25. Testing Javascript with Mocha
 
 <img src="images/CopilotVennDiagram.png" width="400"/>
 
-# Notes
+# Quotes
 
-Software development involves specifying, designing, programming, documenting, testing, and maintaining applications.
-
-In this repository, we will experiment with how Copilot might assist in the software development process.
-
-Always keep in mind: "A fool with a tool is still a fool." - Grady Booch
+"A fool with a tool is still a fool." - Grady Booch
 
 AI pioneer and ACM A.M. Turing Award laureate Yann LeCun says some experts are exaggerating AI's power and risks. LeCun believes today’s AI models lack the intelligence of pets. When an OpenAI researcher stressed the need to control ultra-intelligent AI, LeCun responded, “It seems to me that before ‘urgently figuring out how to control AI systems much smarter than us’ we need to have the beginning of a hint of a design for a system smarter than a house cat."
 
