@@ -82,8 +82,9 @@ If you have any more questions or need further assistance, feel free to ask!
 The proposed solution does not work as specified. The initial tape has an infinity of 0s and so, there will never be a blank encountered. The machine will never halt. Rating:Poor
 
 ## Exercises
-1. See if you can get Copilot to generate a few Busy Beaver results.
-2. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
+1. Ask Copilot to create a Turing Machine that adds two integers expressed in unary notation and separated by a blank.
+2. See if you can get Copilot to generate a few Busy Beaver results.
+3. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
 
 ## References
 [1] Computability and Logic, Boolos and Jeffrey, Cambridge University Press, second edition, pg. 26.
