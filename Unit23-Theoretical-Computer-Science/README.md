@@ -47,7 +47,8 @@ The proposed solution works as specified. There is, however, an unused state. Ra
 
 
 ----------
-### Example 23.2 prompt: I would like for you to build a Turing machine using the following notation. Sigma is the alphabet. Sigma = { '0', '1' }. delta is he transition function. Q is the set of states, for example, Q = { q0, q1, ..., qn}. I would like for you to build a 2 state Turing machine that writes as many ones as possible on an initial tape with an infinity of 0s and then halts. The first state will be the start state, q0, and the other state will be the halt state, q1. It is important to me that that the machine halts after writing as many ones as possible. I need the delta transitions.
+### Example 23.2 prompt:
+I would like for you to build a Turing machine using the following notation. Sigma is the alphabet. Sigma = { '0', '1' }. delta is he transition function. Q is the set of states, for example, Q = { q0, q1, ..., qn}. I would like for you to build a 2 state Turing machine that writes as many ones as possible on an initial tape with an infinity of 0s and then halts. The first state will be the start state, q0, and the other state will be the halt state, q1. It is important to me that that the machine halts after writing as many ones as possible. I need the delta transitions.
 
 ### Generated Response:
 ```
