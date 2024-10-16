@@ -38,17 +38,20 @@ State ( q_3 ):
 If reading ( 1 ): Move left, stay in ( q_3 ).
 If reading ( B ): Move right, go to ( q_0 ).
 ```
+The solution can be drawn as shown:
+
+<img src="images/TM_Odd_or_Even.png" width="800"/>
 
 ### Critique
-The proposed solution works as specified. There is, however, an unused state. Rating: Good
+The proposed solution works as specified. We are assuming that q4 is the halt state. Rating: Good
 
 
 ## Use Case
 
-The second example asks Copilot to work with a famous problem that has been shown to be incomputable - the Busy Beaver[2] problem. The first few Busy Beavers are known. BB(0) = 0, BB(1) = 1, BB(2) = 4, BB(3) = 6, BB(4) = 13,
+The second example asks Copilot to work with a famous problem that has been shown to be incomputable - the Busy Beaver problem[2]. Before proceeding, be sure to study the Busy Beaver problem on Wikipedia (see the link in the references below). As noted in the article, the first few Busy Beavers are known. BB(0) = 0, BB(1) = 1, BB(2) = 4, BB(3) = 6, BB(4) = 13,
 BB(5) = 4098. In general, the BB(n) is incomputable. Note that BB(1) is actually a 2-state Turing machine. One of the states is the halt state and goes uncounted.
 
-In the example, we do not mention the term "Busy Beaver" but only ask Copilot to solve the problem. See the exercises to go further.
+In the example prompt, we do not mention the term "Busy Beaver" but only ask Copilot to solve the problem. See the exercises to go further.
 
 
 ### Example 23.2 prompt:
@@ -77,16 +80,21 @@ This Turing machine will continue writing '1’s until it reaches the end of the
 
 If you have any more questions or need further assistance, feel free to ask!
 ```
+The solution can be drawn as shown:
+
+<img src="images/TM_Never_Halts.png" width="800"/>
 
 ### Critique
+
 The proposed solution does not work as specified. The initial tape has an infinity of 0s and so, there will never be a blank encountered. The machine will never halt. Rating:Poor
 
 ## Exercises
 1. Ask Copilot to create a Turing Machine that adds two integers expressed in unary notation and separated by a blank.
-2. See if you can get Copilot to generate a few Busy Beaver results.
-3. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
+2. Draw a state machine diagram showing BB(1).
+3. See if you can get Copilot to generate a few Busy Beaver results.
+4. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
 
 ## References
 [1] Computability and Logic, Boolos and Jeffrey, Cambridge University Press, second edition, pg. 26.
 
-[2][Busy Beaver well explained on Wikipedia](https://en.wikipedia.org/wiki/Busy_beaver)
+[2][The Busy Beaver problem is well explained on Wikipedia](https://en.wikipedia.org/wiki/Busy_beaver)
