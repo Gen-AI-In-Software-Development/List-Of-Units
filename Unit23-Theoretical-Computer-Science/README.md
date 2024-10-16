@@ -2,11 +2,11 @@
 
 ## Introduction
 
-In this unit, we will ask copilot to generate some Turing machines and ask questions about theoretical computer science.
+In this unit, we will ask Copilot to generate some Turing machines and ask questions about theoretical computer science.
 
 One of the goals of theoretical computer science is to understand the limits of computation. That is, what problems can be solved by algorithms and what problems cannot be solved by algorithms. In this unit, we consider a problem that can be solved and one that cannot.
 
-These examples use Microsoft copilot provided here: [Microsoft copilot](https://copilot.microsoft.com/).
+These examples use Microsoft Copilot provided here: [Microsoft copilot](https://copilot.microsoft.com/).
 
 ## Prompts and Code Critique
 
@@ -48,7 +48,7 @@ The proposed solution works as specified. There is, however, an unused state. Ra
 The second example asks Copilot to work with a famous problem that has been shown to be incomputable - the Busy Beaver[2] problem. The first few Busy Beavers are known. BB(0) = 0, BB(1) = 1, BB(2) = 4, BB(3) = 6, BB(4) = 13,
 BB(5) = 4098. In general, the BB(n) is incomputable. Note that BB(1) is actually a 2-state Turing machine. One of the states is the halt state and goes uncounted.
 
-In the example, we do not mention the term "Busy Beaver" but only ask copilot to solve the problem. See the exercises to go further.
+In the example, we do not mention the term "Busy Beaver" but only ask Copilot to solve the problem. See the exercises to go further.
 
 
 ### Example 23.2 prompt:
@@ -82,8 +82,8 @@ If you have any more questions or need further assistance, feel free to ask!
 The proposed solution does not work as specified. The initial tape has an infinity of 0s and so, there will never be a blank encountered. The machine will never halt. Rating:Poor
 
 ## Exercises
-1. See if you can get CoPilot to generate a few Busy Beaver results.
-2. Does mentioning the term "Busy Beaver" improve on copilot's performance?
+1. See if you can get Copilot to generate a few Busy Beaver results.
+2. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
 
 ## References
 [1] Computability and Logic, Boolos and Jeffrey, Cambridge University Press, second edition, pg. 26.
