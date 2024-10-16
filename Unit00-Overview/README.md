@@ -31,7 +31,7 @@ Unit 1. [Environment setup: IDE and Copilot. IntelliJ setup VScode and/or PyChar
 
 ## Part 1. Programming
 
-Unit 2. [Problem solving and generating pseudocode from problem statements](./Unit02-Problem-Soving-And-Pseudocode)
+Unit 2. [Problem solving and generating pseudocode from problem statements](../Unit02-Problem-Soving-And-Pseudocode)
 
 Unit 3. [Java examples](Unit03-Java-Examples)
 
