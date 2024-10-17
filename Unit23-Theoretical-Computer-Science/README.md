@@ -91,7 +91,7 @@ The proposed solution does not work as specified. The initial tape has an infini
 ## Exercises
 1. Ask Copilot to create a Turing Machine that adds two integers expressed in unary notation and separated by a blank.
 2. Draw a state machine diagram showing BB(1).
-3. Below is a sketch of BB(2). Can you get Copilot to find BB(2) or BB(3).
+3. Below is a sketch of BB(2). Without mentioning "Busy Beaver", can you get Copilot to find BB(2) or BB(3)? How about BB(10) ?
 4. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
 
 
