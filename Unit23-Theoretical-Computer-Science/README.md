@@ -49,7 +49,9 @@ The proposed solution works as specified. We are assuming that q4 is the halt st
 ## Use Case
 
 The second example asks Copilot to work with a famous problem that has been shown to be incomputable - the Busy Beaver problem[2]. Before proceeding, be sure to study the Busy Beaver problem on Wikipedia (see the link in the references below). As noted in the article, the first few Busy Beavers are known. BB(0) = 0, BB(1) = 1, BB(2) = 4, BB(3) = 6, BB(4) = 13,
-BB(5) = 4098. In general, the BB(n) is incomputable. What does that mean? It means that there is no algorithm that is able to compute BB(n) for any integer n. Note that BB(1) is actually a 2-state Turing machine. One of the states is the halt state and goes uncounted.
+BB(5) = 4098. In general, BB(n) is incomputable. What does that mean? It means that there is no algorithm that is able to compute BB(n) for any integer n.
+
+Note that BB(1) is actually a 2-state Turing machine. One of the states is the halt state and goes uncounted.
 
 In the example prompt, we do not mention the term "Busy Beaver" but only ask Copilot to solve the problem. See the exercises to go further.
 
