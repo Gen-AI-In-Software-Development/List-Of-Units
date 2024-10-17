@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this unit, we will ask Copilot to generate some Turing machines and ask questions about theoretical computer science.
+In this unit, we will ask Copilot to generate some Turing machines and ask some questions related to the theory of computation.
 
 One of the goals of theoretical computer science is to understand the limits of computation. That is, what problems can be solved by algorithms and what problems cannot be solved by algorithms. In this unit, we consider a problem that can be solved and one that cannot.
 
