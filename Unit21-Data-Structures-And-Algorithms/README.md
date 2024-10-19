@@ -8,7 +8,7 @@ An _algorithm_ is a plan for accessing a data structure--for example to locate a
 
 Another "data structure" we might use for keeping track of groceries is a collection of slips of paper, with a grocery item written on each one and put in a pocket.  It's trivially easy to write a new grocery item on a slip of paper and add that to the pocket.  At the store, out plan is to remove the slips of paper one by one, and add each desribed item to our cart.  This "algorithm" is not as efficient as stepping through an organized list, but has the advantage of not depending on knowing the store layout in advance.
 
-If we want to be careful to save our labeled slips of paper for reuse, we could use an "algorithm" in which we take a slip of paper out of our pocket at random, add the named item to our cart, and put the slip of paper back into our pocket again.  Instinctively, you probably see that this is a disaster: rather rapidly, the slips of paper we take out will be for items we already have in our cart; and if the number of slips is large, it may be a long time before we take each slip out of our pocket at least once.
+If we want to be careful to save our labeled slips of paper for reuse, we could use an "algorithm" in which we take a slip of paper out of our pocket at random, add the named item to our cart, and put the slip of paper back into our pocket again.  Instinctively, you probably see that this is a disaster: rather rapidly, the slips of paper we take out will be for items we already have in our cart; and if the number of slips is large, it may be a long time before we take each slip out of our pocket at least once.  In fact, if we don't know in advance how many slips of paper there are, we can never know whether we have retrieved each one!
 
 In computer programs, we often deal with thousands, millions, billions or more values, and the data structures and algorithms we choose to store and interact with these values will dramatically affect the efficiency of our program.  Are you willing to wait for 10 minutes for Amazon to add a book to your shopping cart?  No: we need a better data structure and/or algorithm.  Would you need a program to produce a report of every apartment for rent in the USA in 0.001 seconds?  Probably not: we probably don't need to spend the time and money researching data structures, algorithms, and database and network performance issues in order to make this program a reality.
 
@@ -84,14 +84,14 @@ This function directly modifies the input list without returning it. Sorted in p
 ```
 ### Critique
 Revised as requested.  Rating: Good.
-### Example 12.3 prompt:  What is the performance of the Selection Sort algorithm?
+### Example 21.3 prompt:  What is the performance of the Selection Sort algorithm?
 
 ### Generated output
 Selection Sort has a time complexity of O(n²) in the worst, best, and average cases because it always involves comparing and swapping elements in nested loops. This quadratic time complexity makes it less efficient for large lists compared to more advanced algorithms like Quick Sort or Merge Sort. On the upside, it’s straightforward and easy to understand! It's space-efficient too, requiring only a constant amount of additional memory (O(1)).
 ### Critique
 Correct and clear ... if you know what O(...) means!  Rating: Good
 
-### Example 12.4 prompt:  Explain what O(...) means in performance analysis.
+### Example 21.4 prompt:  Explain what O(...) means in performance analysis.
 
 ### Generated output
 Big O notation, or O(...), is used to describe the efficiency of an algorithm. It measures how the runtime or space requirements grow as the input size increases. Here are some common examples:
@@ -110,7 +110,7 @@ Big O helps predict the performance and scalability of algorithms. Handy, right?
 ### Critique
 A helpful description and summary.  The user could ask further questions for more clarification.  Rating: Good
 
-### Example 12.5 prompt:  What are other commonly used sorting algorithms?
+### Example 21.5 prompt:  What are other commonly used sorting algorithms?
 
 ### Generated output
 There are quite a few algorithms people turn to for efficient sorting, depending on the context. Here are some popular ones:
@@ -128,6 +128,179 @@ Heap Sort: Builds a heap from the input data, then repeatedly extracts the maxim
 Each algorithm has its strengths and weaknesses, so the best choice often depends on the specific needs of your task. Which one interests you most?
 ### Critique
 A helpful summary.  The user can ask to see implementations of each sorting algorithm, in Python, Java, C++, or some other language.  Rating: Good
+
+### Example 21.6 prompt:  What other kinds of algorithms are there?
+
+### Generated output
+There are many types of algorithms, each designed to solve specific kinds of problems. Here's a quick tour through some notable categories:
+
+Search Algorithms: These help in finding an element within a data structure. Examples include Binary Search and Depth-First Search (DFS).
+
+Graph Algorithms: These operate on graph data structures. Think Dijkstra's algorithm for shortest paths and Kruskal's algorithm for minimum spanning trees.
+
+Dynamic Programming: This approach solves complex problems by breaking them down into simpler subproblems. Algorithms like the Fibonacci sequence, and the Knapsack problem are classic examples.
+
+Divide and Conquer: These divide the problem into smaller subproblems, solve them independently, and then combine their results. Merge Sort and Quick Sort fall under this category.
+
+Greedy Algorithms: These make the locally optimal choice at each stage in hopes of finding the global optimum. Examples include Prim's algorithm for Minimum Spanning Trees and the Fractional Knapsack problem.
+
+Backtracking Algorithms: These systematically search for a solution by trying out possible solutions and undoing those that fail to meet the criteria. A good example is the N-Queens problem.
+
+Machine Learning Algorithms: These learn from data to make predictions or decisions. Examples include Decision Trees, Neural Networks, and Support Vector Machines.
+
+Cryptographic Algorithms: These focus on securing information. Think RSA and AES for encryption and decryption processes.
+
+Algorithms are the lifeblood of computational problem-solving. Got any specific area you're interested in?
+### Critique
+A helpful and reasonably complete summary of algorithm categories, other than sorting.  The user can ask for more details about these categories, and to see implementations of specific algorithms in Python, Java, C++, or some other language.  Rating: Good
+
+### Example 21.7 prompt:  In addition to the list (or array), what other kinds of data structures are there?
+
+### Generated output
+There are plenty of data structures out there, each suited for different tasks. Some key ones include:
+
+Linked Lists: Elements are stored in nodes, with each node pointing to the next. Great for dynamic memory allocation.
+
+Stacks: LIFO (Last In, First Out) structure. Think of it like a stack of books; you add and remove from the top.
+
+Queues: FIFO (First In, First Out) structure. Like a line at a store; you add to the back and remove from the front.
+
+Trees: Hierarchical structures with nodes. Binary Trees, AVL Trees, and Red-Black Trees fall into this category.
+
+Graphs: Consist of vertices (nodes) and edges (connections). Used in networking and pathfinding algorithms.
+
+Hash Tables: Store key-value pairs, allowing for fast data retrieval based on a key.
+
+Heaps: A type of tree-based structure. Used in priority queues and heap sort.
+
+Trie: A special type of tree used to store associative data structures. Great for things like autocomplete features.
+
+Each of these has unique properties and use cases. Anything catch your interest?
+### Critique
+A helpful and reasonably complete summary of data structure categories, other than list/array.  The user can ask for more details about these categories, and to see implementations of specific data structures in Python, Java, C++, or some other language.  Rating: Good
+
+### Example 21.8 prompt:  What is a Binary Tree?  Show me a diagram.
+
+### Generated output
+A Binary Tree is a hierarchical data structure where each node has at most two children, called the left child and the right child. The tree starts at the root node and branches out to the leaves.
+
+Here’s a simple diagram:
+
+      A
+     / \
+    B   C
+   / \   \
+  D   E   F
+
+A is the root.
+
+B and C are the children of A.
+
+D and E are the children of B.
+
+F is the child of C.
+
+Simple, yet powerful for organizing data! Anything specific you'd like to know about Binary Trees?
+
+### Critique
+A correct but thin description and diagram of a binary tree.  Would be better with more detail, but does ask the user whether they would like anything more specific.  Rating: Fair
+
+### Example 21.9 prompt:  What kinds of Binary Trees are there?
+
+### Generated output
+There are several types of Binary Trees, each with unique properties and use cases:
+
+Full Binary Tree: Every node other than the leaves has two children.
+
+Complete Binary Tree: All levels are fully filled except possibly the last level, which is filled from left to right.
+
+Perfect Binary Tree: All internal nodes have two children and all leaves are at the same level.
+
+Balanced Binary Tree: The height of the left and right subtrees of any node differ by at most one.
+
+Binary Search Tree (BST): The left child contains values less than the parent node, and the right child contains values greater than the parent node. This makes searching efficient.
+
+AVL Tree: A self-balancing binary search tree where the heights of two child subtrees of any node differ by at most one, ensuring O(log n) height.
+
+Red-Black Tree: A binary search tree with an additional property of nodes being colored red or black, which ensures balance and maintains O(log n) time complexity for insertion and deletion.
+
+These structures help optimize different operations, such as searching, inserting, and balancing data. Curious about any one in particular?
+### Critique
+A helpful and reasonable overview of common types of Binary Trees.  The user can ask for more details about these types of Binary Trees, and to see implementations of specific types in Python, Java, C++, or some other language.  Rating: Good
+
+### Example 21.10 prompt:  Show me Python code that implements a Binary Search Tree class called BST.
+
+### Generated output
+Alright! Here’s a basic implementation of a Binary Search Tree (BST) class in Python:
+
+```
+class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.val = key
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        if self.root is None:
+            self.root = Node(key)
+        else:
+            self._insert(key, self.root)
+
+    def _insert(self, key, current_node):
+        if key < current_node.val:
+            if current_node.left is None:
+                current_node.left = Node(key)
+            else:
+                self._insert(key, current_node.left)
+        elif key > current_node.val:
+            if current_node.right is None:
+                current_node.right = Node(key)
+            else:
+                self._insert(key, current_node.right)
+
+    def search(self, key):
+        return self._search(key, self.root)
+
+    def _search(self, key, current_node):
+        if current_node is None:
+            return False
+        elif key == current_node.val:
+            return True
+        elif key < current_node.val:
+            return self._search(key, current_node.left)
+        else:
+            return self._search(key, current_node.right)
+
+    def inorder_traversal(self):
+        return self._inorder_traversal(self.root, [])
+
+    def _inorder_traversal(self, current_node, traversal):
+        if current_node:
+            traversal = self._inorder_traversal(current_node.left, traversal)
+            traversal.append(current_node.val)
+            traversal = self._inorder_traversal(current_node.right, traversal)
+        return traversal
+
+# Example usage
+bst = BST()
+bst.insert(10)
+bst.insert(5)
+bst.insert(20)
+bst.insert(15)
+bst.insert(25)
+
+print(bst.search(15))  # Output: True
+print(bst.search(30))  # Output: False
+print(bst.inorder_traversal())  # Output: [5, 10, 15, 20, 25]
+```
+
+This BST class provides basic methods for inserting nodes, searching for values, and performing an in-order traversal. How does this look?
+### Critique
+A clear implementation of the BST class, with the three most important basic methods: insert(), search(), and inorder_traversal().  Rating: Good
 
 ## Exercises
 ## References
