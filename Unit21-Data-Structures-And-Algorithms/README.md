@@ -488,37 +488,37 @@ A very good answer.  Rating: Good
 ### Generated output
 The tale of BSTs vs. AVL Trees: each has its moments of glory and its own set of quirks.
 
-**Binary Search Tree (BST)
-**
+**Binary Search Tree (BST)**
+
 **Advantages:**
 
-*) **Simplicity**: Easy to implement and understand.
+1.  **Simplicity**: Easy to implement and understand.
 
-*) **Flexible**: Easier to modify (insert, delete nodes) without needing to constantly rebalance.
+2.  **Flexible**: Easier to modify (insert, delete nodes) without needing to constantly rebalance.
 
-*) **Good Performance for Random Data**: For moderately sized, random data, performance can be decent.
+3.  **Good Performance for Random Data**: For moderately sized, random data, performance can be decent.
 
 **Disadvantages:**
 
-*) **Potentially Unbalanced**: Without self-balancing, a BST can become skewed, degrading performance to O(n) for operations like search, insert, and delete.
+1.  **Potentially Unbalanced**: Without self-balancing, a BST can become skewed, degrading performance to O(n) for operations like search, insert, and delete.
 
-*) **No Guarantees on Height**: Can’t guarantee logarithmic height, which impacts performance predictability.
+2.  **No Guarantees on Height**: Can’t guarantee logarithmic height, which impacts performance predictability.
 
-**AVL Tree
-**
+**AVL Tree**
+
 **Advantages:**
 
-*) **Self-Balancing**: Ensures the tree remains balanced after every insertion and deletion, maintaining O(log n) time complexity for search, insert, and delete operations.
+1.  **Self-Balancing**: Ensures the tree remains balanced after every insertion and deletion, maintaining O(log n) time complexity for search, insert, and delete operations.
 
-*) **Height Guarantees**: Provides a balanced structure, ensuring consistent and predictable performance.
+2.  **Height Guarantees**: Provides a balanced structure, ensuring consistent and predictable performance.
 
 **Disadvantages:**
 
-*) **Complexity**: More complex to implement and understand compared to a plain BST.
+1.  **Complexity**: More complex to implement and understand compared to a plain BST.
 
-*) **Overhead**: Requires additional memory and processing time to maintain balance through rotations after insertions and deletions.
+2.  **Overhead**: Requires additional memory and processing time to maintain balance through rotations after insertions and deletions.
 
-*) **Slower** for Small Data Sets: Might introduce unnecessary overhead for small or already balanced datasets where a simple BST might suffice.
+3.  **Slower** for Small Data Sets: Might introduce unnecessary overhead for small or already balanced datasets where a simple BST might suffice.
 
 In essence, if you need consistent performance and work with large datasets, AVL Trees are your friends. For simpler tasks or smaller datasets, a BST might do just fine. Got more angles you want to explore?
 ### Critique
