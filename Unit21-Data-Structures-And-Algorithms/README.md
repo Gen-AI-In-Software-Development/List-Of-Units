@@ -186,11 +186,13 @@ A Binary Tree is a hierarchical data structure where each node has at most two c
 
 Here’s a simple diagram:
 
+```
       A
      / \
     B   C
    / \   \
   D   E   F
+```
 
 A is the root.
 
