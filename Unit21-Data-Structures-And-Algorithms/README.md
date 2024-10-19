@@ -87,16 +87,13 @@ Revised as requested.  Rating: Good.
 ### Example 12.3 prompt:  What is the performance of the Selection Sort algorithm?
 
 ### Generated output
-'''
 Selection Sort has a time complexity of O(n²) in the worst, best, and average cases because it always involves comparing and swapping elements in nested loops. This quadratic time complexity makes it less efficient for large lists compared to more advanced algorithms like Quick Sort or Merge Sort. On the upside, it’s straightforward and easy to understand! It's space-efficient too, requiring only a constant amount of additional memory (O(1)).
-'''
 ### Critique
 Correct and clear ... if you know what O(...) means!  Rating: Good
 
 ### Example 12.4 prompt:  Explain what O(...) means in performance analysis.
 
 ### Generated output
-'''
 Big O notation, or O(...), is used to describe the efficiency of an algorithm. It measures how the runtime or space requirements grow as the input size increases. Here are some common examples:
 
 O(1): Constant time; doesn't change with the size of the input.
@@ -110,14 +107,12 @@ O(log n): Logarithmic time; grows slower than the input size.
 O(n log n): Linearithmic time; common in efficient sorting algorithms like Merge Sort.
 
 Big O helps predict the performance and scalability of algorithms. Handy, right?
-'''
 ### Critique
 A helpful description and summary.  The user could ask further questions for more clarification.  Rating: Good
 
 ### Example 12.5 prompt:  What are other commonly used sorting algorithms?
 
 ### Generated output
-'''
 There are quite a few algorithms people turn to for efficient sorting, depending on the context. Here are some popular ones:
 
 Quick Sort: Uses a divide-and-conquer approach with a pivot element to partition the list and sort it. It’s fast in practice, with an average time complexity of O(n log n).
@@ -131,7 +126,6 @@ Insertion Sort: Builds the sorted array one element at a time, picking each next
 Heap Sort: Builds a heap from the input data, then repeatedly extracts the maximum (or minimum) element to build the sorted array. Its time complexity is O(n log n).
 
 Each algorithm has its strengths and weaknesses, so the best choice often depends on the specific needs of your task. Which one interests you most?
-'''
 ### Critique
 A helpful summary.  The user can ask to see implementations of each sorting algorithm, in Python, Java, C++, or some other language.  Rating: Good
 
