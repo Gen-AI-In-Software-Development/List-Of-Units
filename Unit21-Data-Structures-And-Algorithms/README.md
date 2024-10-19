@@ -526,3 +526,9 @@ A very good answer.  Rating: Good
 
 ## Exercises
 ## References
+Two of the best, of many, many algorithm and data structure books available:
+
+**Introduction to Algorithms, 4th Edition**, 2022, by Cormen, Leiserson, Rivest, and Stein, ISBN 978-0262046305
+
+**Algorithms Illuminated: Omnibus Edition**, 2022, by Tim Roughgarden, ISBN 978-0999282984
+
