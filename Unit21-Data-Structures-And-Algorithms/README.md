@@ -21,7 +21,7 @@ Suppose we want to sort test scores in descending order.
 
 Examine each value in the array (or list) to find the largest value.  Then, swap that largest value with the value in the first slot of the array.  The largest value is now in the first slot.
 
-Examine each value in the array after the first slot to find the largest of the remaining values.  Then, swap that largest remaining value with the value in the second slot of the array.  The second largest value is now in the second slot.
+Examine each value in the array after the first slot to find the largest of the remaining values.  Then, swap that largest remaining value with the value in the second slot of the array.  The second largest value is now in the second slot, and the largest value remains in the first slot.
 
 Repeat this plan for the third slot: the third largest value is now in the third slot.  And so forth.
 
@@ -31,7 +31,7 @@ This algorithm is called _Selection Sort_: for each slot in the array, we _selec
 
 How many value comparisons must we perform in order to implement Selection Sort?  For the first slot, we perform N-1 comparisons to find the largest value; for the second slot, we perform N-2 comparisons to find the second largest value; ..., and for the Nth slot, we perform N-N == 0 comparisons to find the Nth largest value.  This is (N-1) + (N-2) + ... + 1 + 0 comparisons, which is equivalent to 1 + 2 + ... + (N-1).  According to legend, the formula for this was discovered by Carl Friedrich Gauss as a schoolboy: N(N - 1)/2 == (N^2 / 2) - (N / 2).  (N^2 means N squared, here).  As N gets larger and larger, the (N / 2) part of this formula becomes less and less important compared to the (N^2 / 2) part.  We describe this as an "order N squared" algorithm.
 
-What does this mean to us, in practical terms?  Suppose it takes T minutes to sort N values.  Most of the time of the Selection Sort algorithm is consumed by comparing values.  So, if we need to sort 10 times as many values--10N--it will take about (10**2)T or 100T minutes to sort those values.  100N values will take about 10000T minutes.  T minutes may be considered perfectly reasonable for N values, but is 10000T minutes reasonable for 100N values?  Perhaps not.
+What does this mean to us, in practical terms?  Suppose it takes T minutes to sort N values.  Most of the time of the Selection Sort algorithm is consumed by comparing values.  So, if we need to sort 10 times as many values--10N--it will take about (10**2)T or 100T minutes to sort those values.  100N values will take about 10,000T minutes.  T minutes may be considered perfectly reasonable for N values, but is 10,000T minutes reasonable for 100N values?  Perhaps not.
 
 ## Several Solved Examples Using Copilot
 ## Critical Evaluations of the Examples
