@@ -454,7 +454,75 @@ This setup tests the equality in values and differences in structure effectively
 
 ### Critique
 A good example.  Rating: Good
+### Example 21.13 prompt:  Describe the search performance of this BST class
 
+### Generated output
+Searching in a Binary Search Tree (BST) like the one we implemented has a best-case time complexity of O(log n) and a worst-case time complexity of O(n), where n is the number of nodes in the tree. Here’s how these scenarios unfold:
+
+Best-case scenario (O(log n)): This occurs when the BST is balanced, meaning that the height of the tree is minimized. In such cases, each level of the tree roughly halves the number of nodes to be searched, resulting in a logarithmic search time.
+
+Worst-case scenario (O(n)): This occurs when the BST is unbalanced, particularly when it degrades into a linked list (i.e., all nodes have only one child). In this case, searching for a value might require traversing all the nodes, making the search time linear.
+
+The performance heavily depends on the tree's balance, which can be managed with self-balancing BSTs like AVL Trees or Red-Black Trees. Otherwise, operations on a poorly balanced BST can be inefficient.
+
+Want to dive into self-balancing trees or try something different?
+
+### Critique
+A reasonable answer, but without describing how balanced and unbalanced BSTs could arise.  Suggests investigating self-balancing trees, which is great.  Rating: Good
+
+### Example 21.14 prompt:  How could balanced vs. unbalanced BSTs occur?
+
+### Generated output
+Balanced BSTs and unbalanced BSTs are products of how elements are inserted:
+
+1.  Balanced BST: Inserting elements in a random or optimal order tends to produce a balanced tree, where the left and right subtrees of any node have roughly the same height. Self-balancing BSTs, like AVL trees or Red-Black trees, automatically adjust themselves to remain balanced after insertions and deletions.
+
+2.  Unbalanced BST: If elements are inserted in a sorted or nearly sorted order, the BST becomes skewed, resembling a linked list. For example, inserting the elements 1, 2, 3, 4, 5 in ascending order would create an unbalanced BST, as each node will have only one child.
+
+Balancing keeps operations efficient by maintaining a logarithmic height. Want to explore self-balancing trees or learn about different data structures?
+### Critique
+A very good answer.  Rating: Good
+
+### Example 21.15 prompt:  What are the advantages and disadvantages of a BST vs. and AVL Tree?
+
+### Generated output
+The tale of BSTs vs. AVL Trees: each has its moments of glory and its own set of quirks.
+
+**Binary Search Tree (BST)
+**
+**Advantages:**
+
+*) **Simplicity**: Easy to implement and understand.
+
+*) **Flexible**: Easier to modify (insert, delete nodes) without needing to constantly rebalance.
+
+*) **Good Performance for Random Data**: For moderately sized, random data, performance can be decent.
+
+**Disadvantages:**
+
+*) **Potentially Unbalanced**: Without self-balancing, a BST can become skewed, degrading performance to O(n) for operations like search, insert, and delete.
+
+*) **No Guarantees on Height**: Can’t guarantee logarithmic height, which impacts performance predictability.
+
+**AVL Tree
+**
+**Advantages:**
+
+*) **Self-Balancing**: Ensures the tree remains balanced after every insertion and deletion, maintaining O(log n) time complexity for search, insert, and delete operations.
+
+*) **Height Guarantees**: Provides a balanced structure, ensuring consistent and predictable performance.
+
+**Disadvantages:**
+
+*) **Complexity**: More complex to implement and understand compared to a plain BST.
+
+*) **Overhead**: Requires additional memory and processing time to maintain balance through rotations after insertions and deletions.
+
+*) **Slower** for Small Data Sets: Might introduce unnecessary overhead for small or already balanced datasets where a simple BST might suffice.
+
+In essence, if you need consistent performance and work with large datasets, AVL Trees are your friends. For simpler tasks or smaller datasets, a BST might do just fine. Got more angles you want to explore?
+### Critique
+A very good answer.  Rating: Good
 
 ## Exercises
 ## References
