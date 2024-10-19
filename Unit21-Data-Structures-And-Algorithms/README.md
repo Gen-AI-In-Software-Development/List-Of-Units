@@ -527,7 +527,7 @@ A very good answer.  Rating: Good
 ## Exercises
 Ask Copilot to:
 1.  Explain what is meant by "rotations after insertions and deletions" within an AVT Tree, with illustrative diagrams.
-2.  Add an implementation of a delete() method to the BST class, without concern for any resulting search performance degradation.  Do you observe anything interesting about the long-term impact of delete()'s implementation.
+2.  Add an implementation of a delete() method to the BST class, without concern for any resulting search performance degradation.  Do you observe anything interesting about the long-term impact of this delete() implementation?
 3.  Show the Python code for an AVLTree class, including insert(), delete(), min(), max(), is_equal(), is_identical(), and inorder_traversal() methods.  What is different about how a BST Node is implemented vs. how an AVLTree Node is implemented?
 4.  Describe a Red Black Tree, and list the properties of a correctly implemented Red Black Tree.
 5.  Describe the advantages and disadvantages of a Red Black Tree vs. and AVL Tree.
@@ -536,13 +536,13 @@ Ask Copilot to:
 8.  Show the Python code for a Queue class, and describe use cases for a Queue.
 9.  Show the Python code for a Heap class, and for the Heap Sort algorithm.
 10.  Show the Python code for a Hash Table class, and describe use cases for a Hash Table.
-11.  Describe situations where an AVLTree may be preferably to a Hash Table.
+11.  Describe situations where an AVLTree may be preferable to a Hash Table.
 12.  Describe the idea of a general Graph, and show diagrams of undirected vs. directed and unweighted vs. weighted graphs.
 13.  Describe the Breadth-First Search algorithm for a general undirected, unweighted Graph.
 14.  Show the Python code that implements BFS for a general undirected, unweighted Graph.
 15.  Describe the Depth-First Search algorithm for a general undirected, unweighted Graph.
 16.  Show the Python code that implements DFS for a general undirected, unweighted Graph.
-17.  Describe the advantages and disadvantages of BFS vs. DFS?
+17.  Describe the advantages and disadvantages of BFS vs. DFS.
 18.  Describe an algorithm that finds all shortest paths between nodes in a directed, weighted Graph.
 19.  Describe what Dynamic Programming is.
 20.  Describe what an NP algorithm is.
