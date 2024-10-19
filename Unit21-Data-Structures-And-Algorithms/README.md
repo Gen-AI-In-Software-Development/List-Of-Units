@@ -537,6 +537,17 @@ Ask Copilot to:
 9.  Show the Python code for a Heap class, and for the Heap Sort algorithm.
 10.  Show the Python code for a Hash Table class, and describe use cases for a Hash Table.
 11.  Describe situations where an AVLTree may be preferably to a Hash Table.
+12.  Describe the idea of a general Graph, and show diagrams of undirected vs. directed and unweighted vs. weighted graphs.
+13.  Describe the Breadth-First Search algorithm for a general undirected, unweighted Graph.
+14.  Show the Python code that implements BFS for a general undirected, unweighted Graph.
+15.  Describe the Depth-First Search algorithm for a general undirected, unweighted Graph.
+16.  Show the Python code that implements DFS for a general undirected, unweighted Graph.
+17.  Describe the advantages and disadvantages of BFS vs. DFS?
+18.  Describe an algorithm that finds all shortest paths between nodes in a directed, weighted Graph.
+19.  Describe what Dynamic Programming is.
+20.  Describe what an NP algorithm is.
+
+LeetCode is an excellent source of questions about coding in general and about data structures and algorithms.  By using LeetCode in combination with Copilot, you can simulate knowing all kinds of things!
 
 ## References
 Two of the best, of many, many algorithm and data structure books available:
