@@ -525,6 +525,19 @@ In essence, if you need consistent performance and work with large datasets, AVL
 A very good answer.  Rating: Good
 
 ## Exercises
+Ask Copilot to:
+1.  Explain what is meant by "rotations after insertions and deletions" within an AVT Tree, with illustrative diagrams.
+2.  Add an implementation of a delete() method to the BST class, without concern for any resulting search performance degradation.  Do you observe anything interesting about the long-term impact of delete()'s implementation.
+3.  Show the Python code for an AVLTree class, including insert(), delete(), min(), max(), is_equal(), is_identical(), and inorder_traversal() methods.  What is different about how a BST Node is implemented vs. how an AVLTree Node is implemented?
+4.  Describe a Red Black Tree, and list the properties of a correctly implemented Red Black Tree.
+5.  Describe the advantages and disadvantages of a Red Black Tree vs. and AVL Tree.
+6.  Show various ways of computing the Nth Fibonacci number in Python, including iteration, recursion, recursion with memoization, closed-form computation, and lookup table.  What is the performance of each of these algorithms?
+7.  Show the Python code for a Stack class, and describe use cases for a Stack.
+8.  Show the Python code for a Queue class, and describe use cases for a Queue.
+9.  Show the Python code for a Heap class, and for the Heap Sort algorithm.
+10.  Show the Python code for a Hash Table class, and describe use cases for a Hash Table.
+11.  Describe situations where an AVLTree may be preferably to a Hash Table.
+
 ## References
 Two of the best, of many, many algorithm and data structure books available:
 
