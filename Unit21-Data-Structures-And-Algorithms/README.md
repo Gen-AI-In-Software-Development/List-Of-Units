@@ -302,5 +302,157 @@ This BST class provides basic methods for inserting nodes, searching for values,
 ### Critique
 A clear implementation of the BST class, with the three most important basic methods: insert(), search(), and inorder_traversal().  Rating: Good
 
+### Example 21.11 prompt:  Make the Node class a private class within the BST class, and add methods min(), max(), is_identical() (same values and shape), and is_equal() (same values)
+
+### Generated output
+Alright! Here’s the enhanced BST class with a private Node class and the additional methods you requested:
+
+```
+class BST:
+    class _Node:
+        def __init__(self, key):
+            self.left = None
+            self.right = None
+            self.val = key
+
+    def __init__(self):
+        self.root = None
+
+    def insert(self, key):
+        if self.root is None:
+            self.root = self._Node(key)
+        else:
+            self._insert(key, self.root)
+
+    def _insert(self, key, current_node):
+        if key < current_node.val:
+            if current_node.left is None:
+                current_node.left = self._Node(key)
+            else:
+                self._insert(key, current_node.left)
+        elif key > current_node.val:
+            if current_node.right is None:
+                current_node.right = self._Node(key)
+            else:
+                self._insert(key, current_node.right)
+
+    def search(self, key):
+        return self._search(key, self.root)
+
+    def _search(self, key, current_node):
+        if current_node is None:
+            return False
+        elif key == current_node.val:
+            return True
+        elif key < current_node.val:
+            return self._search(key, current_node.left)
+        else:
+            return self._search(key, current_node.right)
+
+    def inorder_traversal(self):
+        return self._inorder_traversal(self.root, [])
+
+    def _inorder_traversal(self, current_node, traversal):
+        if current_node:
+            traversal = self._inorder_traversal(current_node.left, traversal)
+            traversal.append(current_node.val)
+            traversal = self._inorder_traversal(current_node.right, traversal)
+        return traversal
+
+    def min(self):
+        if self.root is None:
+            return None
+        return self._min(self.root)
+
+    def _min(self, current_node):
+        while current_node.left:
+            current_node = current_node.left
+        return current_node.val
+
+    def max(self):
+        if self.root is None:
+            return None
+        return self._max(self.root)
+
+    def _max(self, current_node):
+        while current_node.right:
+            current_node = current_node.right
+        return current_node.val
+
+    def is_identical(self, other):
+        return self._is_identical(self.root, other.root)
+
+    def _is_identical(self, node1, node2):
+        if not node1 and not node2:
+            return True
+        if node1 and node2 and node1.val == node2.val:
+            return (self._is_identical(node1.left, node2.left) and 
+                    self._is_identical(node1.right, node2.right))
+        return False
+
+    def is_equal(self, other):
+        return sorted(self.inorder_traversal()) == sorted(other.inorder_traversal())
+
+# Example usage
+bst1 = BST()
+bst1.insert(10)
+bst1.insert(5)
+bst1.insert(20)
+bst1.insert(15)
+bst1.insert(25)
+
+bst2 = BST()
+bst2.insert(10)
+bst2.insert(5)
+bst2.insert(20)
+bst2.insert(15)
+bst2.insert(25)
+
+print(bst1.min())  # Output: 5
+print(bst1.max())  # Output: 25
+print(bst1.is_identical(bst2))  # Output: True
+print(bst1.is_equal(bst2))  # Output: True
+
+bst2.insert(30)
+print(bst1.is_identical(bst2))  # Output: False
+print(bst1.is_equal(bst2))  # Output: False
+```
+
+The min() method finds the smallest value, max() finds the largest, is_identical() checks if two BSTs have the same structure and values, and is_equal() checks if two BSTs contain the same values, regardless of structure. This should cover it!
+### Critique
+Very nicely done enhancements.  Lacks a test of two BST objects that are equal but not identical.  Rating: Good
+
+### Example 21.12 prompt:  Add tests for two BST objects that are equal but not identical
+
+### Generated output
+Alright, let's write some tests to check if two BST objects are equal in terms of values but not identical in structure:
+
+```
+# Tests for two BST objects that are equal but not identical
+bst1 = BST()
+bst1.insert(10)
+bst1.insert(5)
+bst1.insert(20)
+bst1.insert(15)
+bst1.insert(25)
+
+bst2 = BST()
+bst2.insert(20)
+bst2.insert(10)
+bst2.insert(5)
+bst2.insert(15)
+bst2.insert(25)
+
+# Check if they are equal but not identical
+print(f"bst1 and bst2 have the same values: {bst1.is_equal(bst2)}")  # Output: True
+print(f"bst1 and bst2 are structurally identical: {bst1.is_identical(bst2)}")  # Output: False
+```
+
+This setup tests the equality in values and differences in structure effectively. Everything clicking into place?
+
+### Critique
+A good example.  Rating: Good
+
+
 ## Exercises
 ## References
