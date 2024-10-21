@@ -379,7 +379,5 @@ As you can see, the inorder traversal does not include any duplicate values, ind
 ```
 ### Critique
 Copilot created revised code as requested, and modified the insert() method to disallow insertion of duplicate values.  The original insert() code did allow duplicates, which your humble reviewer failed to notice!  The revised test code has been placed below an "if ... '__main__':" check so that this code can be imported as a module by another program without its test code being executed.  The revised test code does demonstrate that duplicate insertions are ignored.  Overall:  Well and cleanly revised code.  Rating: Good.
-# Several Solved Examples Using Copilot
-## Critical Evaluations of the Examples
 ## Exercises
 ## References

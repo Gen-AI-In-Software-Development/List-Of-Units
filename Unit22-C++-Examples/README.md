@@ -74,7 +74,359 @@ g++ main.cpp -o main
 ### Critique
 Copilot displays the exact correct shortest legal C++ program, and explains the code.  Very nice!
 Rating: Good
-# Several Solved Examples Using Copilot
-## Critical Evaluations of the Examples
+
+### Example 22.4 prompt:  Write a C++ program that displays the integer values evenly divisible by 5, from 0 through 200.  Display 8 such values per line of output.
+
+### Generated Code
+Alright, here’s a simple C++ program to achieve that:
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+    int count = 0;
+    for (int i = 0; i <= 200; i += 5) {
+        cout << i << "\t";
+        count++;
+        if (count % 8 == 0) {
+            cout << endl;
+        }
+    }
+    return 0;
+}
+```
+This program iterates through integers from 0 to 200 in steps of 5, and prints 8 values per line. Give it a run!
+### Critique
+Shows the use of the C++ **for** loop, and the modulus operator (%) for detecting when 8 values have been displayed on the current line.
+Rating: Good
+
+### Example 22.5 prompt:  Write a filter program in C++ that reads from standard input and writes to standard output, with each lowercase letter converted to uppercase.
+
+### Generated Code
+Here’s a simple C++ filter program that reads from standard input, converts each lowercase letter to uppercase, and writes the result to standard output:
+```
+#include <iostream>
+#include <cctype> // for toupper()
+
+int main() {
+    char c;
+    while (std::cin.get(c)) { // Read one character at a time from standard input
+        if (std::islower(c)) {
+            c = std::toupper(c); // Convert to uppercase
+        }
+        std::cout.put(c); // Write the character to standard output
+    }
+    return 0;
+}
+```
+This program uses a loop to read each character from standard input, checks if it's a lowercase letter, converts it to uppercase if it is, and then outputs the modified character. Simple, effective, and gets the job done!
+### Critique
+Shows the use of the C++ **while** loop, with cin.get(c), islower(c), and toupper(c).  Very clean and correct code.  (And gee, Copilot even congratulates itself.)
+Rating: Good
+
+### Example 22.6 prompt:  Write a program in C++ that reads input from the file data.csv, in which the first line gives the column names and subsequent lines give numerical values.  As output, the program should display lines showing the column names and column values in column widths of 20 characters, and should also display the total of the values in each column.
+
+### Generated Code
+Got it! Here’s a program in C++ that reads from data.csv, formats the output, and computes the column totals:
+```
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <iomanip>
+
+int main() {
+    std::ifstream file("data.csv");
+    if (!file.is_open()) {
+        std::cerr << "Error opening file" << std::endl;
+        return 1;
+    }
+
+    std::string line;
+    std::getline(file, line); // Read the first line (column names)
+
+    std::stringstream ss(line);
+    std::vector<std::string> column_names;
+    std::string column;
+    while (std::getline(ss, column, ',')) {
+        column_names.push_back(column);
+    }
+
+    std::vector<double> column_totals(column_names.size(), 0.0);
+    std::vector<std::vector<double>> data;
+
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::vector<double> row;
+        double value;
+        int col_index = 0;
+        while (ss >> value) {
+            row.push_back(value);
+            column_totals[col_index] += value;
+            col_index++;
+            if (ss.peek() == ',') {
+                ss.ignore();
+            }
+        }
+        data.push_back(row);
+    }
+
+    file.close();
+
+    // Display column names
+    for (const auto& name : column_names) {
+        std::cout << std::setw(20) << std::left << name;
+    }
+    std::cout << std::endl;
+
+    // Display data
+    for (const auto& row : data) {
+        for (const auto& value : row) {
+            std::cout << std::setw(20) << std::left << value;
+        }
+        std::cout << std::endl;
+    }
+
+    // Display column totals
+    for (const auto& total : column_totals) {
+        std::cout << std::setw(20) << std::left << total;
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+```
+This program reads the data.csv file, processes the column names and numerical values, and then displays the columns in widths of 20 characters along with their totals. Give it a whirl!
+### Critique
+Correctly infers that data.csv is a comma-separated value text file.  Uses a vector of strings for the column names, a vector of doubles for the totals, and a vector of vectors of doubles for the data rows and columns.  Very nice!  Uses stringstream and getline() to simplify reading each line and splitting up the columns, then uses range for loops with reference-to-auto-const variables to display the column names, process and display the data, and display the totals.  Very very nice!
+Rating: Good
+### Example 22.7 prompt:  That doesn't seem very modular.  Rewrite the code, using a separate function call for each major second of the code.  (NOTICE THE TYPO HERE: "second" should be "section")
+
+### Generated Code
+Alright, let’s break down the tasks into modular functions for better readability and maintainability:
+```
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <iomanip>
+
+void readColumnNames(std::ifstream &file, std::vector<std::string> &column_names) {
+    std::string line;
+    std::getline(file, line);
+    std::stringstream ss(line);
+    std::string column;
+    while (std::getline(ss, column, ',')) {
+        column_names.push_back(column);
+    }
+}
+
+void readData(std::ifstream &file, std::vector<std::vector<double>> &data, std::vector<double> &column_totals, int num_columns) {
+    std::string line;
+    while (std::getline(file, line)) {
+        std::stringstream ss(line);
+        std::vector<double> row;
+        double value;
+        int col_index = 0;
+        while (ss >> value) {
+            row.push_back(value);
+            column_totals[col_index] += value;
+            col_index++;
+            if (ss.peek() == ',') {
+                ss.ignore();
+            }
+        }
+        data.push_back(row);
+    }
+}
+
+void displayColumnNames(const std::vector<std::string> &column_names) {
+    for (const auto &name : column_names) {
+        std::cout << std::setw(20) << std::left << name;
+    }
+    std::cout << std::endl;
+}
+
+void displayData(const std::vector<std::vector<double>> &data) {
+    for (const auto &row : data) {
+        for (const auto &value : row) {
+            std::cout << std::setw(20) << std::left << value;
+        }
+        std::cout << std::endl;
+    }
+}
+
+void displayColumnTotals(const std::vector<double> &column_totals) {
+    for (const auto &total : column_totals) {
+        std::cout << std::setw(20) << std::left << total;
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    std::ifstream file("data.csv");
+    if (!file.is_open()) {
+        std::cerr << "Error opening file" << std::endl;
+        return 1;
+    }
+
+    std::vector<std::string> column_names;
+    readColumnNames(file, column_names);
+
+    std::vector<double> column_totals(column_names.size(), 0.0);
+    std::vector<std::vector<double>> data;
+    readData(file, data, column_totals, column_names.size());
+
+    file.close();
+
+    displayColumnNames(column_names);
+    displayData(data);
+    displayColumnTotals(column_totals);
+
+    return 0;
+}
+```
+In this modular version, each major section of the code has its own function: reading column names, reading data, displaying column names, displaying data, and displaying column totals. This makes the program easier to read, maintain, and extend. How’s this looking?
+### Critique
+Your humble reviewer was happy with the first version of the code, but people new to programming often have an easier time with a more top-down functional "modular" decomposition ... and teachers/professors may demand it.  This is nicely "modularized" and makes the major steps of the algorithm in the **main()** function stand out.  Notice that Copilot was not confused by the typo in the prompt, interpreting "modular" correctly.  We see the use of reference parameters so that the called functions can directly access data objects that were declared in **main()**.
+Rating: Good
+
+### Example 22.8 prompt:  What operators does C++ provide, and what is their precedence and associativity?
+
+### Generated Code
+C++ provides a wide variety of operators, each with specific precedence and associativity rules. Here’s a rundown:
+
+Arithmetic Operators
++ (Addition)
+
+- (Subtraction)
+
+*** **(Multiplication)
+
+/ (Division)
+
+% (Modulo)
+
+Relational Operators
+== (Equal to)
+
+!= (Not equal to)
+
+> (Greater than)
+
+< (Less than)
+
+>= (Greater than or equal to)
+
+<= (Less than or equal to)
+
+Logical Operators
+&& (Logical AND)
+
+|| (Logical OR)
+
+! (Logical NOT)
+
+Bitwise Operators
+& (Bitwise AND)
+
+| (Bitwise OR)
+
+^ (Bitwise XOR)
+
+~ (Bitwise NOT)
+
+<< (Left shift)
+
+>> (Right shift)
+
+Assignment Operators
+= (Assignment)
+
++= (Add and assign)
+
+-= (Subtract and assign)
+
+*= (Multiply and assign)
+
+/= (Divide and assign)
+
+%= (Modulo and assign)
+
+&= (Bitwise AND and assign)
+
+|= (Bitwise OR and assign)
+
+^= (Bitwise XOR and assign)
+
+<<= (Left shift and assign)
+
+>>= (Right shift and assign)
+
+Increment and Decrement Operators
+++ (Increment)
+
+-- (Decrement)
+
+Miscellaneous Operators
+sizeof (Size of)
+
+? : (Ternary conditional)
+
+, (Comma)
+
+& (Address-of)
+
+\* (Pointer dereference)
+
+-> (Member access through pointer)
+
+. (Member access)
+
+[] (Array subscript)
+
+() (Function call)
+
+Operator Precedence and Associativity
+Operator precedence determines the order in which operators are evaluated in an expression. Operators with higher precedence are evaluated before operators with lower precedence. Associativity determines the order in which operators of the same precedence are evaluated.
+
+Here’s a simplified table of some common operators with their precedence and associativity:
+
+Precedence	Operator	Associativity
+1 (highest)	::	Left to Right
+2	() [] . ->	Left to Right
+3	++ --	Right to Left
+4	! ~ + - * &	Right to Left
+5	* / %	Left to Right
+6	+ -	Left to Right
+7	<< >>	Left to Right
+8	< <= > >=	Left to Right
+9	== !=	Left to Right
+10	&	Left to Right
+11	^	Left to Right
+12	`	`	Left to Right
+13	&&	Left to Right
+14	`		`	Left to Right
+15	? :	Right to Left
+16	= += -= *= /= %= &= `	=^=<<=>>=`	Right to Left
+17 (lowest)	,	Left to Right
+This table isn’t exhaustive but covers the most commonly used operators. Clear things up?
+### Critique
+There are some serious formatting problems in this output from Copilot, making it of dubious value.  It's probably better here to use Google for this information rather than Copilot.
+Rating: Poor
+
 ## Exercises
 ## References
+
+A handful of the best books about C++.  Many, many others are available.
+
+**The C++ Programming Language, 4th Edition**, 2013, by Bjarne Stroustrup, ISBN 978-0321958327.  By the originator of C++.
+
+**Programming: Principals and Practice using C++, 3rd Edition**, 2024, by Bjarne Stroustrup, ISBN 978-0138308681.  An introduction to computer programming in general, using C++.
+
+**The C++ Standard Library: A Tutorial and Reference, 2nd Edition**, 2012, by Nicolai Josuttis, ISBN 978-0321623218.  An outstanding reference and tutorial on the C++ Standard Library through C++11.  Outstanding book to learn C++ and its library from.
+
+**C++ Templates: The Complete Guide, 2nd Edition**, 2017, by Vandevoorde, Josuttis, and Gregor, ISBN 978-0321714121.  All about C++ template metaprogramming.
+
+**C++20: The Complete Guide**, 2022, by Nicolai Josuttis, ISBN 978-3967300208.  Josuttis's most up-to-date book.
+
