@@ -1,5 +1,5 @@
 # Unit00-Overview
-## Investigating Generative AI in Software Development
+## Learning Generative AI in Software Development
 
 Description: Generative AI has the potential to significantly enhance developer productivity.
 This course delves into how Microsoft Copilot can be used for various tasks, including code generation, chat assistance, refactoring, unit testing, data file manipulation, and documentation.
@@ -17,9 +17,7 @@ Proposal: We propose creating lab exercises that introduce LLM generated code an
 
 Details: Each of the three of us will work on several units separately but with input from each other as needed. We will use github as a repository for the materials to allow collaboration and later to facilitate student access. If there's interest, these materials could be used by other instructors at Heinz.
 
-The list of units follows. We will complete the first four parts this summer.  The other parts are not immediately useful in intro Python and Java courses; they are more applicable to distributed systems and other courses.
-
-The three of us are willing to co-teach a micro course on this material in the fall and spring semesters. Each of us would cover several units from the topics below.
+The list of units follows. 
 
 —---------------------------------------------------------------------------------------------------------------------
 
