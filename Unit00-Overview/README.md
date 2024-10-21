@@ -17,7 +17,7 @@ Proposal: We propose creating lab exercises that introduce LLM generated code an
 
 Details: Each of the three of us will work on several units separately but with input from each other as needed. We will use github as a repository for the materials to allow collaboration and later to facilitate student access. If there's interest, these materials could be used by other instructors at Heinz.
 
-The list of units follows. 
+The list of units follows.
 
 —---------------------------------------------------------------------------------------------------------------------
 
@@ -154,56 +154,11 @@ git push origin master
 
 6) Goto step 2.
 
-# RESPONSE FROM COMPUTING SERVICES
-
-Michael,
-
-I did some searching through the IntelliJ Plugin marketplace. Unfortunately a lot of these companies are calling their products "Copilot", but they are often completely different products.
-
-GitHub Copilot is probably the plugin you are thinking of, as it is the flagship model for coding now. Confusingly, even though it is owned by Microsoft, GH Copilot is not the same thing as Microsoft Copilot (formerly Bing Chat Enterprise). The latter is what CMU has a license for. I cannot find any Microsoft Copilot plugins for IntelliJ.
-
-As for whether you can use Copilot in Edge for coding, I think that could work. It depends on how the code is rendered in the browser. Copilot in Edge can be "context aware" and read the content of the currently open web page, but it does not work for ALL content. Refer to this documentation from Microsoft about what content might be "invisible" to Copilot:
-https://learn.microsoft.com/en-us/DeployEdge/edge-learnmore-copilot-page-summary-results
-
-I tested it with a private GitHub repository, and I can share what I learned. I opened a TypeScript .tsx file in the browser. Then I opened the copilot sidebar and gave an instruction to rewrite one of the functions and add a line to it. I found out that this worked but only if I explicitly said "Using the code on this page...." in my prompt.
-
-Also a downside of this approach is that Copilot sessions are not saved, so if you accidentally close the sidebar you can lose your message history.
-
-Finally, because you mention this being given to students in a teaching and learning context, I'd recommend reaching out to Judy Brooks at Eberly. They are implementing similar assessments of this technology in the classroom, and they may be able to help or provide some guidance.
-
-Best,
-Bo Powers
-
-# FROM CMU PAGE ON Copilot
+# CMU PAGE ON Copilot
 
 [CMU Copilot page](https://www.cmu.edu/computing/services/ai/copilot/index.html)
 
-# Notes from SEI talk
-Give the LLM a large undocumented program and have it generate a clear description of the code.
+[Prompt Patterns](https://www.dre.vanderbilt.edu/~schmidt/PDF/prompt-patterns.pdf)
+[Prompt engineering utube channel](https://www.youtube.com/@DouglasSchmidt)
 
-Check out glasp (a plugin for chrome) as a tutor or trainer
-
-We have to teach how to read and evaluate code
-
-Unit tests are needed. Now, we will see more of this with LLM's.
-
-Other software engineering activities => Requirements documents from a large body of text, policy document analysis, code, looking for inconsistencies, architecture documents (may be incorrect with glossy beauty)
-
-
-Test driven development with LLMs.
-
-Good prompt engineering is a type of programming.
-
-Risk assessment of introducing LLM code into a system
-
-We have code coming from a potentially untrusted source. We have to be able to read and analyze code.
-
-Fundamental principles of software engineering (abstractions, information hiding, etc) will not be going away.
-
-Ethically sourced data for LLMs?
-
-Douglas Schmidt has videos. Know how to do prompt engineering and providing context.
-
-Prompt Patterns are important: https://www.dre.vanderbilt.edu/~schmidt/PDF/prompt-patterns.pdf
-Prompt engineering utube channel: https://www.youtube.com/@DouglasSchmidt
-The programmer still needs to take ownership of the code in, say, safety critical systems.
+The programmer needs to take ownership of code in, say, safety critical systems.
