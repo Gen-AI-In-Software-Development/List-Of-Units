@@ -6,7 +6,7 @@ Comma separated values (CSV) files are plain text files containing tabular data.
 Each line represents a row of the table and values are separated by commas.
 These file types are quite common in industry and are often used for exporting and importing data between databases, spreadsheets, and other applications.
 
-## Compelling Use Case
+## Use Case
 To increase productivity, we would like to use a tool that can generate code providing simple access to CSV files. For example, it might model each row of the file with an object of an appropriate class and model the entire file with an array of row objects.
 
 The code should be readable and easy to use for reading, writing, and processing data within the file. Additionally, the code should be tailored to a particular file structure. For example, if the file contains names and addresses, the code will have variables (or object properties) named "name" and "address".
