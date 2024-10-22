@@ -112,7 +112,7 @@ Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 
 [ChatGPT in the classroom](./3626252.3630803.pdf)
 
-[Teaching CS50 with AI](.)/3626252.3630938.pdf)
+[Teaching CS50 with AI](./3626252.3630938.pdf)
 
 # Where does Copilot fit?
 
