@@ -98,19 +98,21 @@ Unit 27. [Cloud Computing](../Unit27-Cloud-Computing)
 
 Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 
-# Readings
+# Papers
 
 [Harnessing the Power of Generative AI in Transforming Software Engineering Productivity](https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/)
 
 [A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT](https://arxiv.org/abs/2302.11382)
 
-[A Paper critical of this approach](https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html)
+[A Paper critical of the AI approach](https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html)
 
 [Beyond Traditional Teaching](./3626252.3630789.pdf)
 
 [Prompt Problems: A New Programming Exercise for the Generative AI Era](./3626252.3630909.pdf)
 
 [ChatGPT in the classroom](./3626252.3630803.pdf)
+
+[Teaching CS50 with AI](.)/3626252.3630938.pdf)
 
 # Where does Copilot fit?
 
