@@ -1,7 +1,15 @@
 #  Unit11-CSV
+
 ## Introduction
+
+Comma separated values (CSV) files are plain text files containing tabular data.
+Each line represents a row of the table and value is separated by a comma.
+These file types are quite common in industry and are often used for exporting and importing data between databases, spreadsheets, and other applications.
+
 ## Compelling Use Case
-## Several Solved Examples Using Copilot
-## Critical Evaluations of the Examples
+To increase our productivity, it would be nice if we had a tool that could generate code that provides simple access to such a file.
+
 ## Exercises
-## References
+1. Given the following file, use Copilot to generate code (in the language of your choice) that provides a clean abstraction for a developer to use.
+
+[Crime data in Pittsburgh 1990-1999](https://www.andrew.cmu.edu/user/mm6/95-771/CrimeData/CrimeLatLonXY1990.csv)
