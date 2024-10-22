@@ -124,8 +124,8 @@ Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 
 AI pioneer and ACM A.M. Turing Award laureate Yann LeCun says some experts are exaggerating AI's power and risks. LeCun believes today’s AI models lack the intelligence of pets. When an OpenAI researcher stressed the need to control ultra-intelligent AI, LeCun responded, “It seems to me that before ‘urgently figuring out how to control AI systems much smarter than us’ we need to have the beginning of a hint of a design for a system smarter than a house cat."
 
-The programmer needs to take ownership of code in, say, safety
-critical systems.
+"The programmer needs to take ownership of code in, say, safety
+critical systems." - Overheard at an SEI workshop
 
 # GitHub Mechanics: Updating a Unit
 
