@@ -482,6 +482,7 @@ Process finished with exit code 0
 This is not exactly what we wanted. The error is not shown as it is in the example execution. But, overall, this code is doing the job of allowing us to repeatedly train the network for different tasks. Rating: Good.
 
 ## Exercises
-1. This problem is a common one to see on the web. It is a classic example of how one can train a neural network. Perhaps you can think of a training exercise that is not so common. How did CoPilot perform on your new task?
+1. This problem is a common one to see on the web. It is a classic example of how one can train a neural network. Perhaps you can think of a training exercise that is not so common. How did CoPilot perform on your new task? Poor, Fair, or Good.  
+
 ## References
 [1] [This example was motivated by this blog post](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
