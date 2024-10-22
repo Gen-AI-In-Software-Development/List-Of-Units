@@ -168,5 +168,3 @@ git push origin master
 # CMU PAGE ON Copilot
 
 [CMU Copilot page](https://www.cmu.edu/computing/services/ai/copilot/index.html)
-
-[Prompt engineering utube channel](https://www.youtube.com/@DouglasSchmidt)
