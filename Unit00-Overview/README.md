@@ -124,6 +124,9 @@ Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 
 AI pioneer and ACM A.M. Turing Award laureate Yann LeCun says some experts are exaggerating AI's power and risks. LeCun believes today’s AI models lack the intelligence of pets. When an OpenAI researcher stressed the need to control ultra-intelligent AI, LeCun responded, “It seems to me that before ‘urgently figuring out how to control AI systems much smarter than us’ we need to have the beginning of a hint of a design for a system smarter than a house cat."
 
+The programmer needs to take ownership of code in, say, safety
+critical systems.
+
 # GitHub Mechanics: Updating a Unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
@@ -166,7 +169,4 @@ git push origin master
 
 [CMU Copilot page](https://www.cmu.edu/computing/services/ai/copilot/index.html)
 
-[Prompt Patterns](https://www.dre.vanderbilt.edu/~schmidt/PDF/prompt-patterns.pdf)
 [Prompt engineering utube channel](https://www.youtube.com/@DouglasSchmidt)
-
-The programmer needs to take ownership of code in, say, safety critical systems.
