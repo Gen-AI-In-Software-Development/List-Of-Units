@@ -3,7 +3,7 @@
 ## Introduction
 
 Comma separated values (CSV) files are plain text files containing tabular data.
-Each line represents a row of the table and value is separated by a comma.
+Each line represents a row of the table and values are separated by commas.
 These file types are quite common in industry and are often used for exporting and importing data between databases, spreadsheets, and other applications.
 
 ## Compelling Use Case
