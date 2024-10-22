@@ -106,7 +106,7 @@ Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 
 [A Paper critical of this approach](https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html)
 
-[Beyond Traditional Teaching](Unit00-Overview/3626252.3630789.pdf)
+[Beyond Traditional Teaching](./3626252.3630789.pdf)
 # Where does Copilot fit?
 
 <img src="images/CopilotVennDiagram.png" width="400"/>
