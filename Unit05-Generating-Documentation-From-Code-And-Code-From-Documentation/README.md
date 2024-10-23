@@ -239,7 +239,7 @@ public class TicTacToe {
 }
 ```
 ### Critique
-This appears to be on the right track. However, the compiler gives a syntax error on the line "char[][] board = new char;". This is not correct Java code.
+This appears to be on the right track. However, the compiler gives a syntax error on the line "char[][] board = new char;". This is not correct Java code. Rating: Poor
 
 ## Exercises
 1. Can you get CoPilot to generate a good TicTacToe program from documentation?
