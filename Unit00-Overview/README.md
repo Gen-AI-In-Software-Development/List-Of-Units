@@ -115,6 +115,8 @@ AI pioneer and ACM A.M. Turing Award laureate Yann LeCun says some experts are e
 "The programmer needs to take ownership of code in, say, safety
 critical systems." - Overheard at an SEI workshop
 
+Developers also have growing concerns over the potential for AI assistants to suggest or propagate vulnerable code. While the majority of developers (56%) expect AI assistants to provide usable code, only 23% expect the code to be secure, while a larger group (40%) don't believe AI assistants provide secure code at all, according to research by software development firm JetBrains and the University of California at Irvine, published in June, 2024.
+
 # GitHub Mechanics: Updating a Unit
 
 1) Do this once: Download the repository into a new directory named List-of-Units. This will create the
