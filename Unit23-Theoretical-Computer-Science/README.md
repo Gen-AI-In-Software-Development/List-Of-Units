@@ -100,7 +100,6 @@ The proposed solution does not work as specified. The initial tape has an infini
 <img src="images/TM_BB(2).png" width="800"/>
 
 
-
 ## References
 [1] Computability and Logic, Boolos and Jeffrey, Cambridge University Press, second edition, pg. 26.
 
