@@ -86,7 +86,9 @@ This is very well done. Copilot explained that messages are not sent back to the
 
 ### Example 5.2 prompt: Please generate a complete Java program from the following documentation:
 
-// Two users would like to play Tic Tac Toe[1] against each other.
+// Overall description: Two users would like to play Tic Tac Toe[1] against each other.
+
+// Method documentation follows:
 
 // Post-condition: An empty X and O board is displayed on the console
 
