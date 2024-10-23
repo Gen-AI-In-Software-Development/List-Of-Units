@@ -82,7 +82,7 @@ This Turing machine will continue writing '1’s until it reaches the end of the
 
 If you have any more questions or need further assistance, feel free to ask!
 ```
-The solution can be drawn as shown:
+The proposed solution can be drawn as shown:
 
 <img src="images/TM_Never_Halts.png" width="800"/>
 
