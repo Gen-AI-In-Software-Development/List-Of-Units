@@ -112,7 +112,9 @@ boolean x-is-a-winner(char board[])
 boolean o-is-a-winner(char board[])
 
 // interact with a user and allow the user to select moves.
+
 // the x moves always move first.
+
 // Stop when we have a winner
 
 public void main()
