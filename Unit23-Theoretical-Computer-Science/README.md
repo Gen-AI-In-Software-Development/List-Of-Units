@@ -91,11 +91,12 @@ The proposed solution can be drawn as shown:
 The proposed solution does not work as specified. The initial tape has an infinity of 0s and so, there will never be a blank encountered. The machine will never halt. Rating:Poor
 
 ## Exercises
-1. Ask Copilot to create a Turing Machine that adds two integers greater than zero expressed in unary notation and separated by a blank. For example, the input tape may begin with 111 11. After execution of the Turing machine, the tape should contain 11111. That is, 3 + 2 == 5.
+1. Ask Copilot to create a Turing Machine that adds two integers greater than zero expressed in unary notation and separated by a blank. For example, the input tape may begin with 111 11. After execution of the Turing machine, the tape should contain 11111. That is, 3 + 2 == 5. How do you rate Copilot on this task? Poor, Fair, or Good?
+2. Can Copilot find a Turing Machine with fewer states that solves the same problem as Example 23.1? How do you rate Copilot on this task? Poor, Fair, or Good?
 2. Draw a state machine diagram showing BB(1).
-3. Below is a sketch of BB(2). Without mentioning "Busy Beaver", can you get Copilot to find BB(2) or BB(3)? How about BB(10) ?
-4. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
-5. Can Copilot find BB(n) for an arbitrary n?
+3. Below is a sketch of BB(2). Without mentioning "Busy Beaver", can you get Copilot to find BB(2) or BB(3)? How about BB(10) ? How do you rate Copilot on this task? Poor, Fair, or Good?
+4. Does mentioning the term "Busy Beaver" improve on Copilot's performance? Yes or No?
+5. Can Copilot find BB(n) for an arbitrary n? Yes or No?
 
 <img src="images/TM_BB(2).png" width="800"/>
 
