@@ -86,26 +86,35 @@ This is very well done. Copilot explained that messages are not sent back to the
 
 ### Example 5.2 prompt: Please generate a complete Java program from the following documentation:
 
-// Post-condition: An empty X and O board is displayed in the console
+// Post-condition: An empty X and O board is displayed on the console
+
 void showBoard()
 
+
 // Pre-condition: An X and O board is provided as input.
+
 // Post-condition: The board is modified with a new X at a new row and column.
+
 void getXMoveFromUser(char board[][])
 
 // Pre-condition: An X and O board is provided as input.
+
 // Post-condition: The board is modified with a new O at a new row and column.
+
 void getOMoveFromUser(char board[][])
 
 // Post-condition: returns true if X is a winner
+
 boolean x-is-a-winner(char board[])
 
 // Post-condition: returns true if O is a winner
+
 boolean o-is-a-winner(char board[])
 
 // interact with a user and allow the user to select moves.
 // the x moves always move first.
 // Stop when we have a winner
+
 public void main()
 
 ```
