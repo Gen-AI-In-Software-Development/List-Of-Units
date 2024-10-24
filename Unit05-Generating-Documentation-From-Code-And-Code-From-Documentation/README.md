@@ -86,26 +86,44 @@ This is very well done. Copilot explained that messages are not sent back to the
 
 ### Example 5.2 prompt: Please generate a complete Java program from the following documentation:
 
-// Post-condition: An empty X and O board is displayed in the console
+// Overall description: Two users would like to play Tic Tac Toe[1] against each other.
+
+// Method documentation follows:
+
+// Post-condition: An empty X and O board is displayed on the console
+
 void showBoard()
 
+
 // Pre-condition: An X and O board is provided as input.
+
 // Post-condition: The board is modified with a new X at a new row and column.
+
 void getXMoveFromUser(char board[][])
 
 // Pre-condition: An X and O board is provided as input.
+
 // Post-condition: The board is modified with a new O at a new row and column.
+
 void getOMoveFromUser(char board[][])
 
 // Post-condition: returns true if X is a winner
+
 boolean x-is-a-winner(char board[])
 
 // Post-condition: returns true if O is a winner
+
 boolean o-is-a-winner(char board[])
 
+
+// main routine
+
 // interact with a user and allow the user to select moves.
+
 // the x moves always move first.
+
 // Stop when we have a winner
+
 public void main()
 
 ```
@@ -239,9 +257,20 @@ public class TicTacToe {
 }
 ```
 ### Critique
-This appears to be on the right track. However, the compiler gives a syntax error on the line "char[][] board = new char;". This is not correct Java code.
+This appears to be on the right track. However, the compiler gives a syntax error on the line "char[][] board = new char;". In addition, the checkWinner
+method contains this code when checking for a win on the diagonal:
+```
+if ((board == player && board == player && board == player) ||
+                (board == player && board == player && board == player)) {
+            return true;
+        }
+```
+
+This is not correct Java code. The variable "board" is a two dimensional array and cannot be compared to a player of type char. The directions to the user are not clear. Rating: Poor
 
 ## Exercises
-1. Can you get CoPilot to generate a good TicTacToe program from documentation?
+1. In your language of choice, can you get Copilot to generate a good TicTacToe program for two users from documentation?
+2. Can you get Copilot to play as one of the competitors in an X and O game from documentation?
 
 ## References
+[1] [Tic Tac Toe at Wikipedia](https://en.wikipedia.org/wiki/Tic-tac-toe)

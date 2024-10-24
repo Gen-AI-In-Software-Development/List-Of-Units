@@ -49,7 +49,7 @@ The proposed solution works as specified. We are assuming that q4 is the halt st
 ## Use Case
 
 The second example asks Copilot to work with a famous problem that has been shown to be incomputable - the Busy Beaver problem[2]. Before proceeding, be sure to study the Busy Beaver problem on Wikipedia (see the link in the references below). As noted in the article, the first few Busy Beavers are known. BB(0) = 0, BB(1) = 1, BB(2) = 4, BB(3) = 6, BB(4) = 13,
-BB(5) = 4098. In general, BB(n) is incomputable. What does that mean? It means that there is no algorithm that is able to compute BB(n) for any integer n.
+BB(5) = 4098. In general, BB(n) is incomputable. What does that mean? It means that is has been proven that there is no algorithm that is able to compute BB(n) for any arbitrary integer n.
 
 Note that BB(1) is actually a 2-state Turing machine. One of the states is the halt state and goes uncounted.
 
@@ -82,7 +82,7 @@ This Turing machine will continue writing '1’s until it reaches the end of the
 
 If you have any more questions or need further assistance, feel free to ask!
 ```
-The solution can be drawn as shown:
+The proposed solution can be drawn as shown:
 
 <img src="images/TM_Never_Halts.png" width="800"/>
 
@@ -91,14 +91,14 @@ The solution can be drawn as shown:
 The proposed solution does not work as specified. The initial tape has an infinity of 0s and so, there will never be a blank encountered. The machine will never halt. Rating:Poor
 
 ## Exercises
-1. Ask Copilot to create a Turing Machine that adds two integers expressed in unary notation and separated by a blank.
+1. Ask Copilot to create a Turing Machine that adds two integers greater than zero expressed in unary notation and separated by a blank. For example, the input tape may begin with 111 11. After execution of the Turing machine, the tape should contain 11111. That is, 3 + 2 == 5. How do you rate Copilot on this task? Poor, Fair, or Good?
+2. Can Copilot find a Turing Machine with fewer states that solves the same problem as Example 23.1? How do you rate Copilot on this task? Poor, Fair, or Good?
 2. Draw a state machine diagram showing BB(1).
-3. Below is a sketch of BB(2). Without mentioning "Busy Beaver", can you get Copilot to find BB(2) or BB(3)? How about BB(10) ?
-4. Does mentioning the term "Busy Beaver" improve on Copilot's performance?
-
+3. Below is a sketch of BB(2). Without mentioning "Busy Beaver", can you get Copilot to find BB(2) or BB(3)? How about BB(10) ? How do you rate Copilot on this task? Poor, Fair, or Good?
+4. Does mentioning the term "Busy Beaver" improve on Copilot's performance? Yes or No?
+5. Can Copilot find BB(n) for an arbitrary n? Yes or No?
 
 <img src="images/TM_BB(2).png" width="800"/>
-
 
 
 ## References

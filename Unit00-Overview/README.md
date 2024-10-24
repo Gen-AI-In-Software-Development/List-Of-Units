@@ -1,25 +1,13 @@
 # Unit00-Overview
 ## Learning Generative AI in Software Development
 
-Description: Generative AI has the potential to significantly enhance developer productivity.
-This course delves into how Microsoft Copilot can be used for various tasks, including code generation, chat assistance, refactoring, unit testing, data file manipulation, and documentation.
-Examples will span multiple programming languages, such as Java and Python. Additionally, we'll explore ethical considerations (code ownership, privacy concerns, bias and fairness),
-integration with existing tools (e.g. Git), and real-world use cases.
+Description: Generative AI has the potential to significantly enhance developer productivity. This micro-mini course delves into how Microsoft Copilot can be used for various tasks, including code generation, chat assistance, refactoring, unit testing, data file manipulation, and documentation. Examples will span multiple programming languages, such as Java, Python, and Javascript. The course will be hands-on and involve teamwork. Everyone will need a laptop to run code. There will be pre-work to set up your environment and post-work to include a short (1-to-3 page) paper.
 
-Prerequisites: While there is no formal prerequisite, it will be assumed that students have some
-programming background. Specifically, each student should already be familiar with concepts such as variables, data types, iteration, and functions in at least one programming language (not necessarily limited to Python or Java).
+Prerequisites: While there is no formal prerequisite, it will be assumed that students have some programming background. Specifically, each student should already be familiar with concepts such as variables, data types, iteration, and functions in at least one programming language (not necessarily limited to Python or Java).
 
-—-------------------------------------------------------------------------------------------------------
+Units: There are 28 units covering different topics in computer science and software engineering.
 
-Schedule: Weekend micro courses could be offered near the beginning of the fall and spring semesters.
-
-Proposal: We propose creating lab exercises that introduce LLM generated code and other artifacts using Copilot running in an IDE for Python and for Java. Each unit will have a similar structure: an introduction, a compelling use case, several solved examples using Copilot, critical evaluations of those examples, student exercises similar to the examples, and references. The examples and exercises will range from easy beginner problems to more moderate problems, with a few complicated problems that will illustrate the limitations of using Copilot.
-
-Details: Each of the three of us will work on several units separately but with input from each other as needed. We will use github as a repository for the materials to allow collaboration and later to facilitate student access. If there's interest, these materials could be used by other instructors at Heinz.
-
-The list of units follows.
-
-—---------------------------------------------------------------------------------------------------------------------
+The list of units is broken down into 8 parts. The parts and units follow:
 
 ## Part 0. Introduction
 
@@ -98,13 +86,21 @@ Unit 27. [Cloud Computing](../Unit27-Cloud-Computing)
 
 Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 
-# Readings
+# Papers
 
 [Harnessing the Power of Generative AI in Transforming Software Engineering Productivity](https://zinnov.com/digital-technologies/generative-ai-in-software-engineering-transforming-productivity-whitepaper/)
 
 [A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT](https://arxiv.org/abs/2302.11382)
 
-[A Paper critical of this approach](https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html)
+[A Paper critical of the AI approach](https://www.cio.com/article/3540579/devs-gaining-little-if-anything-from-ai-coding-assistants.html)
+
+[Beyond Traditional Teaching](papers/3626252.3630789.pdf)
+
+[Prompt Problems: A New Programming Exercise for the Generative AI Era](papers/3626252.3630909.pdf)
+
+[ChatGPT in the classroom](papers/3626252.3630803.pdf)
+
+[Teaching CS50 with AI](papers/3626252.3630938.pdf)
 
 # Where does Copilot fit?
 
@@ -115,6 +111,11 @@ Unit 28. [Prompt Patterns](../Unit28-Prompt-Patterns)
 "A fool with a tool is still a fool." - Grady Booch
 
 AI pioneer and ACM A.M. Turing Award laureate Yann LeCun says some experts are exaggerating AI's power and risks. LeCun believes today’s AI models lack the intelligence of pets. When an OpenAI researcher stressed the need to control ultra-intelligent AI, LeCun responded, “It seems to me that before ‘urgently figuring out how to control AI systems much smarter than us’ we need to have the beginning of a hint of a design for a system smarter than a house cat."
+
+"The programmer needs to take ownership of code in, say, safety
+critical systems." - Overheard at an SEI workshop
+
+Developers also have growing concerns over the potential for AI assistants to suggest or propagate vulnerable code. While the majority of developers (56%) expect AI assistants to provide usable code, only 23% expect the code to be secure, while a larger group (40%) don't believe AI assistants provide secure code at all, according to research by software development firm JetBrains and the University of California at Irvine, published in June, 2024.
 
 # GitHub Mechanics: Updating a Unit
 
@@ -157,8 +158,3 @@ git push origin master
 # CMU PAGE ON Copilot
 
 [CMU Copilot page](https://www.cmu.edu/computing/services/ai/copilot/index.html)
-
-[Prompt Patterns](https://www.dre.vanderbilt.edu/~schmidt/PDF/prompt-patterns.pdf)
-[Prompt engineering utube channel](https://www.youtube.com/@DouglasSchmidt)
-
-The programmer needs to take ownership of code in, say, safety critical systems.
