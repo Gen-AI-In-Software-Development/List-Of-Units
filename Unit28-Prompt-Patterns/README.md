@@ -778,15 +778,18 @@ Looks good. Rating: excellent.
 
 2. Continue with Example 28.1 and ask Copilot to find the longest path between two vertices in a graph. Use a larger graph than is shown in the example and include edge weights. Note that the longest path problem is NP-Hard. Evaluate its performance as Poor, Fair, or Good.
 
-3. See 28.11 and ask Copilot to generate the correct HTML/MathML that shows that the integral of x is x to the second power plus a constant. We want to view the integral as it would look in a calculus text. How did Copilot do? Was it poor, fair, or good?
+3. See Example 28.3, the Flipped Interaction Pattern. Write a prompt in this style to get Copilot to help generate code for reading a JSON record for a forecast for Pittsburgh from the U.S. National Weather Service using the API api.weather.gov.
 
-4. See 28.11 and ask Copilot to generate the correct HTML/MathML that shows that the sum of 1/n^2 for all integers n from 1 to infinity is pi^2 over 6. In a browser, it should appear as it would in a text book. How did Copilot do? Was it poor, fair, or good?  
+4. See 28.6; ask Copilot to generate alternate solutions to the factorial problem.
 
-5. See 28.6; ask Copilot to generate alternate solutions to the factorial problem.
+5. See 28.7; ask Copilot for the pros and cons of using the Strategy Pattern.
 
-6. See 28.7; ask Copilot for the pros and cons of using the Strategy Pattern.
+6. See 28.9; ask Copilot to redo the example using CSV format. The redo it using XML format.
 
-7. See 28.9; ask Copilot to redo the example using CSV format. The redo it using XML format.
+7. See 28.11 and ask Copilot to generate the correct HTML/MathML that shows that the integral of x is x to the second power plus a constant. We want to view the integral as it would look in a calculus text. How did Copilot do? Was it poor, fair, or good?
+
+8. See 28.11 and ask Copilot to generate the correct HTML/MathML that shows that the sum of 1/n^2 for all integers n from 1 to infinity is pi^2 over 6. In a browser, it should appear as it would in a text book. How did Copilot do? Was it poor, fair, or good?  
+
 
 ## References
 [1] White, Jules, Quchen Fu, Sam Hays, Michael Sandborn, Carlos Olea, Henry Gilbert, Ashraf Elnashar, Jesse Spencer-Smith, and Douglas C. Schmidt. “A Prompt Pattern Catalog to Enhance Prompt Engineering with ChatGPT.” arXiv (2023). https://doi.org/10.48550/arXiv.2302.11382
